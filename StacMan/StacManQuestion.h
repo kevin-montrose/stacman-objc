@@ -1,5 +1,5 @@
 //
-//  StacMan.h
+//  StacManQuestion.h
 //  StacMan
 //
 //  Created by Kevin Montrose on 3/28/13.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StacMan : NSObject
-
+@interface StacManQuestion : NSObject
++(NSArray*)parseArray:(NSArray*)json;
 @end

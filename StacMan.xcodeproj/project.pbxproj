@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		B992115F1704A6A800BEB0D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B992115E1704A6A800BEB0D2 /* Cocoa.framework */; };
-		B99211691704A6A900BEB0D2 /* StacMan.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211681704A6A900BEB0D2 /* StacMan.m */; };
+		B99211691704A6A900BEB0D2 /* StacManClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211681704A6A900BEB0D2 /* StacManClient.m */; };
 		B99211711704A6A900BEB0D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99211701704A6A900BEB0D2 /* SenTestingKit.framework */; };
 		B99211721704A6A900BEB0D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B992115E1704A6A800BEB0D2 /* Cocoa.framework */; };
 		B99211751704A6A900BEB0D2 /* StacMan.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B992115B1704A6A800BEB0D2 /* StacMan.dylib */; };
 		B992117B1704A6A900BEB0D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B99211791704A6A900BEB0D2 /* InfoPlist.strings */; };
 		B992117E1704A6A900BEB0D2 /* StacManTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B992117D1704A6A900BEB0D2 /* StacManTests.m */; };
+		B99211891704A7B500BEB0D2 /* StacManQuestionMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = B99211871704A7B500BEB0D2 /* StacManQuestionMethods.h */; };
+		B992118A1704A7B500BEB0D2 /* StacManQuestionMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211881704A7B500BEB0D2 /* StacManQuestionMethods.m */; };
+		B992118D1704AA0000BEB0D2 /* StacManResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = B992118B1704AA0000BEB0D2 /* StacManResponse.h */; };
+		B992118E1704AA0000BEB0D2 /* StacManResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B992118C1704AA0000BEB0D2 /* StacManResponse.m */; };
+		B99211911704AA9B00BEB0D2 /* StacManWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = B992118F1704AA9B00BEB0D2 /* StacManWrapper.h */; };
+		B99211921704AA9B00BEB0D2 /* StacManWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211901704AA9B00BEB0D2 /* StacManWrapper.m */; };
+		B99211951704AD4500BEB0D2 /* StacManQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = B99211931704AD4500BEB0D2 /* StacManQuestion.h */; };
+		B99211961704AD4500BEB0D2 /* StacManQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211941704AD4500BEB0D2 /* StacManQuestion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,15 +40,23 @@
 		B99211611704A6A800BEB0D2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		B99211621704A6A800BEB0D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B99211631704A6A800BEB0D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B99211661704A6A800BEB0D2 /* StacMan-Prefix.pch */ = {isa = PBXFileReference; path = "StacMan-Prefix.pch"; sourceTree = "<group>"; };
-		B99211671704A6A900BEB0D2 /* StacMan.h */ = {isa = PBXFileReference; path = StacMan.h; sourceTree = "<group>"; };
-		B99211681704A6A900BEB0D2 /* StacMan.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StacMan.m; sourceTree = "<group>"; };
+		B99211661704A6A800BEB0D2 /* StacMan-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StacMan-Prefix.pch"; sourceTree = "<group>"; };
+		B99211671704A6A900BEB0D2 /* StacManClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StacManClient.h; sourceTree = "<group>"; };
+		B99211681704A6A900BEB0D2 /* StacManClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StacManClient.m; sourceTree = "<group>"; };
 		B992116F1704A6A900BEB0D2 /* StacManTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StacManTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99211701704A6A900BEB0D2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B99211781704A6A900BEB0D2 /* StacManTests-Info.plist */ = {isa = PBXFileReference; path = "StacManTests-Info.plist"; sourceTree = "<group>"; };
+		B99211781704A6A900BEB0D2 /* StacManTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StacManTests-Info.plist"; sourceTree = "<group>"; };
 		B992117A1704A6A900BEB0D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B992117C1704A6A900BEB0D2 /* StacManTests.h */ = {isa = PBXFileReference; path = StacManTests.h; sourceTree = "<group>"; };
+		B992117C1704A6A900BEB0D2 /* StacManTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StacManTests.h; sourceTree = "<group>"; };
 		B992117D1704A6A900BEB0D2 /* StacManTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StacManTests.m; sourceTree = "<group>"; };
+		B99211871704A7B500BEB0D2 /* StacManQuestionMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManQuestionMethods.h; sourceTree = "<group>"; };
+		B99211881704A7B500BEB0D2 /* StacManQuestionMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManQuestionMethods.m; sourceTree = "<group>"; };
+		B992118B1704AA0000BEB0D2 /* StacManResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManResponse.h; sourceTree = "<group>"; };
+		B992118C1704AA0000BEB0D2 /* StacManResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManResponse.m; sourceTree = "<group>"; };
+		B992118F1704AA9B00BEB0D2 /* StacManWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManWrapper.h; sourceTree = "<group>"; };
+		B99211901704AA9B00BEB0D2 /* StacManWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManWrapper.m; sourceTree = "<group>"; };
+		B99211931704AD4500BEB0D2 /* StacManQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManQuestion.h; sourceTree = "<group>"; };
+		B99211941704AD4500BEB0D2 /* StacManQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManQuestion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +123,17 @@
 		B99211641704A6A800BEB0D2 /* StacMan */ = {
 			isa = PBXGroup;
 			children = (
-				B99211671704A6A900BEB0D2 /* StacMan.h */,
-				B99211681704A6A900BEB0D2 /* StacMan.m */,
+				B99211671704A6A900BEB0D2 /* StacManClient.h */,
+				B99211681704A6A900BEB0D2 /* StacManClient.m */,
 				B99211651704A6A800BEB0D2 /* Supporting Files */,
+				B99211871704A7B500BEB0D2 /* StacManQuestionMethods.h */,
+				B99211881704A7B500BEB0D2 /* StacManQuestionMethods.m */,
+				B992118B1704AA0000BEB0D2 /* StacManResponse.h */,
+				B992118C1704AA0000BEB0D2 /* StacManResponse.m */,
+				B992118F1704AA9B00BEB0D2 /* StacManWrapper.h */,
+				B99211901704AA9B00BEB0D2 /* StacManWrapper.m */,
+				B99211931704AD4500BEB0D2 /* StacManQuestion.h */,
+				B99211941704AD4500BEB0D2 /* StacManQuestion.m */,
 			);
 			path = StacMan;
 			sourceTree = "<group>";
@@ -148,6 +172,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B99211891704A7B500BEB0D2 /* StacManQuestionMethods.h in Headers */,
+				B992118D1704AA0000BEB0D2 /* StacManResponse.h in Headers */,
+				B99211911704AA9B00BEB0D2 /* StacManWrapper.h in Headers */,
+				B99211951704AD4500BEB0D2 /* StacManQuestion.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B99211691704A6A900BEB0D2 /* StacMan.m in Sources */,
+				B99211691704A6A900BEB0D2 /* StacManClient.m in Sources */,
+				B992118A1704A7B500BEB0D2 /* StacManQuestionMethods.m in Sources */,
+				B992118E1704AA0000BEB0D2 /* StacManResponse.m in Sources */,
+				B99211921704AA9B00BEB0D2 /* StacManWrapper.m in Sources */,
+				B99211961704AD4500BEB0D2 /* StacManQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

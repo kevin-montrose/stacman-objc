@@ -7,6 +7,7 @@
 //
 
 #import "StacManTests.h"
+#import "StacManClient.h"
 
 @implementation StacManTests
 
@@ -26,7 +27,11 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in StacManTests");
+    StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
+    StacManQuestionMethods* questions = client.Questions;
+    StacManResponse* response = [questions getAllOnSite:@"stackoverflow"];
+    
+    STAssertNotNil(response, @"Non nil response");
 }
 
 @end
