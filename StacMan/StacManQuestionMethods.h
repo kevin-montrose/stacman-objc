@@ -14,5 +14,5 @@
 @class StacManClient;
 @interface StacManQuestionMethods : NSObject
 -(id)initWithClient:(StacManClient*)client;
--(StacManResponse*)getAllOnSite:(NSString*)site;
+-(StacManResponse*)getAllOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize;
 @end

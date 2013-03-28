@@ -24,11 +24,11 @@ StacManClient* Client;
     return self;
 }
 
--(StacManResponse*)getAllOnSite:(NSString*)site
+-(StacManResponse*)getAllOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize
 {
     NSString* key = Client.Key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions?site=%@&key=%@", site, key];
+    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions?site=%@&key=%@&filter=%@&page=%i&pagesize=%i", site, key, filter, page, pagesize];
     
     NSURL* asUrl = [NSURL URLWithString:url];
     NSError* error;

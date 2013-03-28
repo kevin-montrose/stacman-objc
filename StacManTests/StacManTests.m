@@ -29,7 +29,7 @@
 {
     StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
     StacManQuestionMethods* questions = client.Questions;
-    StacManResponse* response = [questions getAllOnSite:@"stackoverflow"];
+    StacManResponse* response = [questions getAllOnSite:@"stackoverflow" filter:@"default" page:1 pagesize:2];
     
     STAssertNotNil(response, @"Non nil response");
 }
