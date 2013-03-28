@@ -14,7 +14,13 @@
 @synthesize Data;
 -(id)initWithWrapper:(StacManWrapper*)data
 {
-    Data = data;
+    self = [super init];
+    
+    if(self)
+    {
+        Data = data;
+    }
+    
     return self;
 }
 @end

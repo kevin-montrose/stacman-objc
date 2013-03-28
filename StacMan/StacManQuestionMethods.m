@@ -14,7 +14,12 @@ StacManClient* Client;
 
 -(id)initWithClient:(StacManClient*)client
 {
-    Client = client;
+    self = [super init];
+    
+    if(self)
+    {
+        Client = client;
+    }
     
     return self;
 }

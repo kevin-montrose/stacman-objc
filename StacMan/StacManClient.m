@@ -15,8 +15,13 @@
 
 -(id)initWithKey:(NSString*)key;
 {
-    _Key = key;
-    _Questions = [[StacManQuestionMethods alloc] initWithClient:self];
+    self = [super init];
+    
+    if(self)
+    {
+        _Key = key;
+        _Questions = [[StacManQuestionMethods alloc] initWithClient:self];
+    }
     
     return self;
 }

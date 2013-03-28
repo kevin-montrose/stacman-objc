@@ -63,9 +63,16 @@ NSString* ToKey(const char* str)
     return ret;
 }
 
+-(id)init
+{
+    self = [super init];
+    
+    return self;
+}
+
 +(StacManQuestion*)parse:(NSDictionary*)dict
 {
-    StacManQuestion* ret = [StacManQuestion alloc];
+    StacManQuestion* ret = [[StacManQuestion alloc] init];
     
     Class c = [StacManQuestion class];
     unsigned int count;

@@ -35,20 +35,25 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
 
 -(id)initWithJson:(NSData*)data type:(NSString*)type
 {
-    Type = type;
-    NSError* error;
+    self = [super init];
     
-    NSDictionary* parsed = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
-    
-    NSArray* items = TryGet(parsed, @"items", nil);
-    
-    Error = error;
-    Backoff = [TryGet(parsed, @"backoff", [NSNumber numberWithBool:NO]) boolValue];
-    ErrorId = [TryGet(parsed, @"error_id", [NSNumber numberWithInt:0]) intValue];
-    ErrorMessage = TryGet(parsed, @"error_message", nil);
-    
-    if ([type caseInsensitiveCompare:@"question"] == NSOrderedSame) {
-        Items = [StacManQuestion parseArray:items];
+    if(self)
+    {
+        Type = type;
+        NSError* error;
+        
+        NSDictionary* parsed = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
+        
+        NSArray* items = TryGet(parsed, @"items", nil);
+        
+        Error = error;
+        Backoff = [TryGet(parsed, @"backoff", [NSNumber numberWithBool:NO]) boolValue];
+        ErrorId = [TryGet(parsed, @"error_id", [NSNumber numberWithInt:0]) intValue];
+        ErrorMessage = TryGet(parsed, @"error_message", nil);
+        
+        if ([type caseInsensitiveCompare:@"question"] == NSOrderedSame) {
+            Items = [StacManQuestion parseArray:items];
+        }
     }
     
     return self;
