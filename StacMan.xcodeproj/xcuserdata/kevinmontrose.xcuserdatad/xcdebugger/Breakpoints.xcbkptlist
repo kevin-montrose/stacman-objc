@@ -7,13 +7,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "StacMan/StacManWrapper.m"
-         timestampString = "386184688.398234"
+         filePath = "StacMan/StacManQuestion.m"
+         timestampString = "386187274.0074"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
-         landmarkName = "-initWithJson:type:"
+         startingLineNumber = "86"
+         endingLineNumber = "86"
+         landmarkName = "+parse:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
