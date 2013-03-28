@@ -22,6 +22,7 @@
 		B99211921704AA9B00BEB0D2 /* StacManWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211901704AA9B00BEB0D2 /* StacManWrapper.m */; };
 		B99211951704AD4500BEB0D2 /* StacManQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = B99211931704AD4500BEB0D2 /* StacManQuestion.h */; };
 		B99211961704AD4500BEB0D2 /* StacManQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211941704AD4500BEB0D2 /* StacManQuestion.m */; };
+		B997EF271704CD360074637A /* PropertySetter.m in Sources */ = {isa = PBXBuildFile; fileRef = B997EF261704CD360074637A /* PropertySetter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		B99211901704AA9B00BEB0D2 /* StacManWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManWrapper.m; sourceTree = "<group>"; };
 		B99211931704AD4500BEB0D2 /* StacManQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManQuestion.h; sourceTree = "<group>"; };
 		B99211941704AD4500BEB0D2 /* StacManQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManQuestion.m; sourceTree = "<group>"; };
+		B997EF261704CD360074637A /* PropertySetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertySetter.m; sourceTree = "<group>"; };
+		B997EF281704CD400074637A /* PropertySetter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropertySetter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				B99211901704AA9B00BEB0D2 /* StacManWrapper.m */,
 				B99211931704AD4500BEB0D2 /* StacManQuestion.h */,
 				B99211941704AD4500BEB0D2 /* StacManQuestion.m */,
+				B997EF261704CD360074637A /* PropertySetter.m */,
+				B997EF281704CD400074637A /* PropertySetter.h */,
 			);
 			path = StacMan;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				B992118E1704AA0000BEB0D2 /* StacManResponse.m in Sources */,
 				B99211921704AA9B00BEB0D2 /* StacManWrapper.m in Sources */,
 				B99211961704AD4500BEB0D2 /* StacManQuestion.m in Sources */,
+				B997EF271704CD360074637A /* PropertySetter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +433,7 @@
 				B99211831704A6A900BEB0D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B99211841704A6A900BEB0D2 /* Build configuration list for PBXNativeTarget "StacManTests" */ = {
 			isa = XCConfigurationList;
@@ -435,6 +442,7 @@
 				B99211861704A6A900BEB0D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
