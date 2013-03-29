@@ -12,13 +12,13 @@
 @implementation StacManResponse
 @synthesize success;
 @synthesize data;
--(id)initWithWrapper:(StacManWrapper*)data
+-(id)initWithWrapper:(StacManWrapper*)d
 {
     self = [super init];
     
     if(self)
     {
-        self.data = data;
+        self.data = d;
     }
     
     return self;

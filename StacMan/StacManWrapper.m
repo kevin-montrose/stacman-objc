@@ -33,26 +33,26 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
     return [dict valueForKey:key];
 }
 
--(id)initWithJson:(NSData*)data type:(NSString*)type
+-(id)initWithJson:(NSData*)data type:(NSString*)t
 {
     self = [super init];
     
     if(self)
     {
-        self.type = type;
-        NSError* error;
+        self.type = t;
+        NSError* e;
         
-        NSDictionary* parsed = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
+        NSDictionary* parsed = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &e];
         
-        NSArray* items = TryGet(parsed, @"items", nil);
+        NSArray* i = TryGet(parsed, @"items", nil);
         
-        self.error = error;
+        self.error = e;
         self.backoff = [TryGet(parsed, @"backoff", [NSNumber numberWithBool:NO]) boolValue];
         self.errorId = [TryGet(parsed, @"error_id", [NSNumber numberWithInt:0]) intValue];
         self.errorMessage = TryGet(parsed, @"error_message", nil);
         
         if ([type caseInsensitiveCompare:@"question"] == NSOrderedSame) {
-            self.items = [StacManQuestion parseArray:items];
+            self.items = [StacManQuestion parseArray:i];
         }
     }
     
