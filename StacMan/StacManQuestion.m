@@ -37,13 +37,7 @@
 @synthesize title;
 @synthesize viewCount;
 @synthesize upVoteCount;
-
--(id)init
-{
-    self = [super init];
-    
-    return self;
-}
+@synthesize owner;
 
 +(StacManQuestion*)parse:(NSDictionary*)dict
 {

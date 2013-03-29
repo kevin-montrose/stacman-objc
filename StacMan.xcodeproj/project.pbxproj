@@ -23,6 +23,10 @@
 		B99211951704AD4500BEB0D2 /* StacManQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = B99211931704AD4500BEB0D2 /* StacManQuestion.h */; };
 		B99211961704AD4500BEB0D2 /* StacManQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211941704AD4500BEB0D2 /* StacManQuestion.m */; };
 		B997EF271704CD360074637A /* PropertySetter.m in Sources */ = {isa = PBXBuildFile; fileRef = B997EF261704CD360074637A /* PropertySetter.m */; };
+		B9E0FB061705D3BF00478677 /* StacManShallowUser.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0FB041705D3BF00478677 /* StacManShallowUser.h */; };
+		B9E0FB071705D3BF00478677 /* StacManShallowUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB051705D3BF00478677 /* StacManShallowUser.m */; };
+		B9E0FB0A1705D49400478677 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0FB081705D49400478677 /* Constants.h */; };
+		B9E0FB0D1705D4DE00478677 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB0C1705D4DE00478677 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		B99211941704AD4500BEB0D2 /* StacManQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManQuestion.m; sourceTree = "<group>"; };
 		B997EF261704CD360074637A /* PropertySetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertySetter.m; sourceTree = "<group>"; };
 		B997EF281704CD400074637A /* PropertySetter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PropertySetter.h; sourceTree = "<group>"; };
+		B9E0FB041705D3BF00478677 /* StacManShallowUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManShallowUser.h; sourceTree = "<group>"; };
+		B9E0FB051705D3BF00478677 /* StacManShallowUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManShallowUser.m; sourceTree = "<group>"; };
+		B9E0FB081705D49400478677 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		B9E0FB0C1705D4DE00478677 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +147,10 @@
 				B99211941704AD4500BEB0D2 /* StacManQuestion.m */,
 				B997EF261704CD360074637A /* PropertySetter.m */,
 				B997EF281704CD400074637A /* PropertySetter.h */,
+				B9E0FB041705D3BF00478677 /* StacManShallowUser.h */,
+				B9E0FB051705D3BF00478677 /* StacManShallowUser.m */,
+				B9E0FB081705D49400478677 /* Constants.h */,
+				B9E0FB0C1705D4DE00478677 /* Constants.m */,
 			);
 			path = StacMan;
 			sourceTree = "<group>";
@@ -181,6 +193,8 @@
 				B992118D1704AA0000BEB0D2 /* StacManResponse.h in Headers */,
 				B99211911704AA9B00BEB0D2 /* StacManWrapper.h in Headers */,
 				B99211951704AD4500BEB0D2 /* StacManQuestion.h in Headers */,
+				B9E0FB061705D3BF00478677 /* StacManShallowUser.h in Headers */,
+				B9E0FB0A1705D49400478677 /* Constants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +302,8 @@
 				B99211921704AA9B00BEB0D2 /* StacManWrapper.m in Sources */,
 				B99211961704AD4500BEB0D2 /* StacManQuestion.m in Sources */,
 				B997EF271704CD360074637A /* PropertySetter.m in Sources */,
+				B9E0FB071705D3BF00478677 /* StacManShallowUser.m in Sources */,
+				B9E0FB0D1705D4DE00478677 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

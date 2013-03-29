@@ -35,6 +35,56 @@ NSString* ToKey(const char* str)
     return ret;
 }
 
+NSDate* ParseDate(NSNumber* num)
+{
+    return [NSDate dateWithTimeIntervalSince1970:[num longLongValue]];
+}
+
+Class GetClass(const char* attr)
+{
+    CFStringRef cfStr = CFStringCreateWithCString(NULL, attr, kCFStringEncodingUTF8);
+    
+    CFStringRef quoteLit = (CFStringRef)@"\"";
+    
+    CFRange i = CFStringFind(cfStr, quoteLit, 0);
+    CFRange subSearch = CFRangeMake(i.location+1, strlen(attr) - i.location-1);
+    CFRange j;
+    CFStringFindWithOptions(cfStr, quoteLit, subSearch, 0, &j);
+    
+    CFStringRef name = CFStringCreateWithSubstring(NULL, cfStr, CFRangeMake(i.location + 1, j.location - i.location - 1));
+    
+    NSString* asNSStr = (__bridge NSString*)name;
+    
+    return NSClassFromString(asNSStr);
+}
+
+id Convert(objc_property_t prop, id obj)
+{
+    const char* attrs = property_getAttributes(prop);
+    
+    BOOL isDate = strstr(attrs, "T@\"NSDate") != NULL;
+    
+    if(isDate)
+    {
+        return ParseDate((NSNumber*)obj);
+    }
+    
+    BOOL isStacManType = strstr(attrs, "T@\"StacMan") != NULL;
+    
+    if(isStacManType)
+    {
+        Class stacManType = GetClass(attrs);
+        id ret = [stacManType alloc];
+        ret = [ret init];
+        
+        Parse(stacManType, ret, (NSDictionary*)obj);
+        
+        return ret;
+    }
+    
+    return obj;
+}
+
 void Parse(Class class, id inst, NSDictionary* dict)
 {
     unsigned int count;
@@ -48,6 +98,8 @@ void Parse(Class class, id inst, NSDictionary* dict)
         
         id inDict = [dict valueForKey:asKey];
         if(inDict == nil) continue;
+        
+        inDict = Convert(props[i], inDict);
         
         [inst setValue:inDict forKey:propName];
     }
