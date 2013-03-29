@@ -13,8 +13,8 @@
 @class StacManQuestionMethods;
 @interface StacManClient : NSObject
 
-@property (readonly) StacManQuestionMethods* Questions;
-@property (readonly) NSString* Key;
+@property (readonly) StacManQuestionMethods* questions;
+@property (readonly) NSString* key;
 
 -initWithKey:(NSString*)key;
 @end

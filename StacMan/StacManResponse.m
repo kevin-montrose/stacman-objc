@@ -10,15 +10,15 @@
 #import "StacManWrapper.h"
 
 @implementation StacManResponse
-@synthesize Success;
-@synthesize Data;
+@synthesize success;
+@synthesize data;
 -(id)initWithWrapper:(StacManWrapper*)data
 {
     self = [super init];
     
     if(self)
     {
-        Data = data;
+        self.data = data;
     }
     
     return self;

@@ -9,20 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @interface StacManWrapper : NSObject
-@property int Backoff;
-@property int ErrorId;
-@property NSString* ErrorMessage;
-@property NSString* ErrorName;
-@property BOOL HasMore;
-@property NSArray* Items;
-@property int Page;
-@property int PageSize;
-@property int QuotaMax;
-@property int QuotaRemaining;
-@property int Total;
-@property NSString* Type;
+@property int backoff;
+@property int errorId;
+@property NSString* errorMessage;
+@property NSString* errorName;
+@property BOOL hasMore;
+@property NSArray* items;
+@property int page;
+@property int pageSize;
+@property int quotaMax;
+@property int quotaRemaining;
+@property int total;
+@property NSString* type;
 
-@property NSError* Error;
+@property NSError* error;
 
 -(id)initWithJson:(NSData*)data type:(NSString*)type;
 @end

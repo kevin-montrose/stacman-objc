@@ -10,19 +10,19 @@
 #import "StacManQuestion.h"
 
 @implementation StacManWrapper
-@synthesize Backoff;
-@synthesize ErrorId;
-@synthesize ErrorMessage;
-@synthesize ErrorName;
-@synthesize HasMore;
-@synthesize Items;
-@synthesize Page;
-@synthesize PageSize;
-@synthesize QuotaMax;
-@synthesize QuotaRemaining;
-@synthesize Total;
-@synthesize Type;
-@synthesize Error;
+@synthesize backoff;
+@synthesize errorId;
+@synthesize errorMessage;
+@synthesize errorName;
+@synthesize hasMore;
+@synthesize items;
+@synthesize page;
+@synthesize pageSize;
+@synthesize quotaMax;
+@synthesize quotaRemaining;
+@synthesize total;
+@synthesize type;
+@synthesize error;
 
 id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
 {
@@ -39,20 +39,20 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
     
     if(self)
     {
-        Type = type;
+        self.type = type;
         NSError* error;
         
         NSDictionary* parsed = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
         
         NSArray* items = TryGet(parsed, @"items", nil);
         
-        Error = error;
-        Backoff = [TryGet(parsed, @"backoff", [NSNumber numberWithBool:NO]) boolValue];
-        ErrorId = [TryGet(parsed, @"error_id", [NSNumber numberWithInt:0]) intValue];
-        ErrorMessage = TryGet(parsed, @"error_message", nil);
+        self.error = error;
+        self.backoff = [TryGet(parsed, @"backoff", [NSNumber numberWithBool:NO]) boolValue];
+        self.errorId = [TryGet(parsed, @"error_id", [NSNumber numberWithInt:0]) intValue];
+        self.errorMessage = TryGet(parsed, @"error_message", nil);
         
         if ([type caseInsensitiveCompare:@"question"] == NSOrderedSame) {
-            Items = [StacManQuestion parseArray:items];
+            self.items = [StacManQuestion parseArray:items];
         }
     }
     

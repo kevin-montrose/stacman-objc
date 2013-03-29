@@ -10,8 +10,8 @@
 
 @implementation StacManClient
 
-@synthesize Questions = _Questions;
-@synthesize Key = _Key;
+@synthesize questions = _questions;
+@synthesize key = _key;
 
 -(id)initWithKey:(NSString*)key;
 {
@@ -19,8 +19,8 @@
     
     if(self)
     {
-        _Key = key;
-        _Questions = [[StacManQuestionMethods alloc] initWithClient:self];
+        _key = key;
+        _questions = [[StacManQuestionMethods alloc] initWithClient:self];
     }
     
     return self;

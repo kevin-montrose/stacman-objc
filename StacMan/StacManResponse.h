@@ -10,8 +10,8 @@
 #import "StacManWrapper.h"
 
 @interface StacManResponse : NSObject
-@property bool Success;
-@property StacManWrapper* Data;
+@property bool success;
+@property StacManWrapper* data;
 
 -(id)initWithWrapper:(StacManWrapper*)data;
 @end
