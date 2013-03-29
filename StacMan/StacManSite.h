@@ -32,7 +32,7 @@
 
 @property NSDate* openBetaDate;
 
-//private RelatedSite[] related_site;
+@property NSArray* relatedSites;
 
 @property NSString* siteState;
 
@@ -43,4 +43,6 @@
 @property StacManStyling* styling;
 
 @property NSString* twitterAccount;
+
+-(void)finishDeserializing;
 @end

@@ -18,3 +18,21 @@ NSNumber* ConvertDate(NSDate* date)
     
     return [NSNumber numberWithLongLong:asSec];
 }
+
+NSString* ConvertArray(NSArray* arr)
+{
+    NSMutableString* ret = [NSMutableString string];
+    
+    BOOL first = YES;
+    for(unsigned int i = 0; i < arr.count; i++)
+    {
+        if(!first)
+        {
+            [ret appendString:@";"];
+        }
+        
+        [ret appendFormat:@"%@", [arr objectAtIndex:i]];
+    }
+
+    return ret;
+}

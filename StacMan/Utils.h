@@ -9,3 +9,4 @@
 #import <Foundation/Foundation.h>
 
 NSNumber* ConvertDate(NSDate* date);
+NSString* ConvertArray(NSArray* arr);

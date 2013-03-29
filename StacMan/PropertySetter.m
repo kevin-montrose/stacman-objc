@@ -103,4 +103,10 @@ void Parse(Class class, id inst, NSDictionary* dict)
         
         [inst setValue:inDict forKey:propName];
     }
+    
+    // lack of generics means we sometime have to ask a class to fixup collections explicitly
+    if([inst respondsToSelector:@selector(finishDeserializing)])
+    {
+        [inst performSelector:@selector(finishDeserializing)];
+    }
 }

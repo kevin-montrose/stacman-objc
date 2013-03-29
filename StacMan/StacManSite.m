@@ -7,6 +7,8 @@
 //
 
 #import "StacManSite.h"
+#import "PropertySetter.h"
+#import "StacManRelatedSite.h"
 
 @implementation StacManSite
 @synthesize aliases;
@@ -25,4 +27,24 @@
 @synthesize siteUrl;
 @synthesize styling;
 @synthesize twitterAccount;
+@synthesize relatedSites;
+
+-(void)finishDeserializing
+{
+    NSMutableArray* asMutable = (NSMutableArray*)relatedSites;
+    
+    if(asMutable)
+    {
+        Class rSClass = [StacManRelatedSite class];
+        
+        for(unsigned int i = 0; i < asMutable.count; i++)
+        {
+            NSDictionary* raw = [asMutable objectAtIndex:i];
+            id obj = [[rSClass alloc] init];
+            Parse(rSClass, obj, raw);
+            
+            [asMutable setObject:obj atIndexedSubscript:i];
+        }
+    }
+}
 @end
