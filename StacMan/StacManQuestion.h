@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
+#import "StacManMigrationInfo.h"
 
 @interface StacManQuestion : NSObject
 @property NSNumber* acceptedAnswerId;
@@ -46,9 +47,9 @@
 
 @property NSDate* lockedDate;
 
-//@property StacManMigrationInfo* migratedFrom;
+@property StacManMigrationInfo* migratedFrom;
 
-//@property StacManMigrationInfo* migratedTo;
+@property StacManMigrationInfo* migratedTo;
 
 @property StacManShallowUser* owner;
 

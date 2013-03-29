@@ -38,6 +38,8 @@
 @synthesize viewCount;
 @synthesize upVoteCount;
 @synthesize owner;
+@synthesize migratedFrom;
+@synthesize migratedTo;
 
 +(StacManQuestion*)parse:(NSDictionary*)dict
 {

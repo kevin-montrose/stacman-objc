@@ -27,6 +27,14 @@
 		B9E0FB071705D3BF00478677 /* StacManShallowUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB051705D3BF00478677 /* StacManShallowUser.m */; };
 		B9E0FB0A1705D49400478677 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0FB081705D49400478677 /* Constants.h */; };
 		B9E0FB0D1705D4DE00478677 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB0C1705D4DE00478677 /* Constants.m */; };
+		B9E0FB101705D72700478677 /* StacManMigrationInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0FB0E1705D72700478677 /* StacManMigrationInfo.h */; };
+		B9E0FB111705D72700478677 /* StacManMigrationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB0F1705D72700478677 /* StacManMigrationInfo.m */; };
+		B9E0FB141705D79300478677 /* StacManSite.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0FB121705D79300478677 /* StacManSite.h */; };
+		B9E0FB151705D79300478677 /* StacManSite.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB131705D79300478677 /* StacManSite.m */; };
+		B9E0FB181705D8E600478677 /* StacManStyling.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0FB161705D8E600478677 /* StacManStyling.h */; };
+		B9E0FB191705D8E600478677 /* StacManStyling.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB171705D8E600478677 /* StacManStyling.m */; };
+		B9E0FB1C1705DB4D00478677 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0FB1A1705DB4D00478677 /* Utils.h */; };
+		B9E0FB1D1705DB4D00478677 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB1B1705DB4D00478677 /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +76,14 @@
 		B9E0FB051705D3BF00478677 /* StacManShallowUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManShallowUser.m; sourceTree = "<group>"; };
 		B9E0FB081705D49400478677 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B9E0FB0C1705D4DE00478677 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		B9E0FB0E1705D72700478677 /* StacManMigrationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManMigrationInfo.h; sourceTree = "<group>"; };
+		B9E0FB0F1705D72700478677 /* StacManMigrationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManMigrationInfo.m; sourceTree = "<group>"; };
+		B9E0FB121705D79300478677 /* StacManSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManSite.h; sourceTree = "<group>"; };
+		B9E0FB131705D79300478677 /* StacManSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManSite.m; sourceTree = "<group>"; };
+		B9E0FB161705D8E600478677 /* StacManStyling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManStyling.h; sourceTree = "<group>"; };
+		B9E0FB171705D8E600478677 /* StacManStyling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManStyling.m; sourceTree = "<group>"; };
+		B9E0FB1A1705DB4D00478677 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		B9E0FB1B1705DB4D00478677 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +167,14 @@
 				B9E0FB051705D3BF00478677 /* StacManShallowUser.m */,
 				B9E0FB081705D49400478677 /* Constants.h */,
 				B9E0FB0C1705D4DE00478677 /* Constants.m */,
+				B9E0FB0E1705D72700478677 /* StacManMigrationInfo.h */,
+				B9E0FB0F1705D72700478677 /* StacManMigrationInfo.m */,
+				B9E0FB121705D79300478677 /* StacManSite.h */,
+				B9E0FB131705D79300478677 /* StacManSite.m */,
+				B9E0FB161705D8E600478677 /* StacManStyling.h */,
+				B9E0FB171705D8E600478677 /* StacManStyling.m */,
+				B9E0FB1A1705DB4D00478677 /* Utils.h */,
+				B9E0FB1B1705DB4D00478677 /* Utils.m */,
 			);
 			path = StacMan;
 			sourceTree = "<group>";
@@ -195,6 +219,10 @@
 				B99211951704AD4500BEB0D2 /* StacManQuestion.h in Headers */,
 				B9E0FB061705D3BF00478677 /* StacManShallowUser.h in Headers */,
 				B9E0FB0A1705D49400478677 /* Constants.h in Headers */,
+				B9E0FB101705D72700478677 /* StacManMigrationInfo.h in Headers */,
+				B9E0FB141705D79300478677 /* StacManSite.h in Headers */,
+				B9E0FB181705D8E600478677 /* StacManStyling.h in Headers */,
+				B9E0FB1C1705DB4D00478677 /* Utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +332,10 @@
 				B997EF271704CD360074637A /* PropertySetter.m in Sources */,
 				B9E0FB071705D3BF00478677 /* StacManShallowUser.m in Sources */,
 				B9E0FB0D1705D4DE00478677 /* Constants.m in Sources */,
+				B9E0FB111705D72700478677 /* StacManMigrationInfo.m in Sources */,
+				B9E0FB151705D79300478677 /* StacManSite.m in Sources */,
+				B9E0FB191705D8E600478677 /* StacManStyling.m in Sources */,
+				B9E0FB1D1705DB4D00478677 /* Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
