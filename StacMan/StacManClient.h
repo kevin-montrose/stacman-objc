@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "StacManQuestionMethods.h"
+#import "StacManResponse.h"
 
 @class StacManQuestionMethods;
 @interface StacManClient : NSObject
@@ -17,5 +18,6 @@
 @property (readonly) NSString* key;
 @property (readonly) NSOperationQueue* queue;
 
--initWithKey:(NSString*)key;
+-(id)initWithKey:(NSString*)key;
+-(StacManResponse*)enqueue:(NSString*)url ofType:(NSString*)type;
 @end

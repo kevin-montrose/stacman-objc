@@ -29,4 +29,25 @@
     return self;
 }
 
+-(StacManResponse*)enqueue:(NSString*)str ofType:(NSString*)type
+{
+    NSURL* url = [NSURL URLWithString:str];
+    
+    StacManResponse* ret = [[StacManResponse alloc] init];
+    
+    [_queue addOperationWithBlock:
+     ^()
+     {
+         NSError* error;
+         NSData* json = [NSData dataWithContentsOfURL:url options:0 error:&error];
+         
+         StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:type];
+         
+         [ret fulfil:wrapper success:YES];
+     }
+     ];
+    
+    return ret;
+}
+
 @end
