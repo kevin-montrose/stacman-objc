@@ -27,21 +27,24 @@ StacManClient* client;
 {
     NSString* key = client.key;
     
+    NSString* mx = MinMax3(ConvertDate(maxDate), max, maxName);
+    NSString* nx = MinMax3(ConvertDate(minDate), min, minName);
+    
     NSString* url =
     [NSString
      stringWithFormat:@"https://api.stackexchange.com/2.1/users?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@&inName=%@",
      site,
      key,
-     filter,
+     filter ?: @"",
      page,
      pagesize,
      ConvertDate(fromDate) ?: @"",
      ConvertDate(toDate) ?: @"",
      sort ?: @"",
-     MinMax(3, ConvertDate(minDate), min, minName),
-     MinMax(3, ConvertDate(maxDate), max, maxName),
+     nx,
+     mx,
      order ?: @"",
-     inName
+     inName ?: @""
     ];
     
     return [client enqueue:url ofType:@"user"];

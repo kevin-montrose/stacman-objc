@@ -10,4 +10,5 @@
 
 NSNumber* ConvertDate(NSDate* date);
 NSString* ConvertArray(NSArray* arr);
-NSString* MinMax(int count, id first, ...);
+NSString* MinMax2(id first, id second);
+NSString* MinMax3(id first, id second, id third);

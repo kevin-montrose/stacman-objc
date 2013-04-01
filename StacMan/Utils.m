@@ -37,24 +37,19 @@ NSString* ConvertArray(NSArray* arr)
     return ret;
 }
 
-NSString* MinMax(int count, id first, ...)
+NSString* MinMax3(id first, id second, id third)
 {
-    va_list ap;
+    id ret = first != nil ? first : second != nil ? second : third != nil ? third : nil;
     
-    id ret = nil;
+    if(ret == nil) return @"";
     
-    va_start(ap, first);
+    return [NSString stringWithFormat:@"%@", ret];
+}
+
+NSString* MinMax2(id first, id second)
+{
     
-    for(int i=0; i<count; i++)
-    {
-        id opt = va_arg(ap, id);
-        if(opt != nil)
-        {
-            ret = opt;
-        }
-    }
-    
-    va_end(ap);
+    id ret = first != nil ? first : second != nil ? second : nil;
     
     if(ret == nil) return @"";
     

@@ -31,3 +31,4 @@
 #import "StacManAnswer.h"
 #import "StacManComment.h"
 #import "StacManQuestionTimeline.h"
+#import "StacManUser.h"
