@@ -36,3 +36,27 @@ NSString* ConvertArray(NSArray* arr)
 
     return ret;
 }
+
+NSString* MinMax(int count, id first, ...)
+{
+    va_list ap;
+    
+    id ret = nil;
+    
+    va_start(ap, first);
+    
+    for(int i=0; i<count; i++)
+    {
+        id opt = va_arg(ap, id);
+        if(opt != nil)
+        {
+            ret = opt;
+        }
+    }
+    
+    va_end(ap);
+    
+    if(ret == nil) return @"";
+    
+    return [NSString stringWithFormat:@"%@", ret];
+}

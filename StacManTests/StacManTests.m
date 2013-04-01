@@ -122,4 +122,41 @@
     }
 }
 
+-(void)testMinMax
+{
+    {
+        StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
+        StacManQuestionMethods* questions = client.questions;
+        StacManResponse* response = [questions getComments:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:@"votes" minDate:nil maxDate:nil min:@1 max:nil order:nil];
+        
+        STAssertNotNil(response, @"Non nil response");
+        
+        STAssertTrue(1 < [response.data.items count], @"Got more than 1 comment");
+        
+        for(unsigned int i = 0; i < [response.data.items count]; i++)
+        {
+            StacManComment* c = [response.data.items objectAtIndex:i];
+            
+            STAssertTrue([c.score intValue] >= 1, @"score min enforced");
+        }
+    }
+    
+    {
+        StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
+        StacManQuestionMethods* questions = client.questions;
+        StacManResponse* response = [questions getComments:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:@"votes" minDate:nil maxDate:nil min:nil max:@3 order:nil];
+        
+        STAssertNotNil(response, @"Non nil response");
+        
+        STAssertTrue(1 < [response.data.items count], @"Got more than 1 comment");
+        
+        for(unsigned int i = 0; i < [response.data.items count]; i++)
+        {
+            StacManComment* c = [response.data.items objectAtIndex:i];
+            
+            STAssertTrue([c.score intValue] <= 3, @"score max enforced");
+        }
+    }
+}
+
 @end

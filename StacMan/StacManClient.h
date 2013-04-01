@@ -10,11 +10,15 @@
 
 #import "StacManQuestionMethods.h"
 #import "StacManResponse.h"
+#import "StacManUserMethods.h"
 
 @class StacManQuestionMethods;
+@class StacManUserMethods;
 @interface StacManClient : NSObject
 
 @property (readonly) StacManQuestionMethods* questions;
+@property (readonly) StacManUserMethods* users;
+
 @property (readonly) NSString* key;
 @property (readonly) NSOperationQueue* queue;
 

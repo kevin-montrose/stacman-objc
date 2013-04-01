@@ -28,7 +28,22 @@ __weak StacManClient* client;
 {
     NSString* key = client.key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@&tagged=%@", site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @"", tagged ?: @""];
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/questions?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@&tagged=%@",
+     site,
+     key,
+     filter,
+     page,
+     pagesize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     MinMax(2, ConvertDate(minDate), min),
+     MinMax(2, ConvertDate(maxDate), max),
+     order ?: @"",
+     tagged ?: @""
+     ];
     
     return [client enqueue:url ofType:@"question"];
 }
@@ -37,7 +52,23 @@ __weak StacManClient* client;
 {
     NSString* key = client.key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@&tagged=%@", ConvertArray(ids), site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @"", tagged ?: @""];
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@&tagged=%@",
+     ConvertArray(ids),
+     site,
+     key,
+     filter,
+     page,
+     pagesize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     MinMax(2, ConvertDate(minDate), min),
+     MinMax(2, ConvertDate(maxDate), max),
+     order ?: @"",
+     tagged ?: @""
+     ];
     
     return [client enqueue:url ofType:@"question"];
 }
@@ -46,7 +77,22 @@ __weak StacManClient* client;
 {
     NSString* key = client.key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/answers?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@", ConvertArray(ids), site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @""];
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/answers?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     ConvertArray(ids),
+     site,
+     key,
+     filter,
+     page,
+     pagesize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     MinMax(2, ConvertDate(minDate), min),
+     MinMax(2, ConvertDate(maxDate), max),
+     order ?: @""
+     ];
     
     return [client enqueue:url ofType:@"answer"];
 }
@@ -55,7 +101,22 @@ __weak StacManClient* client;
 {
     NSString* key = client.key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/comments?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@", ConvertArray(ids), site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @""];
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/comments?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     ConvertArray(ids),
+     site,
+     key,
+     filter,
+     page,
+     pagesize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     MinMax(2, ConvertDate(minDate), min),
+     MinMax(2, ConvertDate(maxDate), max),
+     order ?: @""
+     ];
     
     return [client enqueue:url ofType:@"comment"];
 }
@@ -64,7 +125,22 @@ __weak StacManClient* client;
 {
     NSString* key = client.key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/linked?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@", ConvertArray(ids), site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @""];
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/linked?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     ConvertArray(ids),
+     site,
+     key,
+     filter,
+     page,
+     pagesize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     MinMax(2, ConvertDate(minDate), min),
+     MinMax(2, ConvertDate(maxDate), max),
+     order ?: @""
+     ];
     
     return [client enqueue:url ofType:@"question"];
 }
@@ -73,7 +149,22 @@ __weak StacManClient* client;
 {
     NSString* key = client.key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/related?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@", ConvertArray(ids), site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @""];
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/related?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     ConvertArray(ids),
+     site,
+     key,
+     filter,
+     page,
+     pagesize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     MinMax(2, ConvertDate(minDate), min),
+     MinMax(2, ConvertDate(maxDate), max),
+     order ?: @""
+     ];
     
     return [client enqueue:url ofType:@"question"];
 }
@@ -91,7 +182,22 @@ __weak StacManClient* client;
 {
     NSString* key = client.key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/featured?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@&tagged=%@", site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @"", tagged ?: @""];
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/questions/featured?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@&tagged=%@",
+     site,
+     key,
+     filter,
+     page,
+     pagesize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     MinMax(2, ConvertDate(minDate), min),
+     MinMax(2, ConvertDate(maxDate), max),
+     order ?: @"",
+     tagged ?: @""
+     ];
     
     return [client enqueue:url ofType:@"question"];
 }
@@ -100,7 +206,22 @@ __weak StacManClient* client;
 {
     NSString* key = client.key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/unanswered?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@&tagged=%@", site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @"", tagged ?: @""];
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/questions/unanswered?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@&tagged=%@",
+     site,
+     key,
+     filter,
+     page,
+     pagesize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     MinMax(2, ConvertDate(minDate), min),
+     MinMax(2, ConvertDate(maxDate), max),
+     order ?: @"",
+     tagged ?: @""
+     ];
     
     return [client enqueue:url ofType:@"question"];
 }
@@ -109,7 +230,22 @@ __weak StacManClient* client;
 {
     NSString* key = client.key;
     
-    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/no-answers?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@&tagged=%@", site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @"", tagged ?: @""];
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/questions/no-answers?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@&tagged=%@",
+     site,
+     key,
+     filter,
+     page,
+     pagesize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     MinMax(2, ConvertDate(minDate), min),
+     MinMax(2, ConvertDate(maxDate), max),
+     order ?: @"",
+     tagged ?: @""
+     ];
     
     return [client enqueue:url ofType:@"question"];
 }

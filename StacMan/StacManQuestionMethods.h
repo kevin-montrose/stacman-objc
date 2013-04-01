@@ -10,7 +10,6 @@
 
 #import "StacManClient.h"
 #import "StacManResponse.h"
-#import "StacManMigrationInfo.h"
 #import "Utils.h"
 
 @class StacManClient;

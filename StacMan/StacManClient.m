@@ -11,6 +11,8 @@
 @implementation StacManClient
 
 @synthesize questions = _questions;
+@synthesize users = _users;
+
 @synthesize key = _key;
 @synthesize queue = _queue;
 
@@ -21,7 +23,10 @@
     if(self)
     {
         _key = key;
+        
         _questions = [[StacManQuestionMethods alloc] initWithClient:self];
+        _users = [[StacManUserMethods alloc] initWithClient:self];
+        
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];
     }
