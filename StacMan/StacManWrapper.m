@@ -15,6 +15,7 @@
 #import "StacManBadge.h"
 #import "StacManPrivilege.h"
 #import "StacManReputation.h"
+#import "StacManSuggestedEdit.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -88,6 +89,9 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"reputation"] == NSOrderedSame) {
             self.items = [StacManReputation parseArray:i];
+        }
+        if ([type caseInsensitiveCompare:@"suggested_edit"] == NSOrderedSame) {
+            self.items = [StacManSuggestedEdit parseArray:i];
         }
     }
     
