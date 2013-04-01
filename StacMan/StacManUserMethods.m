@@ -591,4 +591,195 @@ StacManClient* client;
     
     return [client enqueue:url ofType:@"question"];
 }
+
+-(StacManResponse*)getUnansweredQuestions:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax2(ConvertDate(maxDate), max);
+    NSString* nx = MinMax2(ConvertDate(minDate), min);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%@/questions/unanswered?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     ConvertArray(ids),
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"question"];
+}
+
+-(StacManResponse*)getTopAnswers:(NSString*)site id:(int)_id tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax2(ConvertDate(maxDate), max);
+    NSString* nx = MinMax2(ConvertDate(minDate), min);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%i/tags/%@/top-answers?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     _id,
+     ConvertArray(tags),
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"answer"];
+}
+
+-(StacManResponse*)getMyTopAnswers:(NSString*)site accessToken:(NSString*)accessToken tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax2(ConvertDate(maxDate), max);
+    NSString* nx = MinMax2(ConvertDate(minDate), min);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/tags/%@/top-answers?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     ConvertArray(tags),
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"answer"];
+}
+
+-(StacManResponse*)getTopQuestions:(NSString*)site id:(int)_id tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax2(ConvertDate(maxDate), max);
+    NSString* nx = MinMax2(ConvertDate(minDate), min);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%i/tags/%@/top-questions?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     _id,
+     ConvertArray(tags),
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"question"];
+}
+
+-(StacManResponse*)getMyTopQuestions:(NSString*)site accessToken:(NSString*)accessToken tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax2(ConvertDate(maxDate), max);
+    NSString* nx = MinMax2(ConvertDate(minDate), min);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/tags/%@/top-questions?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     ConvertArray(tags),
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"question"];
+}
+
+-(StacManResponse*)getModerators:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax3(ConvertDate(maxDate), max, maxName);
+    NSString* nx = MinMax3(ConvertDate(minDate), min, minName);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/moderators?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"user"];
+}
+
+-(StacManResponse*)getElectedModerators:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax3(ConvertDate(maxDate), max, maxName);
+    NSString* nx = MinMax3(ConvertDate(minDate), min, minName);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/moderators/elected?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"user"];
+}
 @end
