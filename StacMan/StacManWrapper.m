@@ -17,6 +17,7 @@
 #import "StacManReputation.h"
 #import "StacManSuggestedEdit.h"
 #import "StacManTag.h"
+#import "StacManUserTimeline.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -98,6 +99,10 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"tag"] == NSOrderedSame) {
             self.items = [StacManTag parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"user_timeline"] == NSOrderedSame) {
+            self.items = [StacManUserTimeline parseArray:i];
         }
     }
     
