@@ -10,7 +10,7 @@
 #import "StacManWrapper.h"
 
 @implementation StacManResponse
-BOOL success;
+BOOL result;
 StacManWrapper* wrapper;
 
 BOOL fulfilled;
@@ -33,7 +33,7 @@ dispatch_semaphore_t lock;
     if(fulfilled) return;
     
     wrapper = d;
-    success = s;
+    result = s;
     fulfilled = YES;
     
     dispatch_semaphore_signal(lock);
@@ -46,5 +46,14 @@ dispatch_semaphore_t lock;
     dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
     
     return wrapper;
+}
+
+-(BOOL)success
+{
+    if(fulfilled) return result;
+    
+    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+    
+    return result;
 }
 @end
