@@ -148,7 +148,7 @@
 -(StacManResponse*)getElectedModerators:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order;
 
 //getInbox(String site, String access_token, int id, String filter, Integer page, Integer pagesize)
-/*-(StacManResponse*)getInbox:(NSString*)site accessToken:(NSString*)accessToken id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
+-(StacManResponse*)getInbox:(NSString*)site accessToken:(NSString*)accessToken id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
 
 //getMyInbox(String site, String access_token, String filter, Integer page, Integer pagesize)
 -(StacManResponse*)getMyInbox:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
@@ -160,7 +160,7 @@
 -(StacManResponse*)getMyInboxUnread:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
 
 //getAssociated(Integer[] ids, String filter, Integer page, Integer pagesize)
--(StacManResponse*)getAssociated:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
+/*-(StacManResponse*)getAssociated:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
 
 //getMyAssociated(String access_token, String filter, Integer page, Integer pagesize)
 -(StacManResponse*)getMyAssociated:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;*/

@@ -19,6 +19,7 @@
 #import "StacManTag.h"
 #import "StacManUserTimeline.h"
 #import "StacManTopTag.h"
+#import "StacManInboxItem.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -108,6 +109,10 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"tag_tag"] == NSOrderedSame) {
             self.items = [StacManTopTag parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"inbox_item"] == NSOrderedSame) {
+            self.items = [StacManInboxItem parseArray:i];
         }
     }
     

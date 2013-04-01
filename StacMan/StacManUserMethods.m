@@ -1132,4 +1132,78 @@ StacManClient* client;
     
     return [client enqueue:url ofType:@"tag_tag"];
 }
+
+-(StacManResponse*)getInbox:(NSString*)site accessToken:(NSString*)accessToken id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%i/inbox?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     _id,
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"inbox_item"];
+}
+
+-(StacManResponse*)getMyInbox:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/inbox?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"inbox_item"];
+}
+
+-(StacManResponse*)getInboxUnread:(NSString*)site accessToken:(NSString*)accessToken id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%i/inbox/unread?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     _id,
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"inbox_item"];
+}
+
+-(StacManResponse*)getMyInboxUnread:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/inbox/unread?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"inbox_item"];
+}
 @end
