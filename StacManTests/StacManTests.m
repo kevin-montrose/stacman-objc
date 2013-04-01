@@ -110,6 +110,16 @@
             STAssertNotNil(c.owner, @"comment owned");
         }
     }
+    
+    {
+        StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
+        StacManQuestionMethods* questions = client.questions;
+        StacManResponse* response = [questions getComments:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil];
+        
+        STAssertNotNil(response, @"Non nil response");
+        
+        // note that data is never touched, so no block ever happens (semaphore should still be released)
+    }
 }
 
 @end
