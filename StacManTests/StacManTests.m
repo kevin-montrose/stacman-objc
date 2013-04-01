@@ -7,11 +7,7 @@
 //
 
 #import "StacManTests.h"
-#import "StacManClient.h"
-#import "StacManQuestion.h"
-#import "StacManRelatedSite.h"
-#import "StacManAnswer.h"
-#import "StacManComment.h"
+#import "StacMan.h"
 
 @implementation StacManTests
 

@@ -10,6 +10,7 @@
 #import "StacManQuestion.h"
 #import "StacManAnswer.h"
 #import "StacManComment.h"
+#import "StacManQuestionTimeline.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -63,6 +64,10 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"comment"] == NSOrderedSame) {
             self.items = [StacManComment parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"question_timeline"] == NSOrderedSame) {
+            self.items = [StacManQuestionTimeline parseArray:i];
         }
     }
     

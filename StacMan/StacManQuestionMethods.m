@@ -80,7 +80,11 @@ StacManClient* client;
 
 -(StacManResponse*)getTimelines:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate
 {
-    1/0;
+    NSString* key = client.key;
+    
+    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/related?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@", ConvertArray(ids), site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @""];
+    
+    return [client enqueue:url ofType:@"question_timeline"];
 }
 
 -(StacManResponse*)getFeatured:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged;
