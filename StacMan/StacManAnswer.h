@@ -1,32 +1,22 @@
 //
-//  StacManQuestion.h
+//  StacManAnswer.h
 //  StacMan
 //
-//  Created by Kevin Montrose on 3/28/13.
+//  Created by Kevin Montrose on 4/1/13.
 //  Copyright (c) 2013 Stack Exchange. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
-#import "StacManMigrationInfo.h"
+#import "PropertySetter.h"
+#import "StacManComment.h"
 
-@interface StacManQuestion : NSObject
-@property NSNumber* acceptedAnswerId;
-
-@property NSNumber* answerCount;
-
-@property NSArray* answers;
+@interface StacManAnswer : NSObject
+@property NSNumber* answerId;
 
 @property NSString* body;
 
-@property NSNumber* bountyAmount;
-
-@property NSDate* bountyClosesDate;
-
-@property NSDate* closedDate;
-
-@property NSString* closedReason;
-
+//private Comment[] comments;
 @property NSArray* comments;
 
 @property NSDate* communityOwnedDate;
@@ -35,9 +25,7 @@
 
 @property NSNumber* downVoteCount;
 
-@property NSNumber* favoriteCount;
-
-@property NSNumber* isAnswered;
+@property NSNumber* isAccepted;
 
 @property NSDate* lastActivityDate;
 
@@ -47,27 +35,16 @@
 
 @property NSDate* lockedDate;
 
-@property StacManMigrationInfo* migratedFrom;
-
-@property StacManMigrationInfo* migratedTo;
-
 @property StacManShallowUser* owner;
-
-@property NSDate* protectedDate;
 
 @property NSNumber* questionId;
 
 @property NSNumber* score;
 
-@property NSArray* tags;
-
 @property NSString* title;
 
 @property NSNumber* upVoteCount;
-
-@property NSNumber* viewCount;
-
-+(StacManQuestion*)parse:(NSDictionary*)dict;
++(StacManAnswer*)parse:(NSDictionary*)dict;
 +(NSArray*)parseArray:(NSArray*)json;
 
 -(void)finishDeserializing;

@@ -37,6 +37,10 @@
 		B9E0FB1D1705DB4D00478677 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB1B1705DB4D00478677 /* Utils.m */; };
 		B9E0FB201705DFBF00478677 /* StacManRelatedSite.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0FB1E1705DFBE00478677 /* StacManRelatedSite.h */; };
 		B9E0FB211705DFBF00478677 /* StacManRelatedSite.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E0FB1F1705DFBF00478677 /* StacManRelatedSite.m */; };
+		B9E4C54E1709C9FB00F78DC0 /* StacManAnswer.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E4C54C1709C9FB00F78DC0 /* StacManAnswer.h */; };
+		B9E4C54F1709C9FB00F78DC0 /* StacManAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E4C54D1709C9FB00F78DC0 /* StacManAnswer.m */; };
+		B9E4C5521709CBFF00F78DC0 /* StacManComment.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E4C5501709CBFF00F78DC0 /* StacManComment.h */; };
+		B9E4C5531709CBFF00F78DC0 /* StacManComment.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E4C5511709CBFF00F78DC0 /* StacManComment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,10 @@
 		B9E0FB1B1705DB4D00478677 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		B9E0FB1E1705DFBE00478677 /* StacManRelatedSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManRelatedSite.h; sourceTree = "<group>"; };
 		B9E0FB1F1705DFBF00478677 /* StacManRelatedSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManRelatedSite.m; sourceTree = "<group>"; };
+		B9E4C54C1709C9FB00F78DC0 /* StacManAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManAnswer.h; sourceTree = "<group>"; };
+		B9E4C54D1709C9FB00F78DC0 /* StacManAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManAnswer.m; sourceTree = "<group>"; };
+		B9E4C5501709CBFF00F78DC0 /* StacManComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManComment.h; sourceTree = "<group>"; };
+		B9E4C5511709CBFF00F78DC0 /* StacManComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManComment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +224,10 @@
 				B9E0FB171705D8E600478677 /* StacManStyling.m */,
 				B9E0FB1E1705DFBE00478677 /* StacManRelatedSite.h */,
 				B9E0FB1F1705DFBF00478677 /* StacManRelatedSite.m */,
+				B9E4C54C1709C9FB00F78DC0 /* StacManAnswer.h */,
+				B9E4C54D1709C9FB00F78DC0 /* StacManAnswer.m */,
+				B9E4C5501709CBFF00F78DC0 /* StacManComment.h */,
+				B9E4C5511709CBFF00F78DC0 /* StacManComment.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -238,6 +250,8 @@
 				B9E0FB181705D8E600478677 /* StacManStyling.h in Headers */,
 				B9E0FB1C1705DB4D00478677 /* Utils.h in Headers */,
 				B9E0FB201705DFBF00478677 /* StacManRelatedSite.h in Headers */,
+				B9E4C54E1709C9FB00F78DC0 /* StacManAnswer.h in Headers */,
+				B9E4C5521709CBFF00F78DC0 /* StacManComment.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +366,8 @@
 				B9E0FB191705D8E600478677 /* StacManStyling.m in Sources */,
 				B9E0FB1D1705DB4D00478677 /* Utils.m in Sources */,
 				B9E0FB211705DFBF00478677 /* StacManRelatedSite.m in Sources */,
+				B9E4C54F1709C9FB00F78DC0 /* StacManAnswer.m in Sources */,
+				B9E4C5531709CBFF00F78DC0 /* StacManComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

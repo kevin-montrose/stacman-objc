@@ -8,6 +8,8 @@
 
 #import "StacManWrapper.h"
 #import "StacManQuestion.h"
+#import "StacManAnswer.h"
+#import "StacManComment.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -53,6 +55,14 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"question"] == NSOrderedSame) {
             self.items = [StacManQuestion parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"answer"] == NSOrderedSame) {
+            self.items = [StacManAnswer parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"comment"] == NSOrderedSame) {
+            self.items = [StacManComment parseArray:i];
         }
     }
     

@@ -44,7 +44,11 @@ StacManClient* client;
 
 -(StacManResponse*)getAnswers:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order
 {
-    1/0;
+    NSString* key = client.key;
+    
+    NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/answers?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@", ConvertArray(ids), site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @""];
+    
+    return [client enqueue:url ofType:@"answer"];
 }
 
 -(StacManResponse*)getComments:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order

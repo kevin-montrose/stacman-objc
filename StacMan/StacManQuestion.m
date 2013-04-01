@@ -9,6 +9,8 @@
 #import "StacManQuestion.h"
 #import <objc/runtime.h>
 #import "PropertySetter.h"
+#import "StacManAnswer.h"
+#import "StacManComment.h"
 
 @implementation StacManQuestion
 
@@ -63,5 +65,42 @@
     }
     
     return ret;
+}
+
+-(void)finishDeserializing
+{
+    {
+        NSMutableArray* aAsMutable = (NSMutableArray*)answers;
+        if(aAsMutable)
+        {
+            Class aClass = [StacManAnswer class];
+            
+            for(unsigned int i = 0; i < aAsMutable.count; i++)
+            {
+                NSDictionary* raw = [aAsMutable objectAtIndex:i];
+                id obj = [[aClass alloc] init];
+                Parse(aClass, obj, raw);
+                
+                [aAsMutable setObject:obj atIndexedSubscript:i];
+            }
+        }
+    }
+    
+    {
+        NSMutableArray* cAsMutable = (NSMutableArray*)comments;
+        if(cAsMutable)
+        {
+            Class cClass = [StacManComment class];
+            
+            for(unsigned int i = 0; i < cAsMutable.count; i++)
+            {
+                NSDictionary* raw = [cAsMutable objectAtIndex:i];
+                id obj = [[cClass alloc] init];
+                Parse(cClass, obj, raw);
+                
+                [cAsMutable setObject:obj atIndexedSubscript:i];
+            }
+        }
+    }
 }
 @end
