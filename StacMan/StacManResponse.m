@@ -35,6 +35,8 @@ dispatch_semaphore_t lock;
     wrapper = d;
     success = s;
     fulfilled = YES;
+    
+    dispatch_semaphore_signal(lock);
 }
 
 -(StacManWrapper*)data
