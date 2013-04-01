@@ -154,6 +154,7 @@
 		B99211641704A6A800BEB0D2 /* StacMan */ = {
 			isa = PBXGroup;
 			children = (
+				B9E4C54B1709C9A100F78DC0 /* Models */,
 				B99211671704A6A900BEB0D2 /* StacManClient.h */,
 				B99211681704A6A900BEB0D2 /* StacManClient.m */,
 				B99211651704A6A800BEB0D2 /* Supporting Files */,
@@ -163,24 +164,12 @@
 				B992118C1704AA0000BEB0D2 /* StacManResponse.m */,
 				B992118F1704AA9B00BEB0D2 /* StacManWrapper.h */,
 				B99211901704AA9B00BEB0D2 /* StacManWrapper.m */,
-				B99211931704AD4500BEB0D2 /* StacManQuestion.h */,
-				B99211941704AD4500BEB0D2 /* StacManQuestion.m */,
 				B997EF261704CD360074637A /* PropertySetter.m */,
 				B997EF281704CD400074637A /* PropertySetter.h */,
-				B9E0FB041705D3BF00478677 /* StacManShallowUser.h */,
-				B9E0FB051705D3BF00478677 /* StacManShallowUser.m */,
 				B9E0FB081705D49400478677 /* Constants.h */,
 				B9E0FB0C1705D4DE00478677 /* Constants.m */,
-				B9E0FB0E1705D72700478677 /* StacManMigrationInfo.h */,
-				B9E0FB0F1705D72700478677 /* StacManMigrationInfo.m */,
-				B9E0FB121705D79300478677 /* StacManSite.h */,
-				B9E0FB131705D79300478677 /* StacManSite.m */,
-				B9E0FB161705D8E600478677 /* StacManStyling.h */,
-				B9E0FB171705D8E600478677 /* StacManStyling.m */,
 				B9E0FB1A1705DB4D00478677 /* Utils.h */,
 				B9E0FB1B1705DB4D00478677 /* Utils.m */,
-				B9E0FB1E1705DFBE00478677 /* StacManRelatedSite.h */,
-				B9E0FB1F1705DFBF00478677 /* StacManRelatedSite.m */,
 			);
 			path = StacMan;
 			sourceTree = "<group>";
@@ -210,6 +199,25 @@
 				B99211791704A6A900BEB0D2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9E4C54B1709C9A100F78DC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B99211931704AD4500BEB0D2 /* StacManQuestion.h */,
+				B99211941704AD4500BEB0D2 /* StacManQuestion.m */,
+				B9E0FB041705D3BF00478677 /* StacManShallowUser.h */,
+				B9E0FB051705D3BF00478677 /* StacManShallowUser.m */,
+				B9E0FB0E1705D72700478677 /* StacManMigrationInfo.h */,
+				B9E0FB0F1705D72700478677 /* StacManMigrationInfo.m */,
+				B9E0FB121705D79300478677 /* StacManSite.h */,
+				B9E0FB131705D79300478677 /* StacManSite.m */,
+				B9E0FB161705D8E600478677 /* StacManStyling.h */,
+				B9E0FB171705D8E600478677 /* StacManStyling.m */,
+				B9E0FB1E1705DFBE00478677 /* StacManRelatedSite.h */,
+				B9E0FB1F1705DFBF00478677 /* StacManRelatedSite.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
