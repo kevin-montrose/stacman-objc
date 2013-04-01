@@ -9,7 +9,7 @@
 #import "StacManUserMethods.h"
 
 @implementation StacManUserMethods
-StacManClient* client;
+__weak StacManClient* client;
 
 -(id)initWithClient:(StacManClient *)c
 {
