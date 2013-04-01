@@ -45,6 +45,12 @@ dispatch_semaphore_t lock;
     
     dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
     
+    if(lock != 0)
+    {
+        dispatch_release(lock);
+        lock = 0;
+    }
+    
     return wrapper;
 }
 @end

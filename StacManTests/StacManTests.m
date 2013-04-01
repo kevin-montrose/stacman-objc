@@ -74,7 +74,7 @@
     
     StacManAnswer* a = [response.data.items objectAtIndex:0];
     
-    STAssertNotNil(a.owner, @"question owned");
+    STAssertNotNil(a.owner, @"answer owned");
 }
 
 - (void)testQuestionsGetComments
@@ -89,7 +89,27 @@
     
     StacManComment* c = [response.data.items objectAtIndex:0];
     
-    STAssertNotNil(c.owner, @"question owned");
+    STAssertNotNil(c.owner, @"comment owned");
+}
+
+-(void)testSempahoreBadTouch
+{
+    {
+        StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
+        StacManQuestionMethods* questions = client.questions;
+        StacManResponse* response = [questions getComments:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil];
+        
+        STAssertNotNil(response, @"Non nil response");
+        
+        STAssertTrue(1 < [response.data.items count], @"Got more than 1 comment");
+        
+        for(unsigned int i = 0; i < [response.data.items count]; i++)
+        {
+            StacManComment* c = [response.data.items objectAtIndex:i];
+            
+            STAssertNotNil(c.owner, @"comment owned");
+        }
+    }
 }
 
 @end
