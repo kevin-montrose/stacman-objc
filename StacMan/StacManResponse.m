@@ -35,11 +35,6 @@ dispatch_semaphore_t lock;
     wrapper = d;
     success = s;
     fulfilled = YES;
-    
-    if(dispatch_semaphore_signal(lock) == 0)
-    {
-        dispatch_release(lock);
-    }
 }
 
 -(StacManWrapper*)data
@@ -47,12 +42,6 @@ dispatch_semaphore_t lock;
     if(fulfilled) return wrapper;
     
     dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-    
-    if(lock != 0)
-    {
-        dispatch_release(lock);
-        lock = 0;
-    }
     
     return wrapper;
 }

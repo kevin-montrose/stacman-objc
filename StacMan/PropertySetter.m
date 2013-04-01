@@ -32,6 +32,8 @@ NSString* ToKey(const char* str)
         }
     }
     
+    CFRelease(cfStr);
+    
     return ret;
 }
 
@@ -54,6 +56,7 @@ Class GetClass(const char* attr)
     CFStringRef name = CFStringCreateWithSubstring(NULL, cfStr, CFRangeMake(i.location + 1, j.location - i.location - 1));
     
     NSString* asNSStr = (__bridge NSString*)name;
+    CFRelease(name);
     
     return NSClassFromString(asNSStr);
 }
@@ -93,7 +96,7 @@ void Parse(Class class, id inst, NSDictionary* dict)
     for(unsigned int i = 0; i < count; i++)
     {
         const char* name = property_getName(props[i]);
-        NSString* propName = [NSString stringWithCString:name encoding:kCFStringEncodingUTF8];
+        NSString *propName = [NSString stringWithUTF8String:name];
         NSString* asKey = ToKey(name);
         
         id inDict = [dict valueForKey:asKey];
