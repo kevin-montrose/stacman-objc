@@ -1059,6 +1059,77 @@ StacManClient* client;
      ];
     
     return [client enqueue:url ofType:@"user_timeline"];
+}
 
+-(StacManResponse*)getTopAnswerTags:(NSString*)site id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%i/top-answer-tags?site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     _id,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"tag_tag"];
+}
+
+-(StacManResponse*)getMyTopAnswerTags:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/top-answer-tags?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"tag_tag"];
+}
+
+-(StacManResponse*)getTopQuestionTags:(NSString*)site id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%i/top-question-tags?site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     _id,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"tag_tag"];
+}
+
+-(StacManResponse*)getMyTopQuestionTags:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/top-question-tags?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"tag_tag"];
 }
 @end
