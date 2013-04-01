@@ -10,7 +10,7 @@
 
 @implementation StacManQuestionMethods
 
-StacManClient* client;
+__weak StacManClient* client;
 
 -(id)initWithClient:(StacManClient*)c
 {
