@@ -12,6 +12,7 @@
 #import "StacManComment.h"
 #import "StacManQuestionTimeline.h"
 #import "StacManUser.h"
+#import "StacManBadge.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -73,6 +74,10 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"user"] == NSOrderedSame) {
             self.items = [StacManUser parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"badge"] == NSOrderedSame) {
+            self.items = [StacManBadge parseArray:i];
         }
     }
     

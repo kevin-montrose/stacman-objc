@@ -782,4 +782,58 @@ StacManClient* client;
     
     return [client enqueue:url ofType:@"user"];
 }
+
+-(StacManResponse*)getBadges:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minRank:(NSString*)minRank maxRank:(NSString*)maxRank minName:(NSString*)minName maxName:(NSString*)maxName minType:(NSString*)minType maxType:(NSString*)maxType minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax4(ConvertDate(maxDate), maxRank, maxType, maxName);
+    NSString* nx = MinMax4(ConvertDate(minDate), minRank, minType, minName);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%@/badges?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     ConvertArray(ids),
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"badge"];
+}
+
+-(StacManResponse*)getMyBadges:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minRank:(NSString*)minRank maxRank:(NSString*)maxRank minName:(NSString*)minName maxName:(NSString*)maxName minType:(NSString*)minType maxType:(NSString*)maxType minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax4(ConvertDate(maxDate), maxRank, maxType, maxName);
+    NSString* nx = MinMax4(ConvertDate(minDate), minRank, minType, minName);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/badges?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"badge"];
+}
 @end

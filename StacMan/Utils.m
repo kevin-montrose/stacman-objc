@@ -37,6 +37,15 @@ NSString* ConvertArray(NSArray* arr)
     return ret;
 }
 
+NSString* MinMax4(id first, id second, id third, id fourth)
+{
+    id ret = first != nil ? first : second != nil ? second : third != nil ? third : fourth != nil ? fourth : nil;
+    
+    if(ret == nil) return @"";
+    
+    return [NSString stringWithFormat:@"%@", ret];
+}
+
 NSString* MinMax3(id first, id second, id third)
 {
     id ret = first != nil ? first : second != nil ? second : third != nil ? third : nil;
