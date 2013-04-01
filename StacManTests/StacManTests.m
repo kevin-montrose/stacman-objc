@@ -34,6 +34,7 @@
     StacManResponse* response = [questions getAllOnSite:@"stackoverflow" filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil tagged:nil];
     
     STAssertNotNil(response, @"Non nil response");
+    
     STAssertTrue(2 == [response.data.items count], @"Got two questions");
     
     StacManQuestion* q = [response.data.items objectAtIndex:0];
@@ -45,10 +46,13 @@
 {
     StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
     StacManQuestionMethods* questions = client.questions;
-    StacManResponse* response = [questions getByIdsOnSite:@"stackoverflow" ids:@[@15003816] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil tagged:nil];
+    StacManResponse* response = [questions getByIdsOnSite:@"stackoverflow" ids:@[@5483594] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil tagged:nil];
     
     STAssertNotNil(response, @"Non nil response");
-    STAssertTrue(1 == [response.data.items count], @"Got one question");
+    
+    StacManWrapper* data = response.data;
+    
+    STAssertTrue(1 == [data.items count], @"Got one question");
     
     StacManQuestion* q = [response.data.items objectAtIndex:0];
     

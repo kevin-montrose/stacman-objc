@@ -15,6 +15,7 @@
 
 @property (readonly) StacManQuestionMethods* questions;
 @property (readonly) NSString* key;
+@property (readonly) NSOperationQueue* queue;
 
 -initWithKey:(NSString*)key;
 @end

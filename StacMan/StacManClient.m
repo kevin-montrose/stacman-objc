@@ -12,6 +12,7 @@
 
 @synthesize questions = _questions;
 @synthesize key = _key;
+@synthesize queue = _queue;
 
 -(id)initWithKey:(NSString*)key;
 {
@@ -21,6 +22,8 @@
     {
         _key = key;
         _questions = [[StacManQuestionMethods alloc] initWithClient:self];
+        _queue = [[NSOperationQueue alloc] init];
+        [_queue setMaxConcurrentOperationCount:30];
     }
     
     return self;

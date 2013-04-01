@@ -10,15 +10,15 @@
 
 @implementation StacManQuestionMethods
 
-StacManClient* Client;
+StacManClient* client;
 
--(id)initWithClient:(StacManClient*)client
+-(id)initWithClient:(StacManClient*)c
 {
     self = [super init];
     
     if(self)
     {
-        Client = client;
+        client = c;
     }
     
     return self;
@@ -26,32 +26,55 @@ StacManClient* Client;
 
 -(StacManResponse*)getAllOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged
 {
-    NSString* key = Client.key;
+    NSString* key = client.key;
     
     NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@&tagged=%@", site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @"", tagged ?: @""];
     
     NSURL* asUrl = [NSURL URLWithString:url];
-    NSError* error;
-    NSData* json = [NSData dataWithContentsOfURL:asUrl options:0 error:&error];
     
-    StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:@"question"];
+    StacManResponse* ret = [[StacManResponse alloc] init];
+    NSOperationQueue* queue = client.queue;
     
-    return [[StacManResponse alloc] initWithWrapper:wrapper];
+    [queue addOperationWithBlock:
+     ^()
+     {
+         NSError* error;
+         NSData* json = [NSData dataWithContentsOfURL:asUrl options:0 error:&error];
+         
+         StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:@"question"];
+         
+         [ret fulfil:wrapper success:YES];
+     }
+    ];
+    
+    //return [[StacManResponse alloc] initWithWrapper:wrapper];
+    return ret;
 }
 
 -(StacManResponse*)getByIdsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged
 {
-    NSString* key = Client.key;
+    NSString* key = client.key;
     
     NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&minDate=%@&maxDate=%@&min=%@&max=%@&order=%@&tagged=%@", ConvertArray(ids), site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @"", sort ?: @"", ConvertDate(minDate) ?: @"", ConvertDate(maxDate) ?: @"", min ?: @"", max ?: @"", order ?: @"", tagged ?: @""];
     
     NSURL* asUrl = [NSURL URLWithString:url];
-    NSError* error;
-    NSData* json = [NSData dataWithContentsOfURL:asUrl options:0 error:&error];
     
-    StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:@"question"];
+    StacManResponse* ret = [[StacManResponse alloc] init];
+    NSOperationQueue* queue = client.queue;
     
-    return [[StacManResponse alloc] initWithWrapper:wrapper];
-
+    [queue addOperationWithBlock:
+     ^()
+     {
+         NSError* error;
+         NSData* json = [NSData dataWithContentsOfURL:asUrl options:0 error:&error];
+         
+         StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:@"question"];
+         
+         [ret fulfil:wrapper success:YES];
+     }
+     ];
+    
+    //return [[StacManResponse alloc] initWithWrapper:wrapper];
+    return ret;
 }
 @end
