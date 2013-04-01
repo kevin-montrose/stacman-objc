@@ -52,6 +52,8 @@
 		B9E4C5671709F28E00F78DC0 /* StacManBadgeCount.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E4C5651709F28E00F78DC0 /* StacManBadgeCount.m */; };
 		B9E4C56A170A106300F78DC0 /* StacManBadge.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E4C568170A106200F78DC0 /* StacManBadge.h */; };
 		B9E4C56B170A106300F78DC0 /* StacManBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E4C569170A106200F78DC0 /* StacManBadge.m */; };
+		B9E4C56E170A11C500F78DC0 /* StacManPrivilege.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E4C56C170A11C400F78DC0 /* StacManPrivilege.h */; };
+		B9E4C56F170A11C500F78DC0 /* StacManPrivilege.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E4C56D170A11C400F78DC0 /* StacManPrivilege.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		B9E4C5651709F28E00F78DC0 /* StacManBadgeCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManBadgeCount.m; sourceTree = "<group>"; };
 		B9E4C568170A106200F78DC0 /* StacManBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManBadge.h; sourceTree = "<group>"; };
 		B9E4C569170A106200F78DC0 /* StacManBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManBadge.m; sourceTree = "<group>"; };
+		B9E4C56C170A11C400F78DC0 /* StacManPrivilege.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManPrivilege.h; sourceTree = "<group>"; };
+		B9E4C56D170A11C400F78DC0 /* StacManPrivilege.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManPrivilege.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +265,8 @@
 				B9E4C5651709F28E00F78DC0 /* StacManBadgeCount.m */,
 				B9E4C568170A106200F78DC0 /* StacManBadge.h */,
 				B9E4C569170A106200F78DC0 /* StacManBadge.m */,
+				B9E4C56C170A11C400F78DC0 /* StacManPrivilege.h */,
+				B9E4C56D170A11C400F78DC0 /* StacManPrivilege.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				B9E4C5621709F1AF00F78DC0 /* StacManUser.h in Headers */,
 				B9E4C5661709F28E00F78DC0 /* StacManBadgeCount.h in Headers */,
 				B9E4C56A170A106300F78DC0 /* StacManBadge.h in Headers */,
+				B9E4C56E170A11C500F78DC0 /* StacManPrivilege.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +419,7 @@
 				B9E4C5631709F1AF00F78DC0 /* StacManUser.m in Sources */,
 				B9E4C5671709F28E00F78DC0 /* StacManBadgeCount.m in Sources */,
 				B9E4C56B170A106300F78DC0 /* StacManBadge.m in Sources */,
+				B9E4C56F170A11C500F78DC0 /* StacManPrivilege.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

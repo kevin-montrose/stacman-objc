@@ -836,4 +836,40 @@ StacManClient* client;
     
     return [client enqueue:url ofType:@"badge"];
 }
+
+-(StacManResponse*)getPrivileges:(NSString*)site id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%i/privileges?site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     _id,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"privilege"];
+}
+
+-(StacManResponse*)getMyPrivileges:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/privileges?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"privilege"];
+}
 @end

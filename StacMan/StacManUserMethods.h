@@ -61,10 +61,10 @@
 -(StacManResponse*)getMyCommentsMentionedIn:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order;
 
 //getPrivileges(String site, int id, String filter, Integer page, Integer pagesize)
-/*-(StacManResponse*)getPrivileges:(NSString*)site id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
+-(StacManResponse*)getPrivileges:(NSString*)site id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
 
 //getMyPrivileges(String site, String access_token, String filter, Integer page, Integer pagesize)
--(StacManResponse*)getMyPrivileges:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;*/
+-(StacManResponse*)getMyPrivileges:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
 
 //getQuestions(String site, Integer[] ids, String filter, Integer page, Integer pagesize, Date fromdate, Date todate, QuestionSort sort, Date mindate, Date maxdate, Integer min, Integer max, Order order)
 -(StacManResponse*)getQuestions:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order;
