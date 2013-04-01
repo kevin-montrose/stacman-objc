@@ -872,4 +872,44 @@ StacManClient* client;
     
     return [client enqueue:url ofType:@"privilege"];
 }
+
+-(StacManResponse*)getReputation:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%@/reputation?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@",
+     ConvertArray(ids),
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"reputation"];
+}
+
+-(StacManResponse*)getMyReputation:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/reputation?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@",
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"reputation"];
+}
 @end
