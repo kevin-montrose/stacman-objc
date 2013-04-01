@@ -966,4 +966,58 @@ StacManClient* client;
     
     return [client enqueue:url ofType:@"suggested_edit"];
 }
+
+-(StacManResponse*)getTags:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSNumber*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax3(ConvertDate(maxDate), max, maxName);
+    NSString* nx = MinMax3(ConvertDate(minDate), min, minName);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%@/tags?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     ConvertArray(ids),
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"tag"];
+}
+
+-(StacManResponse*)getMyTags:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSNumber*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order
+{
+    NSString* key = client.key;
+    
+    NSString* mx = MinMax3(ConvertDate(maxDate), max, maxName);
+    NSString* nx = MinMax3(ConvertDate(minDate), min, minName);
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/tags?access_token=%@&site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@&sort=%@&min=%@&max=%@&order=%@",
+     accessToken,
+     site,
+     key,
+     filter ?: @"",
+     page,
+     pageSize,
+     ConvertDate(fromDate) ?: @"",
+     ConvertDate(toDate) ?: @"",
+     sort ?: @"",
+     nx,
+     mx,
+     order ?: @""
+     ];
+    
+    return [client enqueue:url ofType:@"tag"];
+}
 @end
