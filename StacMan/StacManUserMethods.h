@@ -160,8 +160,8 @@
 -(StacManResponse*)getMyInboxUnread:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
 
 //getAssociated(Integer[] ids, String filter, Integer page, Integer pagesize)
-/*-(StacManResponse*)getAssociated:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
+-(StacManResponse*)getAssociated:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
 
 //getMyAssociated(String access_token, String filter, Integer page, Integer pagesize)
--(StacManResponse*)getMyAssociated:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;*/
+-(StacManResponse*)getMyAssociated:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
 @end

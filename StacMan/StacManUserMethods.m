@@ -1206,4 +1206,38 @@ StacManClient* client;
     
     return [client enqueue:url ofType:@"inbox_item"];
 }
+
+-(StacManResponse*)getAssociated:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/users/%@/associated?key=%@&filter=%@&page=%i&pagesize=%i",
+     ConvertArray(ids),
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"network_user"];
+}
+
+-(StacManResponse*)getMyAssociated:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+{
+    NSString* key = client.key;
+    
+    NSString* url =
+    [NSString
+     stringWithFormat:@"https://api.stackexchange.com/2.1/me/associated?access_token=%@&key=%@&filter=%@&page=%i&pagesize=%i",
+     accessToken,
+     key,
+     filter ?: @"",
+     page,
+     pageSize
+     ];
+    
+    return [client enqueue:url ofType:@"network_user"];
+}
 @end
