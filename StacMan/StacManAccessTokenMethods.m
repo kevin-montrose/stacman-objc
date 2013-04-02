@@ -22,7 +22,7 @@ __weak StacManClient* client;
     return self;
 }
 
--(StacManResponse*)invalidAccessTokens:(NSArray*)accessTokens filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+-(StacManResponse*)invalidAccessTokens:(NSArray*)accessTokens filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -36,10 +36,10 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"access_token"];
+    return [client enqueue:url ofType:@"access_token" delegate:del];
 }
 
--(StacManResponse*)getAccessTokens:(NSArray*)accessTokens filter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+-(StacManResponse*)getAccessTokens:(NSArray*)accessTokens filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -53,6 +53,6 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"access_token"];
+    return [client enqueue:url ofType:@"access_token" delegate:del];
 }
 @end

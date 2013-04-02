@@ -24,7 +24,7 @@ __weak StacManClient* client;
     return self;
 }
 
--(StacManResponse*)getAllOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged
+-(StacManResponse*)getAllOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -45,10 +45,10 @@ __weak StacManClient* client;
      tagged ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question"];
+    return [client enqueue:url ofType:@"question" delegate:del];
 }
 
--(StacManResponse*)getByIdsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged
+-(StacManResponse*)getByIdsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -70,10 +70,10 @@ __weak StacManClient* client;
      tagged ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question"];
+    return [client enqueue:url ofType:@"question" delegate:del];
 }
 
--(StacManResponse*)getAnswersOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order
+-(StacManResponse*)getAnswersOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -94,10 +94,10 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"answer"];
+    return [client enqueue:url ofType:@"answer" delegate:del];
 }
 
--(StacManResponse*)getCommentsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order
+-(StacManResponse*)getCommentsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -118,10 +118,10 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment"];
+    return [client enqueue:url ofType:@"comment" delegate:del];
 }
 
--(StacManResponse*)getLinkedOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order
+-(StacManResponse*)getLinkedOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -142,10 +142,10 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question"];
+    return [client enqueue:url ofType:@"question" delegate:del];
 }
 
--(StacManResponse*)getRelatedOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order
+-(StacManResponse*)getRelatedOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -166,19 +166,19 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question"];
+    return [client enqueue:url ofType:@"question" delegate:del];
 }
 
--(StacManResponse*)getTimelinesOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate
+-(StacManResponse*)getTimelinesOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
     NSString* url = [NSString stringWithFormat:@"https://api.stackexchange.com/2.1/questions/%@/related?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&fromDate=%@&toDate=%@", ConvertArray(ids), site, key, filter, page, pagesize, ConvertDate(fromDate) ?: @"", ConvertDate(toDate) ?: @""];
     
-    return [client enqueue:url ofType:@"question_timeline"];
+    return [client enqueue:url ofType:@"question_timeline" delegate:del];
 }
 
--(StacManResponse*)getFeaturedOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged;
+-(StacManResponse*)getFeaturedOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -199,10 +199,10 @@ __weak StacManClient* client;
      tagged ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question"];
+    return [client enqueue:url ofType:@"question" delegate:del];
 }
 
--(StacManResponse*)getUnansweredOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged
+-(StacManResponse*)getUnansweredOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -223,10 +223,10 @@ __weak StacManClient* client;
      tagged ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question"];
+    return [client enqueue:url ofType:@"question" delegate:del];
 }
 
--(StacManResponse*)getWithNoAnswersOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged
+-(StacManResponse*)getWithNoAnswersOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pagesize:(int)pagesize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -247,6 +247,6 @@ __weak StacManClient* client;
      tagged ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question"];
+    return [client enqueue:url ofType:@"question" delegate:del];
 }
 @end

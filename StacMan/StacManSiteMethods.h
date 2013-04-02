@@ -15,5 +15,5 @@
 -(id)initWithClient:(StacManClient*)client;
 
 //getAll(String filter, Integer page, Integer pagesize)
--(StacManResponse*)getAllWithFilter:(NSString*)filter page:(int)page pageSize:(int)pageSize;
+-(StacManResponse*)getAllWithFilter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del;
 @end

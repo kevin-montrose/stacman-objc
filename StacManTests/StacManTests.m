@@ -29,7 +29,7 @@
 {
     StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
     StacManQuestionMethods* questions = client.questions;
-    StacManResponse* response = [questions getAllOnSite:@"stackoverflow" filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil tagged:nil];
+    StacManResponse* response = [questions getAllOnSite:@"stackoverflow" filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil tagged:nil delegate:nil];
     
     STAssertNotNil(response, @"Non nil response");
     
@@ -44,7 +44,7 @@
 {
     StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
     StacManQuestionMethods* questions = client.questions;
-    StacManResponse* response = [questions getByIdsOnSite:@"stackoverflow" ids:@[@5483594] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil tagged:nil];
+    StacManResponse* response = [questions getByIdsOnSite:@"stackoverflow" ids:@[@5483594] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil tagged:nil delegate:nil];
     
     STAssertNotNil(response, @"Non nil response");
     
@@ -66,7 +66,7 @@
 {
     StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
     StacManQuestionMethods* questions = client.questions;
-    StacManResponse* response = [questions getAnswersOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil];
+    StacManResponse* response = [questions getAnswersOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil delegate:nil];
     
     STAssertNotNil(response, @"Non nil response");
     
@@ -81,7 +81,7 @@
 {
     StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
     StacManQuestionMethods* questions = client.questions;
-    StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil];
+    StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil delegate:nil];
     
     STAssertNotNil(response, @"Non nil response");
     
@@ -97,7 +97,7 @@
     {
         StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
         StacManQuestionMethods* questions = client.questions;
-        StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil];
+        StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil delegate:nil];
         
         STAssertNotNil(response, @"Non nil response");
         
@@ -114,7 +114,7 @@
     {
         StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
         StacManQuestionMethods* questions = client.questions;
-        StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil];
+        StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:nil minDate:nil maxDate:nil min:nil max:nil order:nil delegate:nil];
         
         STAssertNotNil(response, @"Non nil response");
         
@@ -127,7 +127,7 @@
     {
         StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
         StacManQuestionMethods* questions = client.questions;
-        StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:@"votes" minDate:nil maxDate:nil min:@1 max:nil order:nil];
+        StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:@"votes" minDate:nil maxDate:nil min:@1 max:nil order:nil delegate:nil];
         
         STAssertNotNil(response, @"Non nil response");
         
@@ -144,7 +144,7 @@
     {
         StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
         StacManQuestionMethods* questions = client.questions;
-        StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:@"votes" minDate:nil maxDate:nil min:nil max:@3 order:nil];
+        StacManResponse* response = [questions getCommentsOnSite:@"stackoverflow" ids:@[@11227809] filter:@"default" page:1 pagesize:2 fromDate:nil toDate:nil sort:@"votes" minDate:nil maxDate:nil min:nil max:@3 order:nil delegate:nil];
         
         STAssertNotNil(response, @"Non nil response");
         
@@ -164,7 +164,7 @@
     {
         StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
         StacManUserMethods* users = client.users;
-        StacManResponse* response = [users getAllOnSite:@"stackoverflow" filter:nil page:1 pageSize:1 fromDate:nil toDate:nil sort:@"reputation" min:nil max:nil minDate:nil maxDate:nil minName:nil maxName:nil order:nil inName:nil];
+        StacManResponse* response = [users getAllOnSite:@"stackoverflow" filter:nil page:1 pageSize:1 fromDate:nil toDate:nil sort:@"reputation" min:nil max:nil minDate:nil maxDate:nil minName:nil maxName:nil order:nil inName:nil delegate:nil];
         
         STAssertNotNil(response, @"Non nil response");
         
@@ -180,7 +180,7 @@
     {
         StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
         StacManUserMethods* users = client.users;
-        StacManResponse* response = [users getAllOnSite:@"stackoverflow" filter:nil page:-1 pageSize:1 fromDate:nil toDate:nil sort:@"reputation" min:nil max:nil minDate:nil maxDate:nil minName:nil maxName:nil order:nil inName:nil];
+        StacManResponse* response = [users getAllOnSite:@"stackoverflow" filter:nil page:-1 pageSize:1 fromDate:nil toDate:nil sort:@"reputation" min:nil max:nil minDate:nil maxDate:nil minName:nil maxName:nil order:nil inName:nil delegate:nil];
         
         STAssertNotNil(response, @"Non nil response");
         

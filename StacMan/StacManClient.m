@@ -40,11 +40,11 @@
     return self;
 }
 
--(StacManResponse*)enqueue:(NSString*)str ofType:(NSString*)type
+-(StacManResponse*)enqueue:(NSString*)str ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)del
 {
     NSURL* url = [NSURL URLWithString:str];
     
-    StacManResponse* ret = [[StacManResponse alloc] initWithClient:self delegate:nil];
+    StacManResponse* ret = [[StacManResponse alloc] initWithClient:self delegate:del];
     
     [_queue addOperationWithBlock:
      ^()

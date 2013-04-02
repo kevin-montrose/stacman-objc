@@ -22,7 +22,7 @@ __weak StacManClient* client;
     return self;
 }
 
--(StacManResponse*)getAllWithFilter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+-(StacManResponse*)getAllWithFilter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
 {
     NSString* key = client.key;
     
@@ -35,6 +35,6 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"site"];
+    return [client enqueue:url ofType:@"site" delegate:del];
 }
 @end
