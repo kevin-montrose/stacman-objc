@@ -49,12 +49,19 @@
     [_queue addOperationWithBlock:
      ^()
      {
-         NSError* error;
+         NSError* error = nil;
          NSData* json = [NSData dataWithContentsOfURL:url options:0 error:&error];
          
-         StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:type];
+         if(error)
+         {
+             [ret fulfil:nil success:NO error:error];
+         }
+         else
+         {
+             StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:type];
          
-         [ret fulfil:wrapper success:YES error:nil];
+             [ret fulfil:wrapper success:YES error:nil];
+         }
      }
      ];
     

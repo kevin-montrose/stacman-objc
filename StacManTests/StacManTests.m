@@ -175,4 +175,17 @@
     }
 }
 
+-(void)testError
+{
+    {
+        StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
+        StacManUserMethods* users = client.users;
+        StacManResponse* response = [users getAllOnSite:@"stackoverflow" filter:nil page:-1 pageSize:1 fromDate:nil toDate:nil sort:@"reputation" min:nil max:nil minDate:nil maxDate:nil minName:nil maxName:nil order:nil inName:nil];
+        
+        STAssertNotNil(response, @"Non nil response");
+        
+        STAssertNotNil(response.error, @"Non nil error");
+    }
+}
+
 @end
