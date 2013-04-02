@@ -28,7 +28,7 @@ __weak StacManClient* client;
     
     NSString* url =
     [NSString
-     stringWithFormat:@"https://api.stackexchange.com/2.1/privileges?site=%@&key=%@&filter=%@&page=%i&pagesize=%i&",
+     stringWithFormat:@"https://api.stackexchange.com/2.1/privileges?site=%@&key=%@&filter=%@&page=%i&pagesize=%i",
      site,
      key,
      filter ?: @"",
