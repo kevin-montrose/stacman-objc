@@ -51,6 +51,8 @@
 		B93797EA170B4F430058127A /* StacManRevisionMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797E8170B4F430058127A /* StacManRevisionMethods.m */; };
 		B93797ED170B50450058127A /* StacManSearchMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797EB170B50440058127A /* StacManSearchMethods.h */; };
 		B93797EE170B50450058127A /* StacManSearchMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797EC170B50450058127A /* StacManSearchMethods.m */; };
+		B93797F1170B534D0058127A /* StacManSuggestedEditMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797EF170B534D0058127A /* StacManSuggestedEditMethods.h */; };
+		B93797F2170B534D0058127A /* StacManSuggestedEditMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797F0170B534D0058127A /* StacManSuggestedEditMethods.m */; };
 		B992115F1704A6A800BEB0D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B992115E1704A6A800BEB0D2 /* Cocoa.framework */; };
 		B99211691704A6A900BEB0D2 /* StacManClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211681704A6A900BEB0D2 /* StacManClient.m */; };
 		B99211711704A6A900BEB0D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99211701704A6A900BEB0D2 /* SenTestingKit.framework */; };
@@ -170,6 +172,8 @@
 		B93797E8170B4F430058127A /* StacManRevisionMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManRevisionMethods.m; sourceTree = "<group>"; };
 		B93797EB170B50440058127A /* StacManSearchMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManSearchMethods.h; sourceTree = "<group>"; };
 		B93797EC170B50450058127A /* StacManSearchMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManSearchMethods.m; sourceTree = "<group>"; };
+		B93797EF170B534D0058127A /* StacManSuggestedEditMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManSuggestedEditMethods.h; sourceTree = "<group>"; };
+		B93797F0170B534D0058127A /* StacManSuggestedEditMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManSuggestedEditMethods.m; sourceTree = "<group>"; };
 		B992115B1704A6A800BEB0D2 /* StacMan.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = StacMan.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		B992115E1704A6A800BEB0D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B99211611704A6A800BEB0D2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -300,6 +304,8 @@
 				B93797E8170B4F430058127A /* StacManRevisionMethods.m */,
 				B93797EB170B50440058127A /* StacManSearchMethods.h */,
 				B93797EC170B50450058127A /* StacManSearchMethods.m */,
+				B93797EF170B534D0058127A /* StacManSuggestedEditMethods.h */,
+				B93797F0170B534D0058127A /* StacManSuggestedEditMethods.m */,
 			);
 			name = Methods;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				B93797E5170B4E710058127A /* StacManPrivilegeMethods.h in Headers */,
 				B93797E9170B4F430058127A /* StacManRevisionMethods.h in Headers */,
 				B93797ED170B50450058127A /* StacManSearchMethods.h in Headers */,
+				B93797F1170B534D0058127A /* StacManSuggestedEditMethods.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +669,7 @@
 				B93797E6170B4E710058127A /* StacManPrivilegeMethods.m in Sources */,
 				B93797EA170B4F430058127A /* StacManRevisionMethods.m in Sources */,
 				B93797EE170B50450058127A /* StacManSearchMethods.m in Sources */,
+				B93797F2170B534D0058127A /* StacManSuggestedEditMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
