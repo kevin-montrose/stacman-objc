@@ -24,6 +24,7 @@
 @synthesize events = _events;
 @synthesize filters = _filters;
 @synthesize inbox = _inbox;
+@synthesize info = _info;
 
 @synthesize key = _key;
 @synthesize queue = _queue;
@@ -48,6 +49,7 @@
         _events = [[StacManEventMethods alloc] initWithClient:self];
         _filters = [[StacManFilterMethods alloc] initWithClient:self];
         _inbox = [[StacManInboxMethods alloc] initWithClient:self];
+        _info = [[StacManInfoMethods alloc] initWithClient:self];
         
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];

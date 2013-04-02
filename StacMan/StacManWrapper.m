@@ -25,6 +25,7 @@
 #import "StacManError.h"
 #import "StacManEvent.h"
 #import "StacManFilter.h"
+#import "StacManInfo.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -142,6 +143,10 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"filter"] == NSOrderedSame) {
             self.items = [StacManFilter parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"info"] == NSOrderedSame) {
+            self.items = [StacManInfo parseArray:i];
         }
     }
     
