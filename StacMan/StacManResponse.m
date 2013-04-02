@@ -7,7 +7,6 @@
 //
 
 #import "StacManResponse.h"
-#import "StacManWrapper.h"
 
 @implementation StacManResponse
 BOOL result;
@@ -17,14 +16,16 @@ BOOL fulfilled;
 dispatch_semaphore_t lock;
 
 __weak StacManClient* client;
+NSObject<StacManDelegate>* delegate;
 
--(id)initWithClient:(StacManClient*)c
+-(id)initWithClient:(StacManClient*)c delegate:(NSObject<StacManDelegate>*)del
 {
     self = [super init];
     if(self)
     {
         fulfilled = NO;
         client = c;
+        delegate = del;
         lock = dispatch_semaphore_create(0);
     }
     

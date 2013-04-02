@@ -44,7 +44,7 @@
 {
     NSURL* url = [NSURL URLWithString:str];
     
-    StacManResponse* ret = [[StacManResponse alloc] initWithClient:self];
+    StacManResponse* ret = [[StacManResponse alloc] initWithClient:self delegate:nil];
     
     [_queue addOperationWithBlock:
      ^()
