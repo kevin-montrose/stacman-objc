@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManClient.h"
 #import "StacManWrapper.h"
 #import "StacManDelegate.h"
 

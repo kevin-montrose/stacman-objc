@@ -16,7 +16,7 @@ StacManWrapper* wrapper;
 BOOL fulfilled;
 dispatch_semaphore_t lock;
 
-__weak StacManClient* client;
+StacManClient* client;
 NSObject<StacManDelegate>* delegate;
 
 -(id)initWithClient:(StacManClient*)c delegate:(NSObject<StacManDelegate>*)del
@@ -43,6 +43,34 @@ NSObject<StacManDelegate>* delegate;
     fulfilled = YES;
     
     dispatch_semaphore_signal(lock);
+    
+    // copy for race purposes
+    NSObject<StacManDelegate>* clientDel = client.delegate;
+    
+    if(result)
+    {
+        if(clientDel)
+        {
+            [clientDel responseDidSucceed:self];
+        }
+        
+        if(delegate)
+        {
+            [delegate responseDidSucceed:self];
+        }
+    }
+    else
+    {
+        if(clientDel)
+        {
+            [clientDel response:self didFailWithError:fault];
+        }
+        
+        if(delegate)
+        {
+            [delegate response:self didFailWithError:fault];
+        }
+    }
 }
 
 -(StacManWrapper*)data

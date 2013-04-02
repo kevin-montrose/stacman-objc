@@ -19,6 +19,7 @@
 @class StacManUserMethods;
 @class StacManSiteMethods;
 @class StacManAccessTokenMethods;
+
 @interface StacManClient : NSObject
 
 @property NSObject<StacManDelegate>* delegate;

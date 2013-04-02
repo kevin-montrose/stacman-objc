@@ -13,6 +13,8 @@
 #import "Utils.h"
 
 @class StacManClient;
+@class StacManResponse;
+
 @interface StacManQuestionMethods : NSObject
 -(id)initWithClient:(StacManClient*)client;
 //String site, String filter, Integer page, Integer pagesize, Date fromdate, Date todate, QuestionAllSort sort, Date mindate, Date maxdate, Integer min, Integer max, Order order, String tagged
