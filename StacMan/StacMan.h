@@ -19,6 +19,7 @@
 #import "StacManAnswerMethods.h"
 #import "StacManApplicationMethods.h"
 #import "StacManBadgeMethods.h"
+#import "StacManCommentMethods.h"
 
 // Constants
 #import "Constants.h"

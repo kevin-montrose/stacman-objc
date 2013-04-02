@@ -17,6 +17,7 @@
 #import "StacManAnswerMethods.h"
 #import "StacManApplicationMethods.h"
 #import "StacManBadgeMethods.h"
+#import "StacManCommentMethods.h"
 
 @class StacManQuestionMethods;
 @class StacManUserMethods;
@@ -25,6 +26,7 @@
 @class StacManAnswerMethods;
 @class StacManApplicationMethods;
 @class StacManBadgeMethods;
+@class StacManCommentMethods;
 
 @interface StacManClient : NSObject
 
@@ -37,6 +39,7 @@
 @property (readonly) StacManAnswerMethods* answers;
 @property (readonly) StacManApplicationMethods* applications;
 @property (readonly) StacManBadgeMethods* badges;
+@property (readonly) StacManCommentMethods* comments;
 
 @property (readonly) NSString* key;
 @property (readonly) NSOperationQueue* queue;
