@@ -26,6 +26,8 @@
 #import "StacManEvent.h"
 #import "StacManFilter.h"
 #import "StacManInfo.h"
+#import "StacManPost.h"
+#import "StacManRevision.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -147,6 +149,14 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"info"] == NSOrderedSame) {
             self.items = [StacManInfo parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"post"] == NSOrderedSame) {
+            self.items = [StacManPost parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"revision"] == NSOrderedSame) {
+            self.items = [StacManRevision parseArray:i];
         }
     }
     
