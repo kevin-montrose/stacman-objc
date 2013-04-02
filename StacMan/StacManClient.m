@@ -20,6 +20,7 @@
 @synthesize applications = _applications;
 @synthesize badges = _badges;
 @synthesize comments = _comments;
+@synthesize errors = _errors;
 
 @synthesize key = _key;
 @synthesize queue = _queue;
@@ -40,6 +41,7 @@
         _applications = [[StacManApplicationMethods alloc] initWithClient:self];
         _badges = [[StacManBadgeMethods alloc] initWithClient:self];
         _comments = [[StacManCommentMethods alloc] initWithClient:self];
+        _errors = [[StacManErrorMethods alloc] initWithClient:self];
         
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];

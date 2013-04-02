@@ -20,6 +20,7 @@
 #import "StacManApplicationMethods.h"
 #import "StacManBadgeMethods.h"
 #import "StacManCommentMethods.h"
+#import "StacManErrorMethods.h"
 
 // Constants
 #import "Constants.h"
@@ -50,3 +51,4 @@
 #import "StacManInboxItem.h"
 #import "StacManNetworkUser.h"
 #import "StacManAccessToken.h"
+#import "StacManError.h"
