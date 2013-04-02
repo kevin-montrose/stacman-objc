@@ -46,31 +46,37 @@ NSObject<StacManDelegate>* delegate;
     
     // copy for race purposes
     NSObject<StacManDelegate>* clientDel = client.delegate;
+    StacManResponse* selfCopy = self;
+    NSError* faultCopy = fault;
     
-    if(result)
-    {
-        if(clientDel)
+    NSOperationQueue* main = [NSOperationQueue mainQueue];
+    
+    [main addOperationWithBlock:^{
+        if(result)
         {
-            [clientDel responseDidSucceed:self];
+            if(clientDel)
+            {
+                [clientDel responseDidSucceed:selfCopy];
+            }
+            
+            if(delegate)
+            {
+                [delegate responseDidSucceed:selfCopy];
+            }
         }
-        
-        if(delegate)
+        else
         {
-            [delegate responseDidSucceed:self];
+            if(clientDel)
+            {
+                [clientDel response:selfCopy didFailWithError:faultCopy];
+            }
+            
+            if(delegate)
+            {
+                [delegate response:selfCopy didFailWithError:faultCopy];
+            }
         }
-    }
-    else
-    {
-        if(clientDel)
-        {
-            [clientDel response:self didFailWithError:fault];
-        }
-        
-        if(delegate)
-        {
-            [delegate response:self didFailWithError:fault];
-        }
-    }
+    }];
 }
 
 -(StacManWrapper*)data
