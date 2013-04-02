@@ -227,6 +227,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B93797CA170B45E20058127A /* Methods */ = {
+			isa = PBXGroup;
+			children = (
+				B99211871704A7B500BEB0D2 /* StacManQuestionMethods.h */,
+				B99211881704A7B500BEB0D2 /* StacManQuestionMethods.m */,
+				B9E4C55C1709EA2600F78DC0 /* StacManUserMethods.h */,
+				B9E4C55D1709EA2700F78DC0 /* StacManUserMethods.m */,
+				B9379790170B0BC00058127A /* StacManSiteMethods.h */,
+				B9379791170B0BC00058127A /* StacManSiteMethods.m */,
+				B9379794170B0D590058127A /* StacManAccessTokenMethods.h */,
+				B9379795170B0D590058127A /* StacManAccessTokenMethods.m */,
+				B93797A2170B2D780058127A /* StacManAnswerMethods.h */,
+				B93797A3170B2D780058127A /* StacManAnswerMethods.m */,
+				B93797A6170B2FBE0058127A /* StacManApplicationMethods.h */,
+				B93797A7170B2FBF0058127A /* StacManApplicationMethods.m */,
+				B93797AA170B30FB0058127A /* StacManBadgeMethods.h */,
+				B93797AB170B30FB0058127A /* StacManBadgeMethods.m */,
+				B93797AE170B34EC0058127A /* StacManCommentMethods.h */,
+				B93797AF170B34EC0058127A /* StacManCommentMethods.m */,
+				B93797B2170B36840058127A /* StacManErrorMethods.h */,
+				B93797B3170B36840058127A /* StacManErrorMethods.m */,
+				B93797BA170B38F40058127A /* StacManEventMethods.h */,
+				B93797BB170B38F50058127A /* StacManEventMethods.m */,
+				B93797C2170B42E40058127A /* StacManFilterMethods.h */,
+				B93797C3170B42E40058127A /* StacManFilterMethods.m */,
+			);
+			name = Methods;
+			sourceTree = "<group>";
+		};
 		B99211501704A6A800BEB0D2 = {
 			isa = PBXGroup;
 			children = (
@@ -269,12 +298,11 @@
 		B99211641704A6A800BEB0D2 /* StacMan */ = {
 			isa = PBXGroup;
 			children = (
+				B93797CA170B45E20058127A /* Methods */,
 				B9E4C54B1709C9A100F78DC0 /* Models */,
 				B99211671704A6A900BEB0D2 /* StacManClient.h */,
 				B99211681704A6A900BEB0D2 /* StacManClient.m */,
 				B99211651704A6A800BEB0D2 /* Supporting Files */,
-				B99211871704A7B500BEB0D2 /* StacManQuestionMethods.h */,
-				B99211881704A7B500BEB0D2 /* StacManQuestionMethods.m */,
 				B992118B1704AA0000BEB0D2 /* StacManResponse.h */,
 				B992118C1704AA0000BEB0D2 /* StacManResponse.m */,
 				B992118F1704AA9B00BEB0D2 /* StacManWrapper.h */,
@@ -286,27 +314,7 @@
 				B9E0FB1A1705DB4D00478677 /* Utils.h */,
 				B9E0FB1B1705DB4D00478677 /* Utils.m */,
 				B9E4C5581709D15400F78DC0 /* StacMan.h */,
-				B9E4C55C1709EA2600F78DC0 /* StacManUserMethods.h */,
-				B9E4C55D1709EA2700F78DC0 /* StacManUserMethods.m */,
-				B9379790170B0BC00058127A /* StacManSiteMethods.h */,
-				B9379791170B0BC00058127A /* StacManSiteMethods.m */,
-				B9379794170B0D590058127A /* StacManAccessTokenMethods.h */,
-				B9379795170B0D590058127A /* StacManAccessTokenMethods.m */,
 				B93797A1170B22150058127A /* StacManDelegate.h */,
-				B93797A2170B2D780058127A /* StacManAnswerMethods.h */,
-				B93797A3170B2D780058127A /* StacManAnswerMethods.m */,
-				B93797A6170B2FBE0058127A /* StacManApplicationMethods.h */,
-				B93797A7170B2FBF0058127A /* StacManApplicationMethods.m */,
-				B93797AA170B30FB0058127A /* StacManBadgeMethods.h */,
-				B93797AB170B30FB0058127A /* StacManBadgeMethods.m */,
-				B93797AE170B34EC0058127A /* StacManCommentMethods.h */,
-				B93797AF170B34EC0058127A /* StacManCommentMethods.m */,
-				B93797B2170B36840058127A /* StacManErrorMethods.h */,
-				B93797B3170B36840058127A /* StacManErrorMethods.m */,
-				B93797BA170B38F40058127A /* StacManEventMethods.h */,
-				B93797BB170B38F50058127A /* StacManEventMethods.m */,
-				B93797C2170B42E40058127A /* StacManFilterMethods.h */,
-				B93797C3170B42E40058127A /* StacManFilterMethods.m */,
 			);
 			path = StacMan;
 			sourceTree = "<group>";
