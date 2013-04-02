@@ -16,12 +16,15 @@ StacManWrapper* wrapper;
 BOOL fulfilled;
 dispatch_semaphore_t lock;
 
--(id)init
+__weak StacManClient* client;
+
+-(id)initWithClient:(StacManClient*)c
 {
     self = [super init];
     if(self)
     {
         fulfilled = NO;
+        client = c;
         lock = dispatch_semaphore_create(0);
     }
     

@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "StacManWrapper.h"
 
+@class StacManClient;
+
 @interface StacManResponse : NSObject
 @property (readonly) BOOL success;
 @property (readonly) StacManWrapper* data;
 
+-(id)initWithClient:(StacManClient*)client;
 -(void)fulfil:(StacManWrapper*)data success:(BOOL)success;
 @end
