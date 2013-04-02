@@ -22,7 +22,7 @@ __weak StacManClient* client;
     return self;
 }
 
--(StacManResponse*)getAllWithfilter:(NSString*)filter page:(int)page pageSize:(int)pageSize
+-(StacManResponse*)getAllWithFilter:(NSString*)filter page:(int)page pageSize:(int)pageSize
 {
     NSString* key = client.key;
     

@@ -21,6 +21,7 @@
 #import "StacManTopTag.h"
 #import "StacManInboxItem.h"
 #import "StacManNetworkUser.h"
+#import "StacManAccessToken.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -122,6 +123,10 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"site"] == NSOrderedSame) {
             self.items = [StacManSite parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"access_token"] == NSOrderedSame) {
+            self.items = [StacManAccessToken parseArray:i];
         }
     }
     
