@@ -44,5 +44,8 @@
 
 @property NSString* twitterAccount;
 
++(StacManSite*)parse:(NSDictionary*)dict;
++(NSArray*)parseArray:(NSArray*)json;
+
 -(void)finishDeserializing;
 @end

@@ -119,6 +119,10 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         if ([type caseInsensitiveCompare:@"network_user"] == NSOrderedSame) {
             self.items = [StacManNetworkUser parseArray:i];
         }
+        
+        if ([type caseInsensitiveCompare:@"site"] == NSOrderedSame) {
+            self.items = [StacManSite parseArray:i];
+        }
     }
     
     return self;

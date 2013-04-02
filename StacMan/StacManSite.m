@@ -29,6 +29,30 @@
 @synthesize twitterAccount;
 @synthesize relatedSites;
 
++(StacManSite*)parse:(NSDictionary*)dict
+{
+    StacManSite* ret = [[StacManSite alloc] init];
+    
+    if(ret)
+    {
+        Parse([StacManSite class], ret, dict);
+    }
+    
+    return ret;
+}
+
++(NSArray*)parseArray:(NSArray*)json
+{
+    NSMutableArray* ret = [NSMutableArray arrayWithCapacity:json.count];
+    
+    for(int i = 0; i < json.count;i++)
+    {
+        [ret addObject:[StacManSite parse:[json objectAtIndex:i]]];
+    }
+    
+    return ret;
+}
+
 -(void)finishDeserializing
 {
     NSMutableArray* asMutable = (NSMutableArray*)relatedSites;
