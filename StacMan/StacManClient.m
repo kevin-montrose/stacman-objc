@@ -26,6 +26,7 @@
 @synthesize inbox = _inbox;
 @synthesize info = _info;
 @synthesize posts = _posts;
+@synthesize privileges = _privileges;
 
 @synthesize key = _key;
 @synthesize queue = _queue;
@@ -52,6 +53,7 @@
         _inbox = [[StacManInboxMethods alloc] initWithClient:self];
         _info = [[StacManInfoMethods alloc] initWithClient:self];
         _posts = [[StacManPostMethods alloc] initWithClient:self];
+        _privileges= [[StacManPrivilegeMethods alloc] initWithClient:self];
         
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];

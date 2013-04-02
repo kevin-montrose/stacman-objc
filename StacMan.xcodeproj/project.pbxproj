@@ -45,6 +45,8 @@
 		B93797DE170B4B690058127A /* StacManPost.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797DC170B4B690058127A /* StacManPost.m */; };
 		B93797E1170B4CDC0058127A /* StacManRevision.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797DF170B4CDB0058127A /* StacManRevision.h */; };
 		B93797E2170B4CDC0058127A /* StacManRevision.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797E0170B4CDB0058127A /* StacManRevision.m */; };
+		B93797E5170B4E710058127A /* StacManPrivilegeMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797E3170B4E710058127A /* StacManPrivilegeMethods.h */; };
+		B93797E6170B4E710058127A /* StacManPrivilegeMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797E4170B4E710058127A /* StacManPrivilegeMethods.m */; };
 		B992115F1704A6A800BEB0D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B992115E1704A6A800BEB0D2 /* Cocoa.framework */; };
 		B99211691704A6A900BEB0D2 /* StacManClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211681704A6A900BEB0D2 /* StacManClient.m */; };
 		B99211711704A6A900BEB0D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99211701704A6A900BEB0D2 /* SenTestingKit.framework */; };
@@ -158,6 +160,8 @@
 		B93797DC170B4B690058127A /* StacManPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManPost.m; sourceTree = "<group>"; };
 		B93797DF170B4CDB0058127A /* StacManRevision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManRevision.h; sourceTree = "<group>"; };
 		B93797E0170B4CDB0058127A /* StacManRevision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManRevision.m; sourceTree = "<group>"; };
+		B93797E3170B4E710058127A /* StacManPrivilegeMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManPrivilegeMethods.h; sourceTree = "<group>"; };
+		B93797E4170B4E710058127A /* StacManPrivilegeMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManPrivilegeMethods.m; sourceTree = "<group>"; };
 		B992115B1704A6A800BEB0D2 /* StacMan.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = StacMan.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		B992115E1704A6A800BEB0D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B99211611704A6A800BEB0D2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -282,6 +286,8 @@
 				B93797D0170B47770058127A /* StacManInfoMethods.m */,
 				B93797D7170B49ED0058127A /* StacManPostMethods.h */,
 				B93797D8170B49ED0058127A /* StacManPostMethods.m */,
+				B93797E3170B4E710058127A /* StacManPrivilegeMethods.h */,
+				B93797E4170B4E710058127A /* StacManPrivilegeMethods.m */,
 			);
 			name = Methods;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				B93797D9170B49EE0058127A /* StacManPostMethods.h in Headers */,
 				B93797DD170B4B690058127A /* StacManPost.h in Headers */,
 				B93797E1170B4CDC0058127A /* StacManRevision.h in Headers */,
+				B93797E5170B4E710058127A /* StacManPrivilegeMethods.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +645,7 @@
 				B93797DA170B49EE0058127A /* StacManPostMethods.m in Sources */,
 				B93797DE170B4B690058127A /* StacManPost.m in Sources */,
 				B93797E2170B4CDC0058127A /* StacManRevision.m in Sources */,
+				B93797E6170B4E710058127A /* StacManPrivilegeMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
