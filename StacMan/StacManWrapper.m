@@ -22,6 +22,8 @@
 #import "StacManInboxItem.h"
 #import "StacManNetworkUser.h"
 #import "StacManAccessToken.h"
+#import "StacManError.h"
+#import "StacManEvent.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -127,6 +129,14 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"access_token"] == NSOrderedSame) {
             self.items = [StacManAccessToken parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"error"] == NSOrderedSame) {
+            self.items = [StacManError parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"event"] == NSOrderedSame) {
+            self.items = [StacManEvent parseArray:i];
         }
     }
     

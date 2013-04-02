@@ -21,6 +21,7 @@
 @synthesize badges = _badges;
 @synthesize comments = _comments;
 @synthesize errors = _errors;
+@synthesize events = _events;
 
 @synthesize key = _key;
 @synthesize queue = _queue;
@@ -42,6 +43,7 @@
         _badges = [[StacManBadgeMethods alloc] initWithClient:self];
         _comments = [[StacManCommentMethods alloc] initWithClient:self];
         _errors = [[StacManErrorMethods alloc] initWithClient:self];
+        _events = [[StacManEventMethods alloc] initWithClient:self];
         
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];
