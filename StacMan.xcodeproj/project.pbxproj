@@ -29,6 +29,10 @@
 		B93797BD170B38F60058127A /* StacManEventMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797BB170B38F50058127A /* StacManEventMethods.m */; };
 		B93797C0170B39F50058127A /* StacManEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797BE170B39F50058127A /* StacManEvent.h */; };
 		B93797C1170B39F50058127A /* StacManEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797BF170B39F50058127A /* StacManEvent.m */; };
+		B93797C4170B42E60058127A /* StacManFilterMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797C2170B42E40058127A /* StacManFilterMethods.h */; };
+		B93797C5170B42E60058127A /* StacManFilterMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797C3170B42E40058127A /* StacManFilterMethods.m */; };
+		B93797C8170B44C30058127A /* StacManFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797C6170B44C30058127A /* StacManFilter.h */; };
+		B93797C9170B44C30058127A /* StacManFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797C7170B44C30058127A /* StacManFilter.m */; };
 		B992115F1704A6A800BEB0D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B992115E1704A6A800BEB0D2 /* Cocoa.framework */; };
 		B99211691704A6A900BEB0D2 /* StacManClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211681704A6A900BEB0D2 /* StacManClient.m */; };
 		B99211711704A6A900BEB0D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99211701704A6A900BEB0D2 /* SenTestingKit.framework */; };
@@ -126,6 +130,10 @@
 		B93797BB170B38F50058127A /* StacManEventMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManEventMethods.m; sourceTree = "<group>"; };
 		B93797BE170B39F50058127A /* StacManEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManEvent.h; sourceTree = "<group>"; };
 		B93797BF170B39F50058127A /* StacManEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManEvent.m; sourceTree = "<group>"; };
+		B93797C2170B42E40058127A /* StacManFilterMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManFilterMethods.h; sourceTree = "<group>"; };
+		B93797C3170B42E40058127A /* StacManFilterMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManFilterMethods.m; sourceTree = "<group>"; };
+		B93797C6170B44C30058127A /* StacManFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManFilter.h; sourceTree = "<group>"; };
+		B93797C7170B44C30058127A /* StacManFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManFilter.m; sourceTree = "<group>"; };
 		B992115B1704A6A800BEB0D2 /* StacMan.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = StacMan.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		B992115E1704A6A800BEB0D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B99211611704A6A800BEB0D2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -297,6 +305,8 @@
 				B93797B3170B36840058127A /* StacManErrorMethods.m */,
 				B93797BA170B38F40058127A /* StacManEventMethods.h */,
 				B93797BB170B38F50058127A /* StacManEventMethods.m */,
+				B93797C2170B42E40058127A /* StacManFilterMethods.h */,
+				B93797C3170B42E40058127A /* StacManFilterMethods.m */,
 			);
 			path = StacMan;
 			sourceTree = "<group>";
@@ -377,6 +387,8 @@
 				B93797B7170B37B90058127A /* StacManError.m */,
 				B93797BE170B39F50058127A /* StacManEvent.h */,
 				B93797BF170B39F50058127A /* StacManEvent.m */,
+				B93797C6170B44C30058127A /* StacManFilter.h */,
+				B93797C7170B44C30058127A /* StacManFilter.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -426,6 +438,8 @@
 				B93797B8170B37B90058127A /* StacManError.h in Headers */,
 				B93797BC170B38F60058127A /* StacManEventMethods.h in Headers */,
 				B93797C0170B39F50058127A /* StacManEvent.h in Headers */,
+				B93797C4170B42E60058127A /* StacManFilterMethods.h in Headers */,
+				B93797C8170B44C30058127A /* StacManFilter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +580,8 @@
 				B93797B9170B37B90058127A /* StacManError.m in Sources */,
 				B93797BD170B38F60058127A /* StacManEventMethods.m in Sources */,
 				B93797C1170B39F50058127A /* StacManEvent.m in Sources */,
+				B93797C5170B42E60058127A /* StacManFilterMethods.m in Sources */,
+				B93797C9170B44C30058127A /* StacManFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

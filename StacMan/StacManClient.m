@@ -22,6 +22,7 @@
 @synthesize comments = _comments;
 @synthesize errors = _errors;
 @synthesize events = _events;
+@synthesize filters = _filters;
 
 @synthesize key = _key;
 @synthesize queue = _queue;
@@ -44,6 +45,7 @@
         _comments = [[StacManCommentMethods alloc] initWithClient:self];
         _errors = [[StacManErrorMethods alloc] initWithClient:self];
         _events = [[StacManEventMethods alloc] initWithClient:self];
+        _filters = [[StacManFilterMethods alloc] initWithClient:self];
         
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];

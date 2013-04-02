@@ -20,6 +20,7 @@
 #import "StacManCommentMethods.h"
 #import "StacManErrorMethods.h"
 #import "StacManEventMethods.h"
+#import "StacManFilterMethods.h"
 
 @class StacManQuestionMethods;
 @class StacManUserMethods;
@@ -31,6 +32,7 @@
 @class StacManCommentMethods;
 @class StacManErrorMethods;
 @class StacManEventMethods;
+@class StacManFilterMethods;
 
 @interface StacManClient : NSObject
 
@@ -46,6 +48,7 @@
 @property (readonly) StacManCommentMethods* comments;
 @property (readonly) StacManErrorMethods* errors;
 @property (readonly) StacManEventMethods* events;
+@property (readonly) StacManFilterMethods* filters;
 
 @property (readonly) NSString* key;
 @property (readonly) NSOperationQueue* queue;
