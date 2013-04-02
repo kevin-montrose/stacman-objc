@@ -9,6 +9,7 @@
 #import "StacManResponse.h"
 
 @implementation StacManResponse
+NSError* fault;
 BOOL result;
 StacManWrapper* wrapper;
 
@@ -32,12 +33,13 @@ NSObject<StacManDelegate>* delegate;
     return self;
 }
 
--(void)fulfil:(StacManWrapper*)d success:(BOOL)s
+-(void)fulfil:(StacManWrapper*)d success:(BOOL)s error:(NSError*)error
 {
     if(fulfilled) return;
     
     wrapper = d;
     result = s;
+    fault = error;
     fulfilled = YES;
     
     dispatch_semaphore_signal(lock);
@@ -59,5 +61,14 @@ NSObject<StacManDelegate>* delegate;
     dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
     
     return result;
+}
+
+-(NSError*)error
+{
+    if(fulfilled) return fault;
+    
+    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+    
+    return fault;
 }
 @end

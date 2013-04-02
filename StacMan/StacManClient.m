@@ -54,7 +54,7 @@
          
          StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:type];
          
-         [ret fulfil:wrapper success:YES];
+         [ret fulfil:wrapper success:YES error:nil];
      }
      ];
     

@@ -16,7 +16,8 @@
 @interface StacManResponse : NSObject
 @property (readonly) BOOL success;
 @property (readonly) StacManWrapper* data;
+@property (readonly) NSError* error;
 
 -(id)initWithClient:(StacManClient*)client delegate:(NSObject<StacManDelegate>*)delegate;
--(void)fulfil:(StacManWrapper*)data success:(BOOL)success;
+-(void)fulfil:(StacManWrapper*)data success:(BOOL)success error:(NSError*)error;
 @end
