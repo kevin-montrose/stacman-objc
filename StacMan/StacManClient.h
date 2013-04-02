@@ -26,6 +26,7 @@
 #import "StacManPostMethods.h"
 #import "StacManPrivilegeMethods.h"
 #import "StacManRevisionMethods.h"
+#import "StacManSearchMethods.h"
 
 @class StacManQuestionMethods;
 @class StacManUserMethods;
@@ -43,6 +44,7 @@
 @class StacManPostMethods;
 @class StacManPrivilegeMethods;
 @class StacManRevisionMethods;
+@class StacManSearchMethods;
 
 @interface StacManClient : NSObject
 
@@ -64,6 +66,7 @@
 @property (readonly) StacManPostMethods* posts;
 @property (readonly) StacManPrivilegeMethods* privileges;
 @property (readonly) StacManRevisionMethods* revisions;
+@property (readonly) StacManSearchMethods* search;
 
 @property (readonly) NSString* key;
 @property (readonly) NSOperationQueue* queue;

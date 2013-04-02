@@ -28,6 +28,7 @@
 @synthesize posts = _posts;
 @synthesize privileges = _privileges;
 @synthesize revisions = _revisions;
+@synthesize search = _search;
 
 @synthesize key = _key;
 @synthesize queue = _queue;
@@ -56,6 +57,7 @@
         _posts = [[StacManPostMethods alloc] initWithClient:self];
         _privileges = [[StacManPrivilegeMethods alloc] initWithClient:self];
         _revisions = [[StacManRevisionMethods alloc] initWithClient:self];
+        _search = [[StacManSearchMethods alloc] initWithClient:self];
         
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];
