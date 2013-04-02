@@ -28,6 +28,7 @@
 #import "StacManRevisionMethods.h"
 #import "StacManSearchMethods.h"
 #import "StacManSuggestedEditMethods.h"
+#import "StacManTagMethods.h"
 
 @class StacManQuestionMethods;
 @class StacManUserMethods;
@@ -47,6 +48,7 @@
 @class StacManRevisionMethods;
 @class StacManSearchMethods;
 @class StacManSuggestedEditMethods;
+@class StacManTagMethods;
 
 @interface StacManClient : NSObject
 
@@ -70,6 +72,7 @@
 @property (readonly) StacManRevisionMethods* revisions;
 @property (readonly) StacManSearchMethods* search;
 @property (readonly) StacManSuggestedEditMethods* suggestedEdits;
+@property (readonly) StacManTagMethods* tags;
 
 @property (readonly) NSString* key;
 @property (readonly) NSOperationQueue* queue;

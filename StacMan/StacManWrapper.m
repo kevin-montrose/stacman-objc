@@ -28,6 +28,9 @@
 #import "StacManInfo.h"
 #import "StacManPost.h"
 #import "StacManRevision.h"
+#import "StacManTagSynonym.h"
+#import "StacManTagScore.h"
+#import "StacManTagWiki.h"
 
 @implementation StacManWrapper
 @synthesize backoff;
@@ -157,6 +160,18 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         
         if ([type caseInsensitiveCompare:@"revision"] == NSOrderedSame) {
             self.items = [StacManRevision parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"tag_synonym"] == NSOrderedSame) {
+            self.items = [StacManTagSynonym parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"tag_score"] == NSOrderedSame) {
+            self.items = [StacManTagScore parseArray:i];
+        }
+        
+        if ([type caseInsensitiveCompare:@"tag_wiki"] == NSOrderedSame) {
+            self.items = [StacManTagWiki parseArray:i];
         }
     }
     

@@ -53,6 +53,14 @@
 		B93797EE170B50450058127A /* StacManSearchMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797EC170B50450058127A /* StacManSearchMethods.m */; };
 		B93797F1170B534D0058127A /* StacManSuggestedEditMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797EF170B534D0058127A /* StacManSuggestedEditMethods.h */; };
 		B93797F2170B534D0058127A /* StacManSuggestedEditMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797F0170B534D0058127A /* StacManSuggestedEditMethods.m */; };
+		B93797F5170B5AC60058127A /* StacManTagMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797F3170B5AC50058127A /* StacManTagMethods.h */; };
+		B93797F6170B5AC60058127A /* StacManTagMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797F4170B5AC60058127A /* StacManTagMethods.m */; };
+		B93797F9170B5DD40058127A /* StacManTagSynonym.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797F7170B5DD20058127A /* StacManTagSynonym.h */; };
+		B93797FA170B5DD40058127A /* StacManTagSynonym.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797F8170B5DD30058127A /* StacManTagSynonym.m */; };
+		B93797FD170B5F300058127A /* StacManTagScore.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797FB170B5F2E0058127A /* StacManTagScore.h */; };
+		B93797FE170B5F300058127A /* StacManTagScore.m in Sources */ = {isa = PBXBuildFile; fileRef = B93797FC170B5F2E0058127A /* StacManTagScore.m */; };
+		B9379801170B60530058127A /* StacManTagWiki.h in Headers */ = {isa = PBXBuildFile; fileRef = B93797FF170B60510058127A /* StacManTagWiki.h */; };
+		B9379802170B60530058127A /* StacManTagWiki.m in Sources */ = {isa = PBXBuildFile; fileRef = B9379800170B60520058127A /* StacManTagWiki.m */; };
 		B992115F1704A6A800BEB0D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B992115E1704A6A800BEB0D2 /* Cocoa.framework */; };
 		B99211691704A6A900BEB0D2 /* StacManClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211681704A6A900BEB0D2 /* StacManClient.m */; };
 		B99211711704A6A900BEB0D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99211701704A6A900BEB0D2 /* SenTestingKit.framework */; };
@@ -174,6 +182,14 @@
 		B93797EC170B50450058127A /* StacManSearchMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManSearchMethods.m; sourceTree = "<group>"; };
 		B93797EF170B534D0058127A /* StacManSuggestedEditMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManSuggestedEditMethods.h; sourceTree = "<group>"; };
 		B93797F0170B534D0058127A /* StacManSuggestedEditMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManSuggestedEditMethods.m; sourceTree = "<group>"; };
+		B93797F3170B5AC50058127A /* StacManTagMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManTagMethods.h; sourceTree = "<group>"; };
+		B93797F4170B5AC60058127A /* StacManTagMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManTagMethods.m; sourceTree = "<group>"; };
+		B93797F7170B5DD20058127A /* StacManTagSynonym.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManTagSynonym.h; sourceTree = "<group>"; };
+		B93797F8170B5DD30058127A /* StacManTagSynonym.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManTagSynonym.m; sourceTree = "<group>"; };
+		B93797FB170B5F2E0058127A /* StacManTagScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManTagScore.h; sourceTree = "<group>"; };
+		B93797FC170B5F2E0058127A /* StacManTagScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManTagScore.m; sourceTree = "<group>"; };
+		B93797FF170B60510058127A /* StacManTagWiki.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManTagWiki.h; sourceTree = "<group>"; };
+		B9379800170B60520058127A /* StacManTagWiki.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManTagWiki.m; sourceTree = "<group>"; };
 		B992115B1704A6A800BEB0D2 /* StacMan.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = StacMan.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		B992115E1704A6A800BEB0D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B99211611704A6A800BEB0D2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -306,6 +322,8 @@
 				B93797EC170B50450058127A /* StacManSearchMethods.m */,
 				B93797EF170B534D0058127A /* StacManSuggestedEditMethods.h */,
 				B93797F0170B534D0058127A /* StacManSuggestedEditMethods.m */,
+				B93797F3170B5AC50058127A /* StacManTagMethods.h */,
+				B93797F4170B5AC60058127A /* StacManTagMethods.m */,
 			);
 			name = Methods;
 			sourceTree = "<group>";
@@ -457,6 +475,12 @@
 				B93797DC170B4B690058127A /* StacManPost.m */,
 				B93797DF170B4CDB0058127A /* StacManRevision.h */,
 				B93797E0170B4CDB0058127A /* StacManRevision.m */,
+				B93797F7170B5DD20058127A /* StacManTagSynonym.h */,
+				B93797F8170B5DD30058127A /* StacManTagSynonym.m */,
+				B93797FB170B5F2E0058127A /* StacManTagScore.h */,
+				B93797FC170B5F2E0058127A /* StacManTagScore.m */,
+				B93797FF170B60510058127A /* StacManTagWiki.h */,
+				B9379800170B60520058127A /* StacManTagWiki.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -518,6 +542,10 @@
 				B93797E9170B4F430058127A /* StacManRevisionMethods.h in Headers */,
 				B93797ED170B50450058127A /* StacManSearchMethods.h in Headers */,
 				B93797F1170B534D0058127A /* StacManSuggestedEditMethods.h in Headers */,
+				B93797F5170B5AC60058127A /* StacManTagMethods.h in Headers */,
+				B93797F9170B5DD40058127A /* StacManTagSynonym.h in Headers */,
+				B93797FD170B5F300058127A /* StacManTagScore.h in Headers */,
+				B9379801170B60530058127A /* StacManTagWiki.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +698,10 @@
 				B93797EA170B4F430058127A /* StacManRevisionMethods.m in Sources */,
 				B93797EE170B50450058127A /* StacManSearchMethods.m in Sources */,
 				B93797F2170B534D0058127A /* StacManSuggestedEditMethods.m in Sources */,
+				B93797F6170B5AC60058127A /* StacManTagMethods.m in Sources */,
+				B93797FA170B5DD40058127A /* StacManTagSynonym.m in Sources */,
+				B93797FE170B5F300058127A /* StacManTagScore.m in Sources */,
+				B9379802170B60530058127A /* StacManTagWiki.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

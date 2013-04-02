@@ -30,6 +30,7 @@
 @synthesize revisions = _revisions;
 @synthesize search = _search;
 @synthesize suggestedEdits = _suggestedEdits;
+@synthesize tags = _tags;
 
 @synthesize key = _key;
 @synthesize queue = _queue;
@@ -60,6 +61,7 @@
         _revisions = [[StacManRevisionMethods alloc] initWithClient:self];
         _search = [[StacManSearchMethods alloc] initWithClient:self];
         _suggestedEdits = [[StacManSuggestedEditMethods alloc] initWithClient:self];
+        _tags = [[StacManTagMethods alloc] initWithClient:self];
         
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];
