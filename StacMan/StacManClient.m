@@ -18,6 +18,7 @@
 @synthesize accessTokens = _accessTokens;
 @synthesize answers = _answers;
 @synthesize applications = _applications;
+@synthesize badges = _badges;
 
 @synthesize key = _key;
 @synthesize queue = _queue;
@@ -36,6 +37,7 @@
         _accessTokens = [[StacManAccessTokenMethods alloc] initWithClient:self];
         _answers = [[StacManAnswerMethods alloc] initWithClient:self];
         _applications = [[StacManApplicationMethods alloc] initWithClient:self];
+        _badges = [[StacManBadgeMethods alloc] initWithClient:self];
         
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];
