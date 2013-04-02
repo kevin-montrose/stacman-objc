@@ -10,6 +10,8 @@
 
 @implementation StacManClient
 
+@synthesize delegate;
+
 @synthesize questions = _questions;
 @synthesize users = _users;
 @synthesize sites = _sites;

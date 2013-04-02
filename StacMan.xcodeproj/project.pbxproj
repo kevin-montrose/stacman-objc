@@ -93,6 +93,7 @@
 		B9379795170B0D590058127A /* StacManAccessTokenMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManAccessTokenMethods.m; sourceTree = "<group>"; };
 		B9379798170B0DE90058127A /* StacManAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManAccessToken.h; sourceTree = "<group>"; };
 		B9379799170B0DE90058127A /* StacManAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManAccessToken.m; sourceTree = "<group>"; };
+		B93797A1170B22150058127A /* StacManDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StacManDelegate.h; sourceTree = "<group>"; };
 		B992115B1704A6A800BEB0D2 /* StacMan.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = StacMan.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		B992115E1704A6A800BEB0D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B99211611704A6A800BEB0D2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -251,6 +252,7 @@
 				B9379791170B0BC00058127A /* StacManSiteMethods.m */,
 				B9379794170B0D590058127A /* StacManAccessTokenMethods.h */,
 				B9379795170B0D590058127A /* StacManAccessTokenMethods.m */,
+				B93797A1170B22150058127A /* StacManDelegate.h */,
 			);
 			path = StacMan;
 			sourceTree = "<group>";
