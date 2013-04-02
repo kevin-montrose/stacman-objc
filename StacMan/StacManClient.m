@@ -17,6 +17,7 @@
 @synthesize sites = _sites;
 @synthesize accessTokens = _accessTokens;
 @synthesize answers = _answers;
+@synthesize applications = _applications;
 
 @synthesize key = _key;
 @synthesize queue = _queue;
@@ -34,6 +35,7 @@
         _sites = [[StacManSiteMethods alloc] initWithClient:self];
         _accessTokens = [[StacManAccessTokenMethods alloc] initWithClient:self];
         _answers = [[StacManAnswerMethods alloc] initWithClient:self];
+        _applications = [[StacManApplicationMethods alloc] initWithClient:self];
         
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];
