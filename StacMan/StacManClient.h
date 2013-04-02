@@ -14,11 +14,13 @@
 #import "StacManSiteMethods.h"
 #import "StacManAccessTokenMethods.h"
 #import "StacManDelegate.h"
+#import "StacManAnswerMethods.h"
 
 @class StacManQuestionMethods;
 @class StacManUserMethods;
 @class StacManSiteMethods;
 @class StacManAccessTokenMethods;
+@class StacManAnswerMethods;
 
 @interface StacManClient : NSObject
 
@@ -28,6 +30,7 @@
 @property (readonly) StacManUserMethods* users;
 @property (readonly) StacManSiteMethods* sites;
 @property (readonly) StacManAccessTokenMethods* accessTokens;
+@property (readonly) StacManAnswerMethods* answers;
 
 @property (readonly) NSString* key;
 @property (readonly) NSOperationQueue* queue;

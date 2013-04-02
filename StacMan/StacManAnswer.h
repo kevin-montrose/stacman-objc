@@ -16,7 +16,6 @@
 
 @property NSString* body;
 
-//private Comment[] comments;
 @property NSArray* comments;
 
 @property NSDate* communityOwnedDate;
