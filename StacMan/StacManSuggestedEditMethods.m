@@ -7,6 +7,7 @@
 //
 
 #import "StacManSuggestedEditMethods.h"
+#import "Utils.h"
 
 @implementation StacManSuggestedEditMethods
 __weak StacManClient* client;

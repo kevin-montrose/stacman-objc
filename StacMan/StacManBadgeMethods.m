@@ -7,6 +7,7 @@
 //
 
 #import "StacManBadgeMethods.h"
+#import "Utils.h"
 
 @implementation StacManBadgeMethods
 __weak StacManClient* client;

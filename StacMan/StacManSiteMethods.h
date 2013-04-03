@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "StacManClient.h"
 #import "StacManResponse.h"
-#import "Utils.h"
 
 @interface StacManSiteMethods : NSObject
 -(id)initWithClient:(StacManClient*)client;

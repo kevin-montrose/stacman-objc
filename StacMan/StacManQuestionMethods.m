@@ -7,6 +7,7 @@
 //
 
 #import "StacManQuestionMethods.h"
+#import "Utils.h"
 
 @implementation StacManQuestionMethods
 
