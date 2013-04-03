@@ -55,8 +55,7 @@ Class GetClass(const char* attr)
     
     CFStringRef name = CFStringCreateWithSubstring(NULL, cfStr, CFRangeMake(i.location + 1, j.location - i.location - 1));
     
-    NSString* asNSStr = (__bridge NSString*)name;
-    CFRelease(name);
+    NSString* asNSStr = (__bridge_transfer NSString*)name;
     
     return NSClassFromString(asNSStr);
 }
