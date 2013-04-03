@@ -35,12 +35,18 @@
 @synthesize key = _key;
 @synthesize queue = _queue;
 
+int currentRequestCount;
+dispatch_semaphore_t globalBlock;
+dispatch_source_t timer;
+
 -(id)initWithKey:(NSString*)key;
 {
     self = [super init];
     
     if(self)
     {
+        currentRequestCount = 0;
+        
         _key = key;
         
         _questions = [[StacManQuestionMethods alloc] initWithClient:self];
@@ -63,11 +69,41 @@
         _suggestedEdits = [[StacManSuggestedEditMethods alloc] initWithClient:self];
         _tags = [[StacManTagMethods alloc] initWithClient:self];
         
+        
+        globalBlock = dispatch_semaphore_create(30);
+//        resetTimer = [NSTimer timerWithTimeInterval:5.0 target:self selector:@selector(resetGlobalBlock:) userInfo:nil repeats:YES];
+        
+        timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
+        
+        dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 5.0, 0);
+        dispatch_source_set_event_handler(timer, ^{ [self resetGlobalBlock]; });
+        dispatch_resume(timer);
+        
         _queue = [[NSOperationQueue alloc] init];
         [_queue setMaxConcurrentOperationCount:30];
     }
     
     return self;
+}
+
+-(void)resetGlobalBlock
+{
+    int maxRelease;
+    while(true)
+    {
+        maxRelease = currentRequestCount;
+        int resetValue = maxRelease <= 30 ? 0 : maxRelease - 30;
+        if(OSAtomicCompareAndSwap32(maxRelease, resetValue, &currentRequestCount))
+        {
+            break;
+        }
+    }
+
+    int toRelease = maxRelease > 30 ? 30 : maxRelease;
+    for(int i = 0; i < toRelease; i++)
+    {
+        dispatch_semaphore_signal(globalBlock);
+    }
 }
 
 -(StacManResponse*)enqueue:(NSString*)str ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)del
@@ -76,9 +112,15 @@
     
     StacManResponse* ret = [[StacManResponse alloc] initWithClient:self delegate:del];
     
+    OSAtomicIncrement32(&currentRequestCount);
+    
+    dispatch_semaphore_t blockOn = globalBlock;
+    
     [_queue addOperationWithBlock:
      ^()
      {
+         dispatch_semaphore_wait(blockOn, DISPATCH_TIME_FOREVER);
+         
          NSError* error = nil;
          NSData* json = [NSData dataWithContentsOfURL:url options:0 error:&error];
          
@@ -97,5 +139,4 @@
     
     return ret;
 }
-
 @end
