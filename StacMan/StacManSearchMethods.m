@@ -46,7 +46,7 @@ __weak StacManClient* client;
      inTitle ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del];
+    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"smatch"];
 }
 
 -(StacManResponse*)getSimilarOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged notTagged:(NSString*)notTagged inTitle:(NSString*)inTitle delegate:(NSObject<StacManDelegate>*)del
@@ -72,6 +72,6 @@ __weak StacManClient* client;
      inTitle ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del];
+    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"ssimilar"];
 }
 @end

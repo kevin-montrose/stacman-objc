@@ -43,7 +43,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment" delegate:del];
+    return [client enqueue:url ofType:@"comment" delegate:del backoffKey:@"calls"];
 }
 
 -(StacManResponse*)getByIdsSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -67,6 +67,6 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment" delegate:del];
+    return [client enqueue:url ofType:@"comment" delegate:del backoffKey:@"cids"];
 }
 @end

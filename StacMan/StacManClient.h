@@ -78,5 +78,5 @@
 @property (readonly) NSOperationQueue* queue;
 
 -(id)initWithKey:(NSString*)key;
--(StacManResponse*)enqueue:(NSString*)url ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)delegate;
+-(StacManResponse*)enqueue:(NSString*)url ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)delegate backoffKey:(NSString*)key;
 @end

@@ -36,6 +36,6 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"privilege" delegate:del];
+    return [client enqueue:url ofType:@"privilege" delegate:del backoffKey:@"privs"];
 }
 @end

@@ -34,6 +34,6 @@ __weak StacManClient* client;
      filter ?: @""
      ];
     
-    return [client enqueue:url ofType:@"info" delegate:del];
+    return [client enqueue:url ofType:@"info" delegate:del backoffKey:@"info"];
 }
 @end

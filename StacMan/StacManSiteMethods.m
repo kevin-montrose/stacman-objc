@@ -36,6 +36,6 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"site" delegate:del];
+    return [client enqueue:url ofType:@"site" delegate:del backoffKey:@"sites"];
 }
 @end

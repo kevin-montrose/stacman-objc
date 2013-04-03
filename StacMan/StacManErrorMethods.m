@@ -35,7 +35,7 @@ __weak StacManClient* client;
      pageSize
     ];
     
-    return [client enqueue:url ofType:@"error" delegate:del];
+    return [client enqueue:url ofType:@"error" delegate:del backoffKey:@"ealls"];
 }
 
 -(StacManResponse*)simulateWithId:(int)_id filter:(NSString*)filter delegate:(NSObject<StacManDelegate>*)del
@@ -50,6 +50,6 @@ __weak StacManClient* client;
      filter ?: @""
      ];
     
-    return [client enqueue:url ofType:@"error" delegate:del];
+    return [client enqueue:url ofType:@"error" delegate:del backoffKey:@"esimulate"];
 }
 @end

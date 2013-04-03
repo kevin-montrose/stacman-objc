@@ -39,6 +39,8 @@ int currentRequestCount;
 dispatch_semaphore_t globalBlock;
 dispatch_source_t timer;
 
+NSMutableDictionary* backoffs;
+
 -(id)initWithKey:(NSString*)key;
 {
     self = [super init];
@@ -69,18 +71,17 @@ dispatch_source_t timer;
         _suggestedEdits = [[StacManSuggestedEditMethods alloc] initWithClient:self];
         _tags = [[StacManTagMethods alloc] initWithClient:self];
         
+        _queue = [[NSOperationQueue alloc] init];
+        [_queue setMaxConcurrentOperationCount:30];
+        
+        backoffs = [NSMutableDictionary dictionaryWithCapacity:10];
         
         globalBlock = dispatch_semaphore_create(30);
-//        resetTimer = [NSTimer timerWithTimeInterval:5.0 target:self selector:@selector(resetGlobalBlock:) userInfo:nil repeats:YES];
-        
         timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
         
         dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 5.0, 0);
         dispatch_source_set_event_handler(timer, ^{ [self resetGlobalBlock]; });
         dispatch_resume(timer);
-        
-        _queue = [[NSOperationQueue alloc] init];
-        [_queue setMaxConcurrentOperationCount:30];
     }
     
     return self;
@@ -106,7 +107,7 @@ dispatch_source_t timer;
     }
 }
 
--(StacManResponse*)enqueue:(NSString*)str ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)del
+-(StacManResponse*)enqueue:(NSString*)str ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)del backoffKey:(NSString*)backoff
 {
     NSURL* url = [NSURL URLWithString:str];
     
@@ -121,6 +122,17 @@ dispatch_source_t timer;
      {
          dispatch_semaphore_wait(blockOn, DISPATCH_TIME_FOREVER);
          
+         NSNumber* waitFor;
+         @synchronized(backoffs)
+         {
+             waitFor = [backoffs valueForKey:backoff];
+         }
+         
+         if(waitFor)
+         {
+             sleep([waitFor intValue]);
+         }
+         
          NSError* error = nil;
          NSData* json = [NSData dataWithContentsOfURL:url options:0 error:&error];
          
@@ -132,11 +144,24 @@ dispatch_source_t timer;
          {
              StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:type];
          
+             if(wrapper.backoff > 0)
+             {
+                 [self enforceBackoff: backoff forSeconds:wrapper.backoff];
+             }
+             
              [ret fulfil:wrapper success:YES error:nil];
          }
      }
      ];
     
     return ret;
+}
+
+-(void)enforceBackoff:(NSString*)key forSeconds:(int)forSeconds
+{
+    @synchronized(backoffs)
+    {
+        [backoffs setValue:[NSNumber numberWithInt:forSeconds] forKey:key];
+    }
 }
 @end

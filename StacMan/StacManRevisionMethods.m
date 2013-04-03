@@ -40,6 +40,6 @@ __weak StacManClient* client;
      ConvertDate(toDate) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"revision" delegate:del];
+    return [client enqueue:url ofType:@"revision" delegate:del backoffKey:@"revs"];
 }
 @end
