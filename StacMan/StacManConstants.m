@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Stack Exchange. All rights reserved.
 //
 
-#import "Constants.h"
+#import "StacManConstants.h"
 
 NSString* const StacManUnregisteredUserType = @"unregistered";
 NSString *const StacManRegisteredUserType = @"registered";

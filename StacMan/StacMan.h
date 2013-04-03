@@ -33,7 +33,7 @@
 #import "StacManTagMethods.h"
 
 // Constants
-#import "Constants.h"
+#import "StacManConstants.h"
 
 // Helpers
 #import "StacManResponse.h"
