@@ -35,12 +35,6 @@
 @synthesize key = _key;
 @synthesize queue = _queue;
 
-int currentRequestCount;
-dispatch_semaphore_t globalBlock;
-dispatch_source_t timer;
-
-NSMutableDictionary* backoffs;
-
 -(id)initWithKey:(NSString*)key;
 {
     self = [super init];

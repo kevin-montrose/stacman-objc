@@ -50,7 +50,13 @@
 @class StacManSuggestedEditMethods;
 @class StacManTagMethods;
 
-@interface StacManClient : NSObject
+@interface StacManClient : NSObject {
+    int currentRequestCount;
+    dispatch_semaphore_t globalBlock;
+    dispatch_source_t timer;
+    
+    NSMutableDictionary* backoffs;
+}
 
 @property NSObject<StacManDelegate>* delegate;
 

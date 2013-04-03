@@ -9,15 +9,6 @@
 #import "StacManResponse.h"
 
 @implementation StacManResponse
-NSError* fault;
-BOOL result;
-StacManWrapper* wrapper;
-
-BOOL fulfilled;
-dispatch_semaphore_t lock;
-
-StacManClient* client;
-NSObject<StacManDelegate>* delegate;
 
 -(id)initWithClient:(StacManClient*)c delegate:(NSObject<StacManDelegate>*)del
 {

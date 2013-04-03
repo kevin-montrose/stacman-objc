@@ -7,6 +7,7 @@
 //
 
 #import "StacManApplicationMethods.h"
+#import "Utils.h"
 
 @implementation StacManApplicationMethods
 __weak StacManClient* client;

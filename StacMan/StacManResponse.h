@@ -14,7 +14,18 @@
 @class StacManClient;
 @protocol StacManDelegate;
 
-@interface StacManResponse : NSObject
+@interface StacManResponse : NSObject {
+    NSError* fault;
+    BOOL result;
+    StacManWrapper* wrapper;
+    
+    BOOL fulfilled;
+    dispatch_semaphore_t lock;
+    
+    StacManClient* client;
+    NSObject<StacManDelegate>* delegate;
+}
+
 @property (readonly) BOOL success;
 @property (readonly) StacManWrapper* data;
 @property (readonly) NSError* error;
