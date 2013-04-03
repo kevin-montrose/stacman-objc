@@ -24,6 +24,8 @@
     
     StacManClient* client;
     NSObject<StacManDelegate>* delegate;
+    
+    NSMutableArray* callbacks;
 }
 
 @property (readonly) BOOL success;
@@ -32,4 +34,5 @@
 
 -(id)initWithClient:(StacManClient*)client delegate:(NSObject<StacManDelegate>*)delegate;
 -(void)fulfil:(StacManWrapper*)data success:(BOOL)success error:(NSError*)error;
+-(void)continueWith:(void(^)(StacManResponse*))block;
 @end

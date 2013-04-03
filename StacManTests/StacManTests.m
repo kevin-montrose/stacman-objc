@@ -195,12 +195,30 @@
     
     for(int i = 0; i < 100; i++)
     {
-        StacManResponse* response = [users getAllOnSite:@"stackoverflow" filter:nil page:-1 pageSize:1 fromDate:nil toDate:nil sort:@"reputation" min:nil max:nil minDate:nil maxDate:nil minName:nil maxName:nil order:nil inName:nil delegate:nil];
+        StacManResponse* response = [users getAllOnSite:@"stackoverflow" filter:nil page:1 pageSize:1 fromDate:nil toDate:nil sort:@"reputation" min:nil max:nil minDate:nil maxDate:nil minName:nil maxName:nil order:nil inName:nil delegate:nil];
         
         STAssertNotNil(response, @"Non nil response");
         
-        STAssertNotNil(response.error, @"Non nil error");
+        STAssertNotNil(response.data.items, @"Non nil items");
+        STAssertTrue([response.data.items count] > 0, @"Non-zero item count");
     }
+}
+
+-(void)testContinue
+{
+    StacManClient* client = [[StacManClient alloc] initWithKey:@"qlH0V6SW0o3bL9n2ElNihg(("];
+    
+    StacManResponse* resp = [client.users getAllOnSite:@"stackoverflow" filter:nil page:1 pageSize:1 fromDate:nil toDate: nil sort:@"reputation" min:@312 max:@45678 minDate:nil maxDate:nil minName:nil maxName:nil order:StacManReputationUserSort inName:@"j" delegate:nil];
+    
+    dispatch_semaphore_t sig = dispatch_semaphore_create(0);
+    
+    [resp continueWith:^(StacManResponse* innerResp){
+        STAssertTrue(resp == innerResp, @"passed proper response");
+        
+        dispatch_semaphore_signal(sig);
+    }];
+    
+    STAssertTrue(dispatch_semaphore_wait(sig, DISPATCH_TIME_FOREVER) == 0, @"continue with was called");
 }
 
 @end
