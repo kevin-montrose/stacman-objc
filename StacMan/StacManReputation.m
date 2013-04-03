@@ -11,13 +11,13 @@
 
 @implementation StacManReputation
 @synthesize link;
-@synthesize on_date;
-@synthesize post_id;
-@synthesize post_type;
-@synthesize reputation_change;
+@synthesize onDate;
+@synthesize postId;
+@synthesize postType;
+@synthesize reputationChange;
 @synthesize title;
-@synthesize user_id;
-@synthesize vote_type;
+@synthesize userId;
+@synthesize voteType;
 
 +(StacManReputation*)parse:(NSDictionary*)dict
 {

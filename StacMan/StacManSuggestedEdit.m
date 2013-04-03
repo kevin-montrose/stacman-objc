@@ -10,15 +10,15 @@
 #import "PropertySetter.h"
 
 @implementation StacManSuggestedEdit
-@synthesize approval_date;
+@synthesize approvalDate;
 @synthesize body;
 @synthesize comment;
-@synthesize creation_date;
-@synthesize post_id;
-@synthesize post_type;
-@synthesize proposing_user;
-@synthesize rejection_date;
-@synthesize suggested_edit_id;
+@synthesize creationDate;
+@synthesize postId;
+@synthesize postType;
+@synthesize proposingUser;
+@synthesize rejectionDate;
+@synthesize suggestedEditId;
 @synthesize tags;
 @synthesize title;
 

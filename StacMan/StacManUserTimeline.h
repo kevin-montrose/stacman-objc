@@ -9,27 +9,27 @@
 #import <Foundation/Foundation.h>
 
 @interface StacManUserTimeline : NSObject
-@property NSNumber* badge_id;
+@property NSNumber* badgeId;
 
-@property NSNumber* comment_id;
+@property NSNumber* commentId;
 
-@property NSDate* creation_date;
+@property NSDate* creationDate;
 
 @property NSString* detail;
 
 @property NSString* link;
 
-@property NSNumber* post_id;
+@property NSNumber* postId;
 
-@property NSString* post_type;
+@property NSString* postType;
 
-@property NSNumber* suggested_edit_id;
+@property NSNumber* suggestedEditId;
 
-@property NSString* timeline_type;
+@property NSString* timelineType;
 
 @property NSString* title;
 
-@property NSNumber* user_id;
+@property NSNumber* userId;
 
 +(StacManUserTimeline*)parse:(NSDictionary*)dict;
 +(NSArray*)parseArray:(NSArray*)json;

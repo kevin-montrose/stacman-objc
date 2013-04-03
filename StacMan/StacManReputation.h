@@ -11,19 +11,19 @@
 @interface StacManReputation : NSObject
 @property NSString* link;
 
-@property NSDate* on_date;
+@property NSDate* onDate;
 
-@property NSNumber* post_id;
+@property NSNumber* postId;
 
-@property NSString* post_type;
+@property NSString* postType;
 
-@property NSNumber* reputation_change;
+@property NSNumber* reputationChange;
 
 @property NSString* title;
 
-@property NSNumber* user_id;
+@property NSNumber* userId;
 
-@property NSString* vote_type;
+@property NSString* voteType;
 
 +(StacManReputation*)parse:(NSDictionary*)dict;
 +(NSArray*)parseArray:(NSArray*)json;

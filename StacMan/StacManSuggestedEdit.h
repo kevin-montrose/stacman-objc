@@ -10,23 +10,23 @@
 #import "StacManShallowUser.h"
 
 @interface StacManSuggestedEdit : NSObject
-@property NSDate* approval_date;
+@property NSDate* approvalDate;
 
 @property NSString* body;
 
 @property NSString* comment;
 
-@property NSDate* creation_date;
+@property NSDate* creationDate;
 
-@property NSNumber* post_id;
+@property NSNumber* postId;
 
-@property NSString* post_type;
+@property NSString* postType;
 
-@property StacManShallowUser* proposing_user;
+@property StacManShallowUser* proposingUser;
 
-@property NSDate* rejection_date;
+@property NSDate* rejectionDate;
 
-@property NSNumber* suggested_edit_id;
+@property NSNumber* suggestedEditId;
 
 @property NSArray* tags;
 

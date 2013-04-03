@@ -10,17 +10,17 @@
 #import "PropertySetter.h"
 
 @implementation StacManUserTimeline
-@synthesize badge_id;
-@synthesize comment_id;
-@synthesize creation_date;
+@synthesize badgeId;
+@synthesize commentId;
+@synthesize creationDate;
 @synthesize detail;
 @synthesize link;
-@synthesize post_id;
-@synthesize post_type;
-@synthesize suggested_edit_id;
-@synthesize timeline_type;
+@synthesize postId;
+@synthesize postType;
+@synthesize suggestedEditId;
+@synthesize timelineType;
 @synthesize title;
-@synthesize user_id;
+@synthesize userId;
 
 +(StacManUserTimeline*)parse:(NSDictionary*)dict
 {

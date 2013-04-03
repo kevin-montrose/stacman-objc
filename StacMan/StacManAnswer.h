@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
-#import "PropertySetter.h"
 #import "StacManComment.h"
 
 @interface StacManAnswer : NSObject

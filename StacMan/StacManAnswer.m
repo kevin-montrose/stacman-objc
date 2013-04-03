@@ -7,6 +7,7 @@
 //
 
 #import "StacManAnswer.h"
+#import "PropertySetter.h"
 
 @implementation StacManAnswer
 @synthesize answerId;
