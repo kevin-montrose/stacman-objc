@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Stack Exchange. All rights reserved.
 //
 
+@protocol StacManDelegate;
+
 #import <Foundation/Foundation.h>
 #import "StacManResponse.h"
 

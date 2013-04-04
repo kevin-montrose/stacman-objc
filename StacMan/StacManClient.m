@@ -7,6 +7,7 @@
 //
 
 #import "StacManClient.h"
+#import <libkern/OSAtomic.h>
 
 @implementation StacManClient
 
