@@ -50,6 +50,11 @@
 @class StacManSuggestedEditMethods;
 @class StacManTagMethods;
 
+typedef enum {
+    StacManTierDev,
+    StacManTierProd
+} StacManTier;
+
 @interface StacManClient : NSObject {
     int currentRequestCount;
     dispatch_semaphore_t globalBlock;
@@ -59,6 +64,7 @@
 }
 
 @property NSObject<StacManDelegate>* delegate;
+@property StacManTier tier;
 
 @property (readonly) StacManQuestionMethods* questions;
 @property (readonly) StacManUserMethods* users;

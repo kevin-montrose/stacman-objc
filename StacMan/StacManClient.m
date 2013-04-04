@@ -74,6 +74,8 @@
         globalBlock = dispatch_semaphore_create(30);
         timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
         
+        _tier = StacManTierProd;
+        
         dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 5.0, 0);
         dispatch_source_set_event_handler(timer, ^{ [self resetGlobalBlock]; });
         dispatch_resume(timer);
@@ -104,7 +106,16 @@
 
 -(StacManResponse*)enqueue:(NSString*)str ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)del backoffKey:(NSString*)backoff
 {
-    NSURL* url = [NSURL URLWithString:str];
+    NSURL *url;
+    if (_tier == StacManTierDev)
+    {
+        NSMutableString *devStr = [NSMutableString stringWithString:str];
+        [devStr replaceOccurrencesOfString:@"https://api." withString:@"http://dev.api." options:NSCaseInsensitiveSearch range:NSMakeRange(0, [devStr length])];
+        url = [NSURL URLWithString:devStr];
+    } else
+    {
+        url = [NSURL URLWithString:str];
+    }
     
     StacManResponse* ret = [[StacManResponse alloc] initWithClient:self delegate:del];
     
