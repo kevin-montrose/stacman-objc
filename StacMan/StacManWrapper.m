@@ -73,6 +73,12 @@ id TryGet(NSDictionary* dict, NSString* key, id defaultValue)
         self.backoff = [TryGet(parsed, @"backoff", [NSNumber numberWithBool:NO]) boolValue];
         self.errorId = [TryGet(parsed, @"error_id", [NSNumber numberWithInt:0]) intValue];
         self.errorMessage = TryGet(parsed, @"error_message", nil);
+        self.hasMore = [TryGet(parsed, @"has_more", [NSNumber numberWithBool:NO]) boolValue];
+        self.page = [TryGet(parsed, @"page", [NSNumber numberWithInt:0]) intValue];
+        self.pageSize = [TryGet(parsed, @"page_size", [NSNumber numberWithInt:0]) intValue];
+        self.quotaMax = [TryGet(parsed, @"quota_max", [NSNumber numberWithInt:0]) intValue];
+        self.quotaRemaining = [TryGet(parsed, @"quota_remaining", [NSNumber numberWithInt:0]) intValue];
+        self.total = [TryGet(parsed, @"total", [NSNumber numberWithInt:0]) intValue];
         
         if ([type caseInsensitiveCompare:@"question"] == NSOrderedSame) {
             self.items = [StacManQuestion parseArray:i];
