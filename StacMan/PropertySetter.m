@@ -54,6 +54,7 @@ Class GetClass(const char* attr)
     CFStringFindWithOptions(cfStr, quoteLit, subSearch, 0, &j);
     
     CFStringRef name = CFStringCreateWithSubstring(NULL, cfStr, CFRangeMake(i.location + 1, j.location - i.location - 1));
+    CFRelease(cfStr);
     
     NSString* asNSStr = (__bridge_transfer NSString*)name;
     
@@ -105,6 +106,8 @@ void Parse(Class class, id inst, NSDictionary* dict)
         
         [inst setValue:inDict forKey:propName];
     }
+    
+    free(props);
     
     // lack of generics means we sometime have to ask a class to fixup collections explicitly
     if([inst respondsToSelector:@selector(finishDeserializing)])
