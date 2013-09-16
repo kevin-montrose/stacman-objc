@@ -8,5 +8,6 @@
 
 #import <objc/runtime.h>
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-void Parse(Class class, id inst, NSDictionary* dict);
+void Parse(Class class, id<StacManDeserializable> inst, NSDictionary* dict);

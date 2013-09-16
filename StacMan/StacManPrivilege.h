@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManPrivilege : NSObject
+@interface StacManPrivilege : NSObject <StacManDeserializable>
 @property NSString* description;
 @property NSNumber* reputation;
 @property NSString* shortDescription;

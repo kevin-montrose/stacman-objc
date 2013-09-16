@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManError : NSObject
+@interface StacManError : NSObject <StacManDeserializable>
 @property NSString* description;
 
 @property NSNumber* errorId;

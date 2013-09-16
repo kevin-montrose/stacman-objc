@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManReputation : NSObject
+@interface StacManReputation : NSObject <StacManDeserializable>
 @property NSString* link;
 
 @property NSDate* onDate;

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManTag : NSObject
+@interface StacManTag : NSObject <StacManDeserializable>
 @property NSNumber* count;
 @property NSNumber* hasSynonyms;
 @property NSNumber* isModeratorOnly;

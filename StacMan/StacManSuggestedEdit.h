@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
+#import "StacManDeserializable.h"
 
-@interface StacManSuggestedEdit : NSObject
+@interface StacManSuggestedEdit : NSObject <StacManDeserializable>
 @property NSDate* approvalDate;
 
 @property NSString* body;

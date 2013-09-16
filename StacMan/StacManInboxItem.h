@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManSite.h"
+#import "StacManDeserializable.h"
 
-@interface StacManInboxItem : NSObject
+@interface StacManInboxItem : NSObject <StacManDeserializable>
 @property NSNumber* answerId;
 
 @property NSString* body;

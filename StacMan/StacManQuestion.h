@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
 #import "StacManMigrationInfo.h"
+#import "StacManDeserializable.h"
 
-@interface StacManQuestion : NSObject
+@interface StacManQuestion : NSObject <StacManDeserializable>
 @property NSNumber* acceptedAnswerId;
 
 @property NSNumber* answerCount;
