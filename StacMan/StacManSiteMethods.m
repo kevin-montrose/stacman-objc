@@ -7,6 +7,7 @@
 //
 
 #import "StacManSiteMethods.h"
+#import "STacManSite.h"
 #import "Utils.h"
 
 @implementation StacManSiteMethods
@@ -36,6 +37,6 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"site" delegate:del backoffKey:@"sites"];
+    return [client enqueue:url ofType:[StacManSite class] delegate:del backoffKey:@"sites"];
 }
 @end

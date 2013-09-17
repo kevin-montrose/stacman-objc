@@ -7,6 +7,7 @@
 //
 
 #import "StacManApplicationMethods.h"
+#import "StacManAccessToken.h"
 #import "Utils.h"
 
 @implementation StacManApplicationMethods
@@ -37,6 +38,6 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"access_token" delegate:del backoffKey:@"actok"];
+    return [client enqueue:url ofType:[StacManAccessToken class] delegate:del backoffKey:@"actok"];
 }
 @end

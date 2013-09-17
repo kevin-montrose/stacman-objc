@@ -7,6 +7,19 @@
 //
 
 #import "StacManUserMethods.h"
+#import "StacManUser.h"
+#import "StacManTag.h"
+#import "StacManQuestion.h"
+#import "StacMananswer.h"
+#import "StacManComment.h"
+#import "StacManTopTag.h"
+#import "StacManBadge.h"
+#import "StacManPrivilege.h"
+#import "StacManReputation.h"
+#import "StacManUserTimeline.h"
+#import "StacManInboxItem.h"
+#import "StacManNetworkUser.h"
+#import "StacManSuggestedEdit.h"
 #import "Utils.h"
 
 @implementation StacManUserMethods
@@ -48,7 +61,7 @@ __weak StacManClient* client;
      inName ?: @""
     ];
     
-    return [client enqueue:url ofType:@"user" delegate:del backoffKey:@"us"];
+    return [client enqueue:url ofType:[StacManUser class] delegate:del backoffKey:@"us"];
 }
 
 -(StacManResponse*)getByIdsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -75,7 +88,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"user"  delegate:del backoffKey:@"uids"];
+    return [client enqueue:url ofType:[StacManUser class]  delegate:del backoffKey:@"uids"];
 }
 
 -(StacManResponse*)getMeOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -102,7 +115,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"user" delegate:del backoffKey:@"me"];
+    return [client enqueue:url ofType:[StacManUser class] delegate:del backoffKey:@"me"];
 }
 
 -(StacManResponse*)getAnswersOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -129,7 +142,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"answer" delegate:del backoffKey:@"uas"];
+    return [client enqueue:url ofType:[StacManAnswer class] delegate:del backoffKey:@"uas"];
 }
 
 -(StacManResponse*)getMyAnswersOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -156,7 +169,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"answer" delegate:del backoffKey:@"mas"];
+    return [client enqueue:url ofType:[StacManAnswer class] delegate:del backoffKey:@"mas"];
 }
 
 -(StacManResponse*)getCommentsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -183,7 +196,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment" delegate:del backoffKey:@"ucs"];
+    return [client enqueue:url ofType:[StacManComment class] delegate:del backoffKey:@"ucs"];
 }
 
 -(StacManResponse*)getMyCommentsOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -210,7 +223,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment" delegate:del backoffKey:@"mcs"];
+    return [client enqueue:url ofType:[StacManComment class] delegate:del backoffKey:@"mcs"];
 }
 
 -(StacManResponse*)getCommentsToUserOnSite:(NSString*)site ids:(NSArray*)ids toId:(int)toId filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -238,7 +251,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment" delegate:del backoffKey:@"ucts"];
+    return [client enqueue:url ofType:[StacManComment class] delegate:del backoffKey:@"ucts"];
 }
 
 -(StacManResponse*)getMyCommentsToUserOnSite:(NSString*)site accessToken:(NSString*)accessToken toId:(int)toId filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -266,7 +279,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment" delegate:del backoffKey:@"mcts"];
+    return [client enqueue:url ofType:[StacManComment class] delegate:del backoffKey:@"mcts"];
 }
 
 -(StacManResponse*)getFavoritesOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -293,7 +306,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"ufs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"ufs"];
 }
 
 -(StacManResponse*)getMyFavoritesOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -320,7 +333,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"mfs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"mfs"];
 }
 
 -(StacManResponse*)getCommentsMentionedInOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -347,7 +360,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment" delegate:del backoffKey:@"ucms"];
+    return [client enqueue:url ofType:[StacManComment class] delegate:del backoffKey:@"ucms"];
 }
 
 -(StacManResponse*)getMyCommentsMentionedInOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -374,7 +387,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment" delegate:del backoffKey:@"mcms"];
+    return [client enqueue:url ofType:[StacManComment class] delegate:del backoffKey:@"mcms"];
 }
 
 -(StacManResponse*)getQuestionsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -401,7 +414,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"uqs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"uqs"];
 }
 
 -(StacManResponse*)getMyQuestionsOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -428,7 +441,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"mqs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"mqs"];
 }
 
 -(StacManResponse*)getFeaturedQuestionsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -455,7 +468,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"ufqs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"ufqs"];
 }
 
 -(StacManResponse*)getMyFeaturedQuestionsOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -482,7 +495,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"mfqs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"mfqs"];
 }
 
 -(StacManResponse*)getQuestionsWithNoAnswersOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -509,7 +522,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"uqnas"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"uqnas"];
 }
 
 -(StacManResponse*)getMyQuestionsWithNoAnswersOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -536,7 +549,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"mqnas"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"mqnas"];
 }
 
 -(StacManResponse*)getQuestionsWithUnacceptedOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -563,7 +576,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"uqus"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"uqus"];
 }
 
 -(StacManResponse*)getMyQuestionsWithUnacceptedOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -590,7 +603,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"mqus"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"mqus"];
 }
 
 -(StacManResponse*)getUnansweredQuestionsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -617,7 +630,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"uuqs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"uuqs"];
 }
 
 -(StacManResponse*)getTopAnswersOnSite:(NSString*)site id:(int)_id tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -645,7 +658,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"answer" delegate:del backoffKey:@"utas"];
+    return [client enqueue:url ofType:[StacManAnswer class] delegate:del backoffKey:@"utas"];
 }
 
 -(StacManResponse*)getMyTopAnswersOnSite:(NSString*)site accessToken:(NSString*)accessToken tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -673,7 +686,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"answer" delegate:del backoffKey:@"mtas"];
+    return [client enqueue:url ofType:[StacManAnswer class] delegate:del backoffKey:@"mtas"];
 }
 
 -(StacManResponse*)getTopQuestionsOnSite:(NSString*)site id:(int)_id tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -701,7 +714,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"utqs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"utqs"];
 }
 
 -(StacManResponse*)getMyTopQuestionsOnSite:(NSString*)site accessToken:(NSString*)accessToken tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -729,7 +742,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"mtqs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"mtqs"];
 }
 
 -(StacManResponse*)getModeratorsOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -755,7 +768,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"user" delegate:del backoffKey:@"umods"];
+    return [client enqueue:url ofType:[StacManUser class] delegate:del backoffKey:@"umods"];
 }
 
 -(StacManResponse*)getElectedModeratorsOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -781,7 +794,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"user" delegate:del backoffKey:@"uemods"];
+    return [client enqueue:url ofType:[StacManUser class] delegate:del backoffKey:@"uemods"];
 }
 
 -(StacManResponse*)getBadgesOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minRank:(NSString*)minRank maxRank:(NSString*)maxRank minName:(NSString*)minName maxName:(NSString*)maxName minType:(NSString*)minType maxType:(NSString*)maxType minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -808,7 +821,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"badge" delegate:del backoffKey:@"ubs"];
+    return [client enqueue:url ofType:[StacManBadge class] delegate:del backoffKey:@"ubs"];
 }
 
 -(StacManResponse*)getMyBadgesOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minRank:(NSString*)minRank maxRank:(NSString*)maxRank minName:(NSString*)minName maxName:(NSString*)maxName minType:(NSString*)minType maxType:(NSString*)maxType minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -835,7 +848,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"badge" delegate:del backoffKey:@"mbs"];
+    return [client enqueue:url ofType:[StacManBadge class] delegate:del backoffKey:@"mbs"];
 }
 
 -(StacManResponse*)getPrivilegesOnSite:(NSString*)site id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -853,7 +866,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"privilege" delegate:del backoffKey:@"ups"];
+    return [client enqueue:url ofType:[StacManPrivilege class] delegate:del backoffKey:@"ups"];
 }
 
 -(StacManResponse*)getMyPrivilegesOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -871,7 +884,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"privilege" delegate:del backoffKey:@"mps"];
+    return [client enqueue:url ofType:[StacManPrivilege class] delegate:del backoffKey:@"mps"];
 }
 
 -(StacManResponse*)getReputationOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate delegate:(NSObject<StacManDelegate>*)del
@@ -891,7 +904,7 @@ __weak StacManClient* client;
      ConvertDate(toDate) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"reputation" delegate:del backoffKey:@"urs"];
+    return [client enqueue:url ofType:[StacManReputation class] delegate:del backoffKey:@"urs"];
 }
 
 -(StacManResponse*)getMyReputationOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate delegate:(NSObject<StacManDelegate>*)del
@@ -911,7 +924,7 @@ __weak StacManClient* client;
      ConvertDate(toDate) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"reputation" delegate:del backoffKey:@"mrs"];
+    return [client enqueue:url ofType:[StacManReputation class] delegate:del backoffKey:@"mrs"];
 }
 
 -(StacManResponse*)getSuggestedEditsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -938,7 +951,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"suggested_edit" delegate:del backoffKey:@"uses"];
+    return [client enqueue:url ofType:[StacManSuggestedEdit class] delegate:del backoffKey:@"uses"];
 }
 
 -(StacManResponse*)getMySuggestedEditsOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSString*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -965,7 +978,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"suggested_edit" delegate:del backoffKey:@"mses"];
+    return [client enqueue:url ofType:[StacManSuggestedEdit class] delegate:del backoffKey:@"mses"];
 }
 
 -(StacManResponse*)getTagsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSNumber*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -992,7 +1005,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"tag" delegate:del backoffKey:@"uts"];
+    return [client enqueue:url ofType:[StacManTag class] delegate:del backoffKey:@"uts"];
 }
 
 -(StacManResponse*)getMyTagsOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSNumber*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -1019,7 +1032,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"tag" delegate:del backoffKey:@"mts"];
+    return [client enqueue:url ofType:[StacManTag class] delegate:del backoffKey:@"mts"];
 }
 
 -(StacManResponse*)getTimelinesOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate delegate:(NSObject<StacManDelegate>*)del
@@ -1039,7 +1052,7 @@ __weak StacManClient* client;
      ConvertDate(toDate) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"user_timeline" delegate:del backoffKey:@"utls"];
+    return [client enqueue:url ofType:[StacManUserTimeline class] delegate:del backoffKey:@"utls"];
 }
 
 -(StacManResponse*)getMyTimelinesOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate delegate:(NSObject<StacManDelegate>*)del
@@ -1059,7 +1072,7 @@ __weak StacManClient* client;
      ConvertDate(toDate) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"user_timeline" delegate:del backoffKey:@"mtls"];
+    return [client enqueue:url ofType:[StacManUserTimeline class] delegate:del backoffKey:@"mtls"];
 }
 
 -(StacManResponse*)getTopAnswerTagsOnSite:(NSString*)site id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1077,7 +1090,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"tag_tag" delegate:del backoffKey:@"utats"];
+    return [client enqueue:url ofType:[StacManTopTag class] delegate:del backoffKey:@"utats"];
 }
 
 -(StacManResponse*)getMyTopAnswerTagsOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1095,7 +1108,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"tag_tag" delegate:del backoffKey:@"mtats"];
+    return [client enqueue:url ofType:[StacManTopTag class] delegate:del backoffKey:@"mtats"];
 }
 
 -(StacManResponse*)getTopQuestionTagsOnSite:(NSString*)site id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1113,7 +1126,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"tag_tag" delegate:del backoffKey:@"utqts"];
+    return [client enqueue:url ofType:[StacManTopTag class] delegate:del backoffKey:@"utqts"];
 }
 
 -(StacManResponse*)getMyTopQuestionTagsOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1131,7 +1144,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"tag_tag" delegate:del backoffKey:@"mtqts"];
+    return [client enqueue:url ofType:[StacManTopTag class] delegate:del backoffKey:@"mtqts"];
 }
 
 -(StacManResponse*)getInboxOnSite:(NSString*)site accessToken:(NSString*)accessToken id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1150,7 +1163,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"inbox_item" delegate:del backoffKey:@"uis"];
+    return [client enqueue:url ofType:[StacManInboxItem class] delegate:del backoffKey:@"uis"];
 }
 
 -(StacManResponse*)getMyInboxOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1168,7 +1181,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"inbox_item" delegate:del backoffKey:@"mis"];
+    return [client enqueue:url ofType:[StacManInboxItem class] delegate:del backoffKey:@"mis"];
 }
 
 -(StacManResponse*)getInboxUnreadOnSite:(NSString*)site accessToken:(NSString*)accessToken id:(int)_id filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1187,7 +1200,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"inbox_item" delegate:del backoffKey:@"uius"];
+    return [client enqueue:url ofType:[StacManInboxItem class] delegate:del backoffKey:@"uius"];
 }
 
 -(StacManResponse*)getMyInboxUnreadOnSite:(NSString*)site accessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1205,7 +1218,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"inbox_item" delegate:del backoffKey:@"mius"];
+    return [client enqueue:url ofType:[StacManInboxItem class] delegate:del backoffKey:@"mius"];
 }
 
 -(StacManResponse*)getAssociatedWithAccountIds:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1222,7 +1235,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"network_user" delegate:del backoffKey:@"uaas"];
+    return [client enqueue:url ofType:[StacManNetworkUser class] delegate:del backoffKey:@"uaas"];
 }
 
 -(StacManResponse*)getMyAssociatedWithAccessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -1239,6 +1252,6 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"network_user" delegate:del backoffKey:@"maas"];
+    return [client enqueue:url ofType:[StacManNetworkUser class] delegate:del backoffKey:@"maas"];
 }
 @end

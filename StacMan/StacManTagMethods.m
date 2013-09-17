@@ -7,6 +7,11 @@
 //
 
 #import "StacManTagMethods.h"
+#import "StacManTag.h"
+#import "StacManTagScore.h"
+#import "StacManTagSynonym.h"
+#import "StacManTagWiki.h"
+#import "StacManQuestion.h"
 #import "Utils.h"
 
 @implementation StacManTagMethods
@@ -44,7 +49,7 @@ __weak StacManClient* client;
      inName ?: @""
      ];
     
-    return [client enqueue:url ofType:@"tag" delegate:del backoffKey:@"talls"];
+    return [client enqueue:url ofType:[StacManTag class] delegate:del backoffKey:@"talls"];
 }
 
 -(StacManResponse*)getByNameOnSite:(NSString*)site tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSNumber*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -68,7 +73,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"tag" delegate:del backoffKey:@"tnames"];
+    return [client enqueue:url ofType:[StacManTag class] delegate:del backoffKey:@"tnames"];
 }
 
 -(StacManResponse*)getModeratorOnlyOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSNumber*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order inName:(NSString*)inName delegate:(NSObject<StacManDelegate>*)del
@@ -92,7 +97,7 @@ __weak StacManClient* client;
      inName ?: @""
      ];
     
-    return [client enqueue:url ofType:@"tag" delegate:del backoffKey:@"tmods"];
+    return [client enqueue:url ofType:[StacManTag class] delegate:del backoffKey:@"tmods"];
 }
 
 -(StacManResponse*)getRequiredOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSNumber*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate minName:(NSString*)minName maxName:(NSString*)maxName order:(NSString*)order inName:(NSString*)inName delegate:(NSObject<StacManDelegate>*)del
@@ -116,7 +121,7 @@ __weak StacManClient* client;
      inName ?: @""
      ];
     
-    return [client enqueue:url ofType:@"tag" delegate:del backoffKey:@"trequired"];
+    return [client enqueue:url ofType:[StacManTag class] delegate:del backoffKey:@"trequired"];
 }
 
 -(StacManResponse*)getAllSynonymsOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSNumber*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -139,7 +144,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"tag_synonym" delegate:del backoffKey:@"tsyns"];
+    return [client enqueue:url ofType:[StacManTagSynonym class] delegate:del backoffKey:@"tsyns"];
 }
 
 -(StacManResponse*)getFrequentlyAskedOnSite:(NSString*)site filter:(NSString*)filter tags:(NSArray*)tags page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -157,7 +162,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"tfaqs"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"tfaqs"];
 }
 
 -(StacManResponse*)getRelatedOnSite:(NSString*)site filter:(NSString*)filter tags:(NSArray*)tags page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -175,7 +180,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"trel"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"trel"];
 }
 
 -(StacManResponse*)getSynonymsForTagsOnSite:(NSString*)site tags:(NSArray*)tags filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort min:(NSNumber*)min max:(NSNumber*)max minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -199,7 +204,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"tag_synonym" delegate:del backoffKey:@"tsynft"];
+    return [client enqueue:url ofType:[StacManTagSynonym class] delegate:del backoffKey:@"tsynft"];
 }
 
 -(StacManResponse*)getTopAnswerersOnSite:(NSString*)site tag:(NSString*)tag period:(NSString*)period filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -218,7 +223,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"tag_score" delegate:del backoffKey:@"ttas"];
+    return [client enqueue:url ofType:[StacManTagScore class] delegate:del backoffKey:@"ttas"];
 }
 
 -(StacManResponse*)getTopAskersOnSite:(NSString*)site tag:(NSString*)tag period:(NSString*)period filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -237,7 +242,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"tag_score" delegate:del backoffKey:@"ttaos"];
+    return [client enqueue:url ofType:[StacManTagScore class] delegate:del backoffKey:@"ttaos"];
 }
 
 -(StacManResponse*)getTagWikisOnSite:(NSString*)site tags:(NSArray*)tags period:(NSString*)period filter:(NSString*)filter page:(int)page pageSize:(int)pageSize delegate:(NSObject<StacManDelegate>*)del
@@ -255,6 +260,6 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"tag_wiki" delegate:del backoffKey:@"twikis"];
+    return [client enqueue:url ofType:[StacManTagWiki class] delegate:del backoffKey:@"twikis"];
 }
 @end

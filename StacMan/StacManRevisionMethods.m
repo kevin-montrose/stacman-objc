@@ -7,6 +7,7 @@
 //
 
 #import "StacManRevisionMethods.h"
+#import "StacManRevision.h"
 #import "Utils.h"
 
 @implementation StacManRevisionMethods
@@ -40,6 +41,6 @@ __weak StacManClient* client;
      ConvertDate(toDate) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"revision" delegate:del backoffKey:@"revs"];
+    return [client enqueue:url ofType:[StacManRevision class] delegate:del backoffKey:@"revs"];
 }
 @end

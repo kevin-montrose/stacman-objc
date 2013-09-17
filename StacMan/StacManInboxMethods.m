@@ -7,6 +7,7 @@
 //
 
 #import "StacManInboxMethods.h"
+#import "StacManInboxItem.h"
 #import "Utils.h"
 
 @implementation StacManInboxMethods
@@ -37,7 +38,7 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"inbox_item" delegate:del backoffKey:@"iall"];
+    return [client enqueue:url ofType:[StacManInboxItem class] delegate:del backoffKey:@"iall"];
 }
 
 -(StacManResponse*)getUnreadWithAccessToken:(NSString*)accessToken filter:(NSString*)filter page:(int)page pageSize:(int)pageSize since:(NSDate*)since delegate:(NSObject<StacManDelegate>*)del
@@ -55,6 +56,6 @@ __weak StacManClient* client;
      ConvertDate(since) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"inbox_item" delegate:del backoffKey:@"iunread"];
+    return [client enqueue:url ofType:[StacManInboxItem class] delegate:del backoffKey:@"iunread"];
 }
 @end

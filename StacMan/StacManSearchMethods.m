@@ -7,6 +7,7 @@
 //
 
 #import "StacManSearchMethods.h"
+#import "StacManQuestion.h"
 #import "Utils.h"
 
 @implementation StacManSearchMethods
@@ -46,7 +47,7 @@ __weak StacManClient* client;
      inTitle ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"smatch"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"smatch"];
 }
 
 -(StacManResponse*)getSimilarOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order tagged:(NSString*)tagged notTagged:(NSString*)notTagged inTitle:(NSString*)inTitle delegate:(NSObject<StacManDelegate>*)del
@@ -72,6 +73,6 @@ __weak StacManClient* client;
      inTitle ?: @""
      ];
     
-    return [client enqueue:url ofType:@"question" delegate:del backoffKey:@"ssimilar"];
+    return [client enqueue:url ofType:[StacManQuestion class] delegate:del backoffKey:@"ssimilar"];
 }
 @end

@@ -106,8 +106,8 @@
     }
 }
 
--(StacManResponse*)enqueue:(NSString*)str ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)del backoffKey:(NSString*)backoff
-{
+-(StacManResponse*)enqueue:(NSString*)str ofType:(Class)type delegate:(NSObject<StacManDelegate>*)del backoffKey:(NSString*)backoff {
+    
     NSURL *url;
     if (_tier == StacManTierDev)
     {
@@ -150,7 +150,7 @@
          }
          else
          {
-             StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:type];
+             StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json forClass:type];
          
              if(wrapper.backoff > 0)
              {
