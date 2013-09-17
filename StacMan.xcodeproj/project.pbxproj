@@ -13,6 +13,8 @@
 		8F11D0FC17E8B0F400F0E074 /* SM_GTMNSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F11D0FA17E8B0F400F0E074 /* SM_GTMNSString+HTML.h */; };
 		8F11D0FD17E8B0F400F0E074 /* SM_GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11D0FB17E8B0F400F0E074 /* SM_GTMNSString+HTML.m */; };
 		8F11D0FE17E8B0F400F0E074 /* SM_GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11D0FB17E8B0F400F0E074 /* SM_GTMNSString+HTML.m */; };
+		8F11D10317E8FF6300F0E074 /* PropertySetter.h in Headers */ = {isa = PBXBuildFile; fileRef = B997EF281704CD400074637A /* PropertySetter.h */; };
+		8F11D10417E8FF8E00F0E074 /* StacManClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B99211671704A6A900BEB0D2 /* StacManClient.h */; };
 		8F17D03417E75F6A0027D940 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F17D03317E75F6A0027D940 /* Foundation.framework */; };
 		8F17D05717E762ED0027D940 /* StacManWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211901704AA9B00BEB0D2 /* StacManWrapper.m */; };
 		8F17D05817E762F50027D940 /* StacManQuestionMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211881704A7B500BEB0D2 /* StacManQuestionMethods.m */; };
@@ -196,18 +198,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8F17D03017E75F6A0027D940 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		8F11D0F417E7E39E00F0E074 /* NSString+Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Web.h"; sourceTree = "<group>"; };
 		8F11D0F517E7E39E00F0E074 /* NSString+Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Web.m"; sourceTree = "<group>"; };
@@ -216,7 +206,6 @@
 		8F17D03217E75F6A0027D940 /* libStacMan-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libStacMan-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F17D03317E75F6A0027D940 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F17D04117E75F6A0027D940 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		8F17D04417E75F6A0027D940 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B9379790170B0BC00058127A /* StacManSiteMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManSiteMethods.h; sourceTree = "<group>"; };
 		B9379791170B0BC00058127A /* StacManSiteMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StacManSiteMethods.m; sourceTree = "<group>"; };
 		B9379794170B0D590058127A /* StacManAccessTokenMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StacManAccessTokenMethods.h; sourceTree = "<group>"; };
@@ -456,7 +445,6 @@
 				B99211701704A6A900BEB0D2 /* SenTestingKit.framework */,
 				8F17D03317E75F6A0027D940 /* Foundation.framework */,
 				8F17D04117E75F6A0027D940 /* XCTest.framework */,
-				8F17D04417E75F6A0027D940 /* UIKit.framework */,
 				B99211601704A6A800BEB0D2 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -618,6 +606,8 @@
 				B9E4C5661709F28E00F78DC0 /* StacManBadgeCount.h in Headers */,
 				B9E4C56A170A106300F78DC0 /* StacManBadge.h in Headers */,
 				B9E4C56E170A11C500F78DC0 /* StacManPrivilege.h in Headers */,
+				8F11D10317E8FF6300F0E074 /* PropertySetter.h in Headers */,
+				8F11D10417E8FF8E00F0E074 /* StacManClient.h in Headers */,
 				B9E4C572170A12DE00F78DC0 /* StacManReputation.h in Headers */,
 				B9E4C576170A13CA00F78DC0 /* StacManSuggestedEdit.h in Headers */,
 				B9E4C57A170A179200F78DC0 /* StacManTag.h in Headers */,
@@ -666,7 +656,6 @@
 			buildPhases = (
 				8F17D02E17E75F6A0027D940 /* Sources */,
 				8F17D02F17E75F6A0027D940 /* Frameworks */,
-				8F17D03017E75F6A0027D940 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -931,6 +920,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -950,6 +941,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -963,6 +955,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
