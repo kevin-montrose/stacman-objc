@@ -11,7 +11,7 @@
 #import "PropertySetter.h"
 #import "StacManAnswer.h"
 #import "StacManComment.h"
-#import "NSString+SEExtensions.h"
+#import "NSString+Web.h"
 
 @implementation StacManQuestion
 

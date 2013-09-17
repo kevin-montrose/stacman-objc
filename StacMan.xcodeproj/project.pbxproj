@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F11D0F617E7E39E00F0E074 /* NSString+Web.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F11D0F417E7E39E00F0E074 /* NSString+Web.h */; };
+		8F11D0F717E7E39E00F0E074 /* NSString+Web.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11D0F517E7E39E00F0E074 /* NSString+Web.m */; };
+		8F11D0F817E7E39E00F0E074 /* NSString+Web.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11D0F517E7E39E00F0E074 /* NSString+Web.m */; };
+		8F11D0FC17E8B0F400F0E074 /* SM_GTMNSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F11D0FA17E8B0F400F0E074 /* SM_GTMNSString+HTML.h */; };
+		8F11D0FD17E8B0F400F0E074 /* SM_GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11D0FB17E8B0F400F0E074 /* SM_GTMNSString+HTML.m */; };
+		8F11D0FE17E8B0F400F0E074 /* SM_GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11D0FB17E8B0F400F0E074 /* SM_GTMNSString+HTML.m */; };
 		8F17D03417E75F6A0027D940 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F17D03317E75F6A0027D940 /* Foundation.framework */; };
 		8F17D05717E762ED0027D940 /* StacManWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211901704AA9B00BEB0D2 /* StacManWrapper.m */; };
 		8F17D05817E762F50027D940 /* StacManQuestionMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B99211881704A7B500BEB0D2 /* StacManQuestionMethods.m */; };
@@ -203,6 +209,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8F11D0F417E7E39E00F0E074 /* NSString+Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Web.h"; sourceTree = "<group>"; };
+		8F11D0F517E7E39E00F0E074 /* NSString+Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Web.m"; sourceTree = "<group>"; };
+		8F11D0FA17E8B0F400F0E074 /* SM_GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SM_GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		8F11D0FB17E8B0F400F0E074 /* SM_GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SM_GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		8F17D03217E75F6A0027D940 /* libStacMan-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libStacMan-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F17D03317E75F6A0027D940 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F17D04117E75F6A0027D940 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -363,6 +373,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F11D0F917E7E3A600F0E074 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8F11D0FA17E8B0F400F0E074 /* SM_GTMNSString+HTML.h */,
+				8F11D0FB17E8B0F400F0E074 /* SM_GTMNSString+HTML.m */,
+				8F11D0F417E7E39E00F0E074 /* NSString+Web.h */,
+				8F11D0F517E7E39E00F0E074 /* NSString+Web.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		B93797CA170B45E20058127A /* Methods */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +475,7 @@
 		B99211641704A6A800BEB0D2 /* StacMan */ = {
 			isa = PBXGroup;
 			children = (
+				8F11D0F917E7E3A600F0E074 /* Categories */,
 				B93797CA170B45E20058127A /* Methods */,
 				B9E4C54B1709C9A100F78DC0 /* Models */,
 				B99211671704A6A900BEB0D2 /* StacManClient.h */,
@@ -600,12 +622,14 @@
 				B9E4C576170A13CA00F78DC0 /* StacManSuggestedEdit.h in Headers */,
 				B9E4C57A170A179200F78DC0 /* StacManTag.h in Headers */,
 				B9E4C57E170A18F300F78DC0 /* StacManUserTimeline.h in Headers */,
+				8F11D0FC17E8B0F400F0E074 /* SM_GTMNSString+HTML.h in Headers */,
 				B9E4C582170A1A2700F78DC0 /* StacManTopTag.h in Headers */,
 				B9E4C586170A1B9D00F78DC0 /* StacManInboxItem.h in Headers */,
 				B9E4C58A170A1D1200F78DC0 /* StacManNetworkUser.h in Headers */,
 				B9379792170B0BC00058127A /* StacManSiteMethods.h in Headers */,
 				B9379796170B0D590058127A /* StacManAccessTokenMethods.h in Headers */,
 				B937979A170B0DE90058127A /* StacManAccessToken.h in Headers */,
+				8F11D0F617E7E39E00F0E074 /* NSString+Web.h in Headers */,
 				B93797A4170B2D780058127A /* StacManAnswerMethods.h in Headers */,
 				B93797A8170B2FBF0058127A /* StacManApplicationMethods.h in Headers */,
 				B93797AC170B30FC0058127A /* StacManBadgeMethods.h in Headers */,
@@ -778,6 +802,7 @@
 				8F17D08C17E763B40027D940 /* StacManConstants.m in Sources */,
 				8F17D07F17E763B40027D940 /* StacManAccessToken.m in Sources */,
 				8F17D05A17E763430027D940 /* StacManSiteMethods.m in Sources */,
+				8F11D0FE17E8B0F400F0E074 /* SM_GTMNSString+HTML.m in Sources */,
 				8F17D07C17E763B40027D940 /* StacManTopTag.m in Sources */,
 				8F17D08817E763B40027D940 /* StacManTagWiki.m in Sources */,
 				8F17D07117E763B40027D940 /* StacManAnswer.m in Sources */,
@@ -793,6 +818,7 @@
 				8F17D07017E763B40027D940 /* StacManRelatedSite.m in Sources */,
 				8F17D06817E7636E0027D940 /* StacManSearchMethods.m in Sources */,
 				8F17D07817E763B40027D940 /* StacManReputation.m in Sources */,
+				8F11D0F817E7E39E00F0E074 /* NSString+Web.m in Sources */,
 				8F17D06E17E763B40027D940 /* StacManSite.m in Sources */,
 				8F17D07E17E763B40027D940 /* StacManNetworkUser.m in Sources */,
 				8F17D06217E7635D0027D940 /* StacManFilterMethods.m in Sources */,
@@ -840,6 +866,7 @@
 				B9E4C587170A1B9D00F78DC0 /* StacManInboxItem.m in Sources */,
 				B9E4C58B170A1D1200F78DC0 /* StacManNetworkUser.m in Sources */,
 				B9379793170B0BC00058127A /* StacManSiteMethods.m in Sources */,
+				8F11D0FD17E8B0F400F0E074 /* SM_GTMNSString+HTML.m in Sources */,
 				B9379797170B0D590058127A /* StacManAccessTokenMethods.m in Sources */,
 				B937979B170B0DE90058127A /* StacManAccessToken.m in Sources */,
 				B93797A5170B2D780058127A /* StacManAnswerMethods.m in Sources */,
@@ -855,6 +882,7 @@
 				B93797CE170B465B0058127A /* StacManInboxMethods.m in Sources */,
 				B93797D2170B47770058127A /* StacManInfoMethods.m in Sources */,
 				B93797D6170B48190058127A /* StacManInfo.m in Sources */,
+				8F11D0F717E7E39E00F0E074 /* NSString+Web.m in Sources */,
 				B93797DA170B49EE0058127A /* StacManPostMethods.m in Sources */,
 				B93797DE170B4B690058127A /* StacManPost.m in Sources */,
 				B93797E2170B4CDC0058127A /* StacManRevision.m in Sources */,
@@ -1081,6 +1109,7 @@
 				8F17D05217E75F6A0027D940 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B99211551704A6A800BEB0D2 /* Build configuration list for PBXProject "StacMan" */ = {
 			isa = XCConfigurationList;
