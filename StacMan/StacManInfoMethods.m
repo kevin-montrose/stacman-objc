@@ -7,6 +7,7 @@
 //
 
 #import "StacManInfoMethods.h"
+#import "StacManInfo.h"
 
 @implementation StacManInfoMethods
 __weak StacManClient* client;
@@ -34,6 +35,6 @@ __weak StacManClient* client;
      filter ?: @""
      ];
     
-    return [client enqueue:url ofType:@"info" delegate:del backoffKey:@"info"];
+    return [client enqueue:url ofType:[StacManInfo class] delegate:del backoffKey:@"info"];
 }
 @end

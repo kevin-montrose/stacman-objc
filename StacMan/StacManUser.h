@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManBadgeCount.h"
+#import "StacManDeserializable.h"
 
-@interface StacManUser : NSObject
+@interface StacManUser : NSObject <StacManDeserializable>
 @property NSString* aboutMe;
 
 @property NSNumber* acceptRate;

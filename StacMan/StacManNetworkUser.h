@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManBadgeCount.h"
+#import "StacManDeserializable.h"
 
-@interface StacManNetworkUser : NSObject
+@interface StacManNetworkUser : NSObject <StacManDeserializable>
 @property NSNumber* accountId;
 
 @property NSNumber* answerCount;

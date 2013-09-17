@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManAccessToken : NSObject
+@interface StacManAccessToken : NSObject <StacManDeserializable>
 @property NSString* accessTokenName;
 @property NSNumber* accountId;
 @property NSDate* expiresOnDate;

@@ -20,9 +20,12 @@
 @property int quotaMax;
 @property int quotaRemaining;
 @property int total;
-@property NSString* type;
+@property (readonly) Class type;
 
 @property NSError* error;
 
--(id)initWithJson:(NSData*)data type:(NSString*)type;
+/*!
+ \param cls Class object for interface which inherits from StacManWrapper
+ */
+-(id)initWithJson:(NSData *)data forClass:(Class)cls;
 @end

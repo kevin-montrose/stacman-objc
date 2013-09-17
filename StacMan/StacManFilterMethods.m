@@ -7,6 +7,7 @@
 //
 
 #import "StacManFilterMethods.h"
+#import "StacManfilter.h"
 #import "Utils.h"
 
 @implementation StacManFilterMethods
@@ -35,7 +36,7 @@ __weak StacManClient* client;
      filter ?: @""
      ];
     
-    return [client enqueue:url ofType:@"filter" delegate:del backoffKey:@"fread"];
+    return [client enqueue:url ofType:[StacManFilter class] delegate:del backoffKey:@"fread"];
 }
 
 -(StacManResponse*)createFilterWithIncludes:(NSArray*)includes excludes:(NSArray*)excludes base:(NSString*)base unsafe:(BOOL)unsafe filter:(NSString*)filter delegate:(NSObject<StacManDelegate>*)del
@@ -53,6 +54,6 @@ __weak StacManClient* client;
      (unsafe ? @"true" : @"false")
      ];
     
-    return [client enqueue:url ofType:@"filter" delegate:del backoffKey:@"fcreate"];
+    return [client enqueue:url ofType:[StacManFilter class] delegate:del backoffKey:@"fcreate"];
 }
 @end

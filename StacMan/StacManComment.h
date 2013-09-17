@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
+#import "StacManDeserializable.h"
 
-@interface StacManComment : NSObject
+@interface StacManComment : NSObject <StacManDeserializable>
 @property NSString* body;
 
 @property NSNumber* commentId;

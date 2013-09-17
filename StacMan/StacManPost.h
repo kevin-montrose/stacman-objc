@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
+#import "StacManDeserializable.h"
 
-@interface StacManPost : NSObject
+@interface StacManPost : NSObject <StacManDeserializable>
 @property NSString* body;
 
 @property NSArray* comments;
@@ -35,5 +36,4 @@
 +(StacManPost*)parse:(NSDictionary*)dict;
 +(NSArray*)parseArray:(NSArray*)json;
 
--(void)finishDeserializing;
 @end

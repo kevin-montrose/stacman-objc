@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManTopTag : NSObject
+@interface StacManTopTag : NSObject <StacManDeserializable>
 @property NSNumber* answerCount;
 
 @property NSNumber* answerScore;
