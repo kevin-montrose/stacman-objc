@@ -7,6 +7,7 @@
 //
 
 #import "StacManPrivilegeMethods.h"
+#import "StacManPrivilege.h"
 
 @implementation StacManPrivilegeMethods
 __weak StacManClient* client;
@@ -36,6 +37,6 @@ __weak StacManClient* client;
      pageSize
      ];
     
-    return [client enqueue:url ofType:@"privilege" delegate:del backoffKey:@"privs"];
+    return [client enqueue:url ofType:[StacManPrivilege class] delegate:del backoffKey:@"privs"];
 }
 @end

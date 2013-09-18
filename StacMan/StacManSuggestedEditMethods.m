@@ -7,6 +7,7 @@
 //
 
 #import "StacManSuggestedEditMethods.h"
+#import "StacManSuggestedEdit.h"
 #import "Utils.h"
 
 @implementation StacManSuggestedEditMethods
@@ -43,7 +44,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"suggested_edit" delegate:del backoffKey:@"sealls"];
+    return [client enqueue:url ofType:[StacManSuggestedEdit class] delegate:del backoffKey:@"sealls"];
 }
 
 -(StacManResponse*)getByIdsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -67,6 +68,6 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"suggested_edit" delegate:del backoffKey:@"seids"];
+    return [client enqueue:url ofType:[StacManSuggestedEdit class] delegate:del backoffKey:@"seids"];
 }
 @end

@@ -90,5 +90,5 @@ typedef enum {
 @property (readonly) NSOperationQueue* queue;
 
 -(id)initWithKey:(NSString*)key;
--(StacManResponse*)enqueue:(NSString*)url ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)delegate backoffKey:(NSString*)key;
+-(StacManResponse*)enqueue:(NSString*)url ofType:(Class)type delegate:(NSObject<StacManDelegate>*)delegate backoffKey:(NSString*)key;
 @end

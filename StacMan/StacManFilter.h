@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManFilter : NSObject
+@interface StacManFilter : NSObject <StacManDeserializable>
 @property NSString* filter;
 
 @property NSString* filterType;

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManSite.h"
+#import "StacManDeserializable.h"
 
-@interface StacManInfo : NSObject
+@interface StacManInfo : NSObject <StacManDeserializable>
 @property NSNumber* answersPerMinute;
 
 @property NSString* apiRevision;

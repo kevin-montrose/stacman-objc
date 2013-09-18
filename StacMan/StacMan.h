@@ -39,6 +39,9 @@
 #import "StacManResponse.h"
 #import "StacManWrapper.h"
 
+// Protocols
+#import "StacManDeserializable.h"
+
 // Models
 #import "StacManQuestion.h"
 #import "StacManShallowUser.h"

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
+#import "StacManDeserializable.h"
 
-@interface StacManQuestionTimeline : NSObject
+@interface StacManQuestionTimeline : NSObject <StacManDeserializable>
 @property NSNumber* commentId;
 
 @property NSDate* creationDate;

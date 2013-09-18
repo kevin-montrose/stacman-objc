@@ -31,6 +31,11 @@
     return ret;
 }
 
+- (NSString*)description
+{
+    return [[self dictionaryWithValuesForKeys:@[@"title", @"postId", @"reputationChange", @"voteType"]] description];
+}
+
 +(NSArray*)parseArray:(NSArray*)json
 {
     NSMutableArray* ret = [NSMutableArray arrayWithCapacity:json.count];

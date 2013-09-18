@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManStyling.h"
+#import "StacManDeserializable.h"
 
-@interface StacManSite : NSObject
+@interface StacManSite : NSObject <StacManDeserializable>
 @property NSArray* aliases;
 
 @property NSString* apiSiteParameter;
@@ -47,5 +48,4 @@
 +(StacManSite*)parse:(NSDictionary*)dict;
 +(NSArray*)parseArray:(NSArray*)json;
 
--(void)finishDeserializing;
 @end

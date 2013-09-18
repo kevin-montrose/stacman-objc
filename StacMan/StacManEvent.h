@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManEvent : NSObject
+@interface StacManEvent : NSObject <StacManDeserializable>
 @property NSDate* creationDate;
 
 @property NSNumber* eventId;

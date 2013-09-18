@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
+#import "StacManDeserializable.h"
 
-@interface StacManTagScore : NSObject
+@interface StacManTagScore : NSObject <StacManDeserializable>
 @property NSNumber* postCount;
 
 @property NSNumber* score;

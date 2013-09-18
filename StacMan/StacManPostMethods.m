@@ -7,6 +7,10 @@
 //
 
 #import "StacManPostMethods.h"
+#import "StacManPost.h"
+#import "StacManComment.h"
+#import "StacManRevision.h"
+#import "StacManSuggestedEdit.h"
 #import "Utils.h"
 
 @implementation StacManPostMethods
@@ -43,7 +47,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"post" delegate:del backoffKey:@"palls"];
+    return [client enqueue:url ofType:[StacManPost class] delegate:del backoffKey:@"palls"];
 }
 
 -(StacManResponse*)getByIdsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -67,7 +71,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"post" delegate:del backoffKey:@"pids"];
+    return [client enqueue:url ofType:[StacManPost class] delegate:del backoffKey:@"pids"];
 }
 
 -(StacManResponse*)getCommentsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -91,7 +95,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"comment" delegate:del backoffKey:@"pcs"];
+    return [client enqueue:url ofType:[StacManComment class] delegate:del backoffKey:@"pcs"];
 }
 
 -(StacManResponse*)getRevisionsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -115,7 +119,7 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"revision" delegate:del backoffKey:@"prevs"];
+    return [client enqueue:url ofType:[StacManRevision class] delegate:del backoffKey:@"prevs"];
 }
 
 -(StacManResponse*)getSuggestedEditsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minDate:(NSDate*)minDate maxDate:(NSDate*)maxDate min:(NSNumber*)min max:(NSNumber*)max order:(NSString*)order delegate:(NSObject<StacManDelegate>*)del
@@ -139,6 +143,6 @@ __weak StacManClient* client;
      order ?: @""
      ];
     
-    return [client enqueue:url ofType:@"suggested_edit" delegate:del backoffKey:@"pses"];
+    return [client enqueue:url ofType:[StacManSuggestedEdit class] delegate:del backoffKey:@"pses"];
 }
 @end

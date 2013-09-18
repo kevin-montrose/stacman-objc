@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManTagSynonym : NSObject
+@interface StacManTagSynonym : NSObject <StacManDeserializable>
 @property NSNumber* appliedCount;
 
 @property NSDate* creationDate;

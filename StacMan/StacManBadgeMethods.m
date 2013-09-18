@@ -7,6 +7,7 @@
 //
 
 #import "StacManBadgeMethods.h"
+#import "StacManBadge.h"
 #import "Utils.h"
 
 @implementation StacManBadgeMethods
@@ -44,7 +45,7 @@ __weak StacManClient* client;
      inname ?: @""
      ];
     
-    return [client enqueue:url ofType:@"badge" delegate:del backoffKey:@"ball"];
+    return [client enqueue:url ofType:[StacManBadge class] delegate:del backoffKey:@"ball"];
 }
 
 -(StacManResponse*)getByIdsOnSite:(NSString*)site ids:(NSArray*)ids filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minRank:(NSString*)minRank maxRank:(NSString*)maxRank minName:(NSString*)minName maxName:(NSString*)maxName minType:(NSString*)minType maxType:(NSString*)maxType order:(NSString*)order inname:(NSString*)inname delegate:(NSObject<StacManDelegate>*)del
@@ -69,7 +70,7 @@ __weak StacManClient* client;
      inname ?: @""
      ];
     
-    return [client enqueue:url ofType:@"badge" delegate:del backoffKey:@"bids"];
+    return [client enqueue:url ofType:[StacManBadge class] delegate:del backoffKey:@"bids"];
 }
 
 -(StacManResponse*)getNamedOnSite:(NSString*)site filter:(NSString*)filter page:(int)page pageSize:(int)pageSize fromDate:(NSDate*)fromDate toDate:(NSDate*)toDate sort:(NSString*)sort minRank:(NSString*)minRank maxRank:(NSString*)maxRank minName:(NSString*)minName maxName:(NSString*)maxName minType:(NSString*)minType maxType:(NSString*)maxType order:(NSString*)order inname:(NSString*)inname delegate:(NSObject<StacManDelegate>*)del
@@ -93,7 +94,7 @@ __weak StacManClient* client;
      inname ?: @""
      ];
     
-    return [client enqueue:url ofType:@"badge" delegate:del backoffKey:@"bnamed"];
+    return [client enqueue:url ofType:[StacManBadge class] delegate:del backoffKey:@"bnamed"];
 }
 
 //getRecent(String site, String filter, Integer page, Integer pagesize, Date fromdate, Date todate)
@@ -113,7 +114,7 @@ __weak StacManClient* client;
      ConvertDate(toDate) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"badge" delegate:del backoffKey:@"brecent"];
+    return [client enqueue:url ofType:[StacManBadge class] delegate:del backoffKey:@"brecent"];
 }
 
 //getRecentByIds(String site, Integer[] ids, String filter, Integer page, Integer pagesize, Date fromdate, Date todate) {
@@ -134,7 +135,7 @@ __weak StacManClient* client;
      ConvertDate(toDate) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"badge" delegate:del backoffKey:@"brecentids"];
+    return [client enqueue:url ofType:[StacManBadge class] delegate:del backoffKey:@"brecentids"];
 }
 
 //getTagBased(String site, String filter, Integer page, Integer pagesize, Date fromdate, Date todate, BadgeSort sort, BadgeRank minrank, BadgeRank maxrank, String minname, String maxname, Order order, String inname)
@@ -159,6 +160,6 @@ __weak StacManClient* client;
      inname ?: @""
      ];
     
-    return [client enqueue:url ofType:@"badge" delegate:del backoffKey:@"btags"];
+    return [client enqueue:url ofType:[StacManBadge class] delegate:del backoffKey:@"btags"];
 }
 @end

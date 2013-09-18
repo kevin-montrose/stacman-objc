@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "StacManShallowUser.h"
+#import "StacManDeserializable.h"
 
-@interface StacManTagWiki : NSObject
+@interface StacManTagWiki : NSObject <StacManDeserializable>
 @property NSString* body;
 
 @property NSDate* bodyLastEditDate;

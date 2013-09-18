@@ -76,9 +76,10 @@
         
         _tier = StacManTierProd;
         
-        dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 5.0, 0);
+        dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), NSEC_PER_SEC * 1.0, 0);
         dispatch_source_set_event_handler(timer, ^{ [self resetGlobalBlock]; });
         dispatch_resume(timer);
+        
     }
     
     return self;
@@ -91,6 +92,7 @@
     {
         maxRelease = currentRequestCount;
         int resetValue = maxRelease <= 30 ? 0 : maxRelease - 30;
+        
         if(OSAtomicCompareAndSwap32(maxRelease, resetValue, &currentRequestCount))
         {
             break;
@@ -104,8 +106,8 @@
     }
 }
 
--(StacManResponse*)enqueue:(NSString*)str ofType:(NSString*)type delegate:(NSObject<StacManDelegate>*)del backoffKey:(NSString*)backoff
-{
+-(StacManResponse*)enqueue:(NSString*)str ofType:(Class)type delegate:(NSObject<StacManDelegate>*)del backoffKey:(NSString*)backoff {
+    
     NSURL *url;
     if (_tier == StacManTierDev)
     {
@@ -148,7 +150,7 @@
          }
          else
          {
-             StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json type:type];
+             StacManWrapper* wrapper = [[StacManWrapper alloc] initWithJson:json forClass:type];
          
              if(wrapper.backoff > 0)
              {

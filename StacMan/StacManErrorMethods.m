@@ -7,6 +7,7 @@
 //
 
 #import "StacManErrorMethods.h"
+#import "StacManError.h"
 
 @implementation StacManErrorMethods
 __weak StacManClient* client;
@@ -35,7 +36,7 @@ __weak StacManClient* client;
      pageSize
     ];
     
-    return [client enqueue:url ofType:@"error" delegate:del backoffKey:@"ealls"];
+    return [client enqueue:url ofType:[StacManError class] delegate:del backoffKey:@"ealls"];
 }
 
 -(StacManResponse*)simulateWithId:(int)_id filter:(NSString*)filter delegate:(NSObject<StacManDelegate>*)del
@@ -50,6 +51,6 @@ __weak StacManClient* client;
      filter ?: @""
      ];
     
-    return [client enqueue:url ofType:@"error" delegate:del backoffKey:@"esimulate"];
+    return [client enqueue:url ofType:[StacManError class] delegate:del backoffKey:@"esimulate"];
 }
 @end

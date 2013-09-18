@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StacManDeserializable.h"
 
-@interface StacManUserTimeline : NSObject
+@interface StacManUserTimeline : NSObject <StacManDeserializable>
 @property NSNumber* badgeId;
 
 @property NSNumber* commentId;

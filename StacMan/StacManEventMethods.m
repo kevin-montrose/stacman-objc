@@ -7,6 +7,7 @@
 //
 
 #import "StacManEventMethods.h"
+#import "StacManEvent.h"
 #import "Utils.h"
 
 @implementation StacManEventMethods
@@ -38,6 +39,6 @@ __weak StacManClient* client;
      ConvertDate(since) ?: @""
      ];
     
-    return [client enqueue:url ofType:@"event" delegate:del backoffKey:@"events"];
+    return [client enqueue:url ofType:[StacManEvent class] delegate:del backoffKey:@"events"];
 }
 @end
