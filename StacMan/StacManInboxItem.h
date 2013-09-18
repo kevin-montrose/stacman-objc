@@ -19,6 +19,8 @@
 
 @property NSDate* creationDate;
 
+@property NSDate* addedDate;
+
 @property NSNumber* isUnread;
 
 @property NSString* itemType;
